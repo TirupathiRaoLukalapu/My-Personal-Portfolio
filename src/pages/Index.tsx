@@ -38,51 +38,91 @@ const Index = () => {
   const skills = [
     { name: "Python", level: 95 },
     { name: "SQL", level: 90 },
-    { name: "Apache Spark", level: 85 },
-    { name: "AWS/Azure", level: 80 },
-    { name: "Docker", level: 85 },
-    { name: "Airflow", level: 75 },
+    { name: "Apache Spark", level: 90 },
+    { name: "Azure (ADF, Databricks)", level: 85 },
+    { name: "Apache Kafka", level: 85 },
+    { name: "Snowflake", level: 80 },
+    { name: "Tableau", level: 85 },
+    { name: "Apache Airflow", level: 80 },
+    { name: "AWS", level: 75 },
+    { name: "Power BI", level: 80 },
   ];
 
   const projects = [
     {
-      title: "Real-time Data Pipeline",
-      description: "Built a scalable ETL pipeline processing 1M+ records daily using Apache Kafka and Spark",
-      tech: ["Python", "Kafka", "Spark", "AWS"],
-      image: "photo-1461749280684-dccba630e2f6"
+      title: "Real-Time Data Streaming Pipeline",
+      description: "Designed and implemented a real-time ETL pipeline using Apache Kafka and Apache Spark to process over 300,000 financial transactions daily. Reduced fraud response time by 25% and achieved 15% reduction in data latency.",
+      tech: ["Apache Kafka", "AWS", "Snowflake", "Snowpipe", "Python", "Apache Spark"],
+      image: "photo-1461749280684-dccba630e2f6",
+      date: "December 2024"
     },
     {
-      title: "Data Warehouse Optimization",
-      description: "Reduced query time by 60% through intelligent indexing and partitioning strategies",
-      tech: ["SQL", "PostgreSQL", "dbt", "Snowflake"],
-      image: "photo-1518770660439-4636190af475"
+      title: "E-commerce Data Pipeline on Azure",
+      description: "Built end-to-end data pipeline to ingest 100 GB of daily e-commerce sales data. Orchestrated 15+ workflows using Apache Airflow and achieved 30% improvement in data processing time.",
+      tech: ["Azure Data Factory", "Azure Databricks", "Apache Spark", "Apache Airflow", "Delta Lake"],
+      image: "photo-1518770660439-4636190af475",
+      date: "May 2022"
     },
     {
-      title: "ML Feature Store",
-      description: "Designed and implemented a feature store serving ML models with sub-100ms latency",
-      tech: ["Python", "Redis", "FastAPI", "Docker"],
-      image: "photo-1487058792275-0ad4aaf24ca7"
+      title: "Automated Risk-Based Fraud Detection System",
+      description: "Implemented real-time system to analyze 300,000 daily financial transactions with risk-based rules. Reduced manual review by 35% and accelerated fraud identification by 25%.",
+      tech: ["Apache Kafka", "Python", "Apache Spark", "Azure Databricks", "Azure Logic Apps"],
+      image: "photo-1487058792275-0ad4aaf24ca7",
+      date: "January 2021"
     }
   ];
 
   const experience = [
     {
-      role: "Senior Data Engineer",
-      company: "Tech Corp",
-      period: "2022 - Present",
-      description: "Lead data architecture and pipeline development for e-commerce platform"
-    },
-    {
       role: "Data Engineer",
-      company: "StartupXYZ",
-      period: "2020 - 2022",
-      description: "Built data infrastructure from scratch, handling millions of events daily"
+      company: "TeamTech Solutions",
+      period: "Aug 2023 – May 2025",
+      location: "Columbia, Kentucky",
+      description: [
+        "Performed in-depth analysis of large financial transaction datasets to identify KPIs and trends, improving forecasting accuracy by 5%",
+        "Designed and maintained interactive Tableau dashboards for financial data visualization and risk assessment",
+        "Streamlined data processes by automating routine tasks with Python scripts, achieving 20% reduction in manual effort",
+        "Led comprehensive data quality audits, enhancing data reliability by 15%",
+        "Collaborated with cross-functional teams on customer segmentation models, increasing marketing campaign efficiency by 10%"
+      ]
+    }
+  ];
+
+  const education = [
+    {
+      degree: "Master's in Computer/Information Technology Administration and Management",
+      institution: "Lindsey Wilson College",
+      period: "Aug 2018 – June 2022",
+      location: "Columbia, Kentucky"
     },
     {
-      role: "Junior Data Analyst",
-      company: "Analytics Inc",
-      period: "2019 - 2020",
-      description: "Developed automated reporting solutions and data quality frameworks"
+      degree: "Bachelor of Technology in Electronics and Communication Engineering",
+      institution: "MLR Institute Of Technology",
+      period: "June 2020 – June 2023",
+      location: "Hyderabad, Telangana"
+    }
+  ];
+
+  const skillCategories = [
+    {
+      category: "Programming Languages",
+      skills: ["Python (NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, TensorFlow)", "SQL", "PySpark", "R", "Bash"]
+    },
+    {
+      category: "Big Data & Frameworks",
+      skills: ["Apache Spark", "Apache Kafka", "Apache Hive", "Hadoop", "HDFS", "Apache Airflow"]
+    },
+    {
+      category: "Databases & Storage",
+      skills: ["MongoDB", "Snowflake", "Azure Data Lake Storage Gen2", "AWS S3", "PostgreSQL"]
+    },
+    {
+      category: "Cloud Platforms",
+      skills: ["Azure (ADF, Databricks, ADLS Gen2)", "AWS (S3, EC2, EMR)", "Snowflake"]
+    },
+    {
+      category: "Visualization & Tools",
+      skills: ["Power BI", "Tableau", "GitHub", "Azure Data Factory"]
     }
   ];
 
@@ -97,6 +137,7 @@ const Index = () => {
             <a href="#skills" className="hover:text-cyan-400 transition-colors">Skills</a>
             <a href="#projects" className="hover:text-cyan-400 transition-colors">Projects</a>
             <a href="#experience" className="hover:text-cyan-400 transition-colors">Experience</a>
+            <a href="#education" className="hover:text-cyan-400 transition-colors">Education</a>
             <a href="#contact" className="hover:text-cyan-400 transition-colors">Contact</a>
           </div>
         </div>
@@ -123,16 +164,16 @@ const Index = () => {
               </h1>
               <div className="text-lg mb-8 text-gray-300 leading-relaxed">
                 <p className="mb-4">
-                  Results-driven Data Analyst with <span className="text-cyan-400 font-semibold">3 years of experience</span> and a Master's in Information Technology and Management from Lindsey Wilson College.
+                  Results-driven Data Engineer with <span className="text-cyan-400 font-semibold">3 years of experience</span> in developing scalable data solutions in finance and E-commerce.
                 </p>
                 <p className="mb-4">
-                  Proven expertise in <span className="text-cyan-400">Python, SQL, Azure (ADF, Databricks), Apache Spark, Kafka, Tableau, and Snowflake</span>, with hands-on experience in the financial and e-commerce domains.
+                  Proficient in <span className="text-cyan-400">Python, SQL, Data Modeling, Data warehousing concepts, Azure (ADF, Databricks), Apache Spark, Kafka, Tableau, and Snowflake</span>.
                 </p>
                 <p className="mb-4">
-                  At TeamTech Solutions, developed interactive Tableau dashboards for financial insights, improving decision-making and forecasting accuracy by <span className="text-green-400 font-semibold">5%</span>. Automated data workflows using Python, enhancing processing efficiency by <span className="text-green-400 font-semibold">10%</span>.
+                  Automated data workflows and orchestrated real-time pipelines that improved processing efficiency by <span className="text-green-400 font-semibold">10–30%</span>.
                 </p>
                 <p>
-                  I excel in cross-functional teams, enjoy learning new technologies, and am passionate about leveraging data to drive innovation and impactful business outcomes.
+                  Adept at cross-functional collaboration and passionate about building end-to-end pipelines that transform raw data into actionable insights.
                 </p>
               </div>
               <div className="flex space-x-4 mb-8">
@@ -171,7 +212,9 @@ const Index = () => {
       <section id="skills" className="py-16 px-6">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-12 text-cyan-400">Technical Skills</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          
+          {/* Skill Progress Bars */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
             {skills.map((skill, index) => (
               <div key={skill.name} className="space-y-2">
                 <div className="flex justify-between">
@@ -182,6 +225,26 @@ const Index = () => {
               </div>
             ))}
           </div>
+
+          {/* Detailed Skills by Category */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {skillCategories.map((category, index) => (
+              <Card key={index} className="bg-gray-800/50 border-gray-700">
+                <CardHeader>
+                  <CardTitle className="text-cyan-400 text-lg">{category.category}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    {category.skills.map((skill, skillIndex) => (
+                      <Badge key={skillIndex} variant="secondary" className="bg-gray-700/50 text-gray-300 mr-2 mb-2">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -189,7 +252,7 @@ const Index = () => {
       <section id="projects" className="py-16 px-6 bg-black/20">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-12 text-cyan-400">Featured Projects</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-cyan-400/50 transition-all duration-300 group">
                 <div className="relative overflow-hidden">
@@ -199,6 +262,9 @@ const Index = () => {
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60"></div>
+                  <div className="absolute top-4 right-4">
+                    <Badge className="bg-cyan-600/80 text-white">{project.date}</Badge>
+                  </div>
                 </div>
                 <CardHeader>
                   <CardTitle className="text-white">{project.title}</CardTitle>
@@ -229,11 +295,45 @@ const Index = () => {
                 <div className="absolute w-4 h-4 bg-cyan-400 rounded-full -left-2 top-0"></div>
                 <div className="bg-gray-800/30 rounded-lg p-6">
                   <h3 className="text-xl font-bold text-white mb-2">{exp.role}</h3>
-                  <div className="flex justify-between items-center mb-3">
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
                     <span className="text-cyan-400 font-medium">{exp.company}</span>
-                    <span className="text-gray-400">{exp.period}</span>
+                    <div className="text-gray-400 text-sm">
+                      <div>{exp.period}</div>
+                      <div>{exp.location}</div>
+                    </div>
                   </div>
-                  <p className="text-gray-300">{exp.description}</p>
+                  <ul className="text-gray-300 space-y-2">
+                    {exp.description.map((item, itemIndex) => (
+                      <li key={itemIndex} className="flex items-start">
+                        <span className="text-cyan-400 mr-2 mt-1">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section id="education" className="py-16 px-6 bg-black/20">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-3xl font-bold text-center mb-12 text-cyan-400">Education</h2>
+          <div className="space-y-8">
+            {education.map((edu, index) => (
+              <div key={index} className="relative pl-8 border-l-2 border-cyan-400/30">
+                <div className="absolute w-4 h-4 bg-cyan-400 rounded-full -left-2 top-0"></div>
+                <div className="bg-gray-800/30 rounded-lg p-6">
+                  <h3 className="text-xl font-bold text-white mb-2">{edu.degree}</h3>
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-3">
+                    <span className="text-cyan-400 font-medium">{edu.institution}</span>
+                    <div className="text-gray-400 text-sm">
+                      <div>{edu.period}</div>
+                      <div>{edu.location}</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -242,7 +342,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 px-6 bg-black/20">
+      <section id="contact" className="py-16 px-6">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold mb-8 text-cyan-400">Let's Connect</h2>
           <p className="text-xl text-gray-300 mb-8">
