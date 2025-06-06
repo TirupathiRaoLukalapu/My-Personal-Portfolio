@@ -121,9 +121,20 @@ const Index = () => {
               <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                 Data Engineer
               </h1>
-              <p className="text-xl mb-8 text-gray-300">
-                Transforming raw data into actionable insights through scalable pipelines and robust architectures
-              </p>
+              <div className="text-lg mb-8 text-gray-300 leading-relaxed">
+                <p className="mb-4">
+                  Results-driven Data Analyst with <span className="text-cyan-400 font-semibold">3 years of experience</span> and a Master's in Information Technology and Management from Lindsey Wilson College.
+                </p>
+                <p className="mb-4">
+                  Proven expertise in <span className="text-cyan-400">Python, SQL, Azure (ADF, Databricks), Apache Spark, Kafka, Tableau, and Snowflake</span>, with hands-on experience in the financial and e-commerce domains.
+                </p>
+                <p className="mb-4">
+                  At TeamTech Solutions, developed interactive Tableau dashboards for financial insights, improving decision-making and forecasting accuracy by <span className="text-green-400 font-semibold">5%</span>. Automated data workflows using Python, enhancing processing efficiency by <span className="text-green-400 font-semibold">10%</span>.
+                </p>
+                <p>
+                  I excel in cross-functional teams, enjoy learning new technologies, and am passionate about leveraging data to drive innovation and impactful business outcomes.
+                </p>
+              </div>
               <div className="flex space-x-4 mb-8">
                 <Button className="bg-cyan-600 hover:bg-cyan-700">
                   <Mail className="mr-2 h-4 w-4" />
