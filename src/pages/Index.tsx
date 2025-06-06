@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -177,18 +176,26 @@ const Index = () => {
                 </p>
               </div>
               <div className="flex space-x-4 mb-8">
-                <Button className="bg-cyan-600 hover:bg-cyan-700">
-                  <Mail className="mr-2 h-4 w-4" />
-                  Contact Me
+                <Button className="bg-cyan-600 hover:bg-cyan-700" asChild>
+                  <a href="mailto:tirupathiraolukalapu08@gmail.com">
+                    <Mail className="mr-2 h-4 w-4" />
+                    Contact Me
+                  </a>
                 </Button>
                 <Button variant="outline" className="border-cyan-400 text-cyan-400 hover:bg-cyan-400/10">
                   View Resume
                 </Button>
               </div>
               <div className="flex space-x-4">
-                <Github className="h-6 w-6 text-gray-400 hover:text-cyan-400 cursor-pointer transition-colors" />
-                <Linkedin className="h-6 w-6 text-gray-400 hover:text-cyan-400 cursor-pointer transition-colors" />
-                <Mail className="h-6 w-6 text-gray-400 hover:text-cyan-400 cursor-pointer transition-colors" />
+                <a href="https://github.com/TirupathiRaoLukalapu" target="_blank" rel="noopener noreferrer">
+                  <Github className="h-6 w-6 text-gray-400 hover:text-cyan-400 cursor-pointer transition-colors" />
+                </a>
+                <a href="https://www.linkedin.com/in/tirupathi-rao-lukalapu-a719912aa/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-6 w-6 text-gray-400 hover:text-cyan-400 cursor-pointer transition-colors" />
+                </a>
+                <a href="mailto:tirupathiraolukalapu08@gmail.com">
+                  <Mail className="h-6 w-6 text-gray-400 hover:text-cyan-400 cursor-pointer transition-colors" />
+                </a>
               </div>
             </div>
             <div className="relative">
@@ -349,13 +356,17 @@ const Index = () => {
             Ready to discuss data engineering opportunities? Let's build something amazing together.
           </p>
           <div className="flex justify-center space-x-6">
-            <Button size="lg" className="bg-cyan-600 hover:bg-cyan-700">
-              <Mail className="mr-2 h-5 w-5" />
-              Email Me
+            <Button size="lg" className="bg-cyan-600 hover:bg-cyan-700" asChild>
+              <a href="mailto:tirupathiraolukalapu08@gmail.com">
+                <Mail className="mr-2 h-5 w-5" />
+                Email Me
+              </a>
             </Button>
-            <Button size="lg" variant="outline" className="border-cyan-400 text-cyan-400 hover:bg-cyan-400/10">
-              <Linkedin className="mr-2 h-5 w-5" />
-              LinkedIn
+            <Button size="lg" variant="outline" className="border-cyan-400 text-cyan-400 hover:bg-cyan-400/10" asChild>
+              <a href="https://www.linkedin.com/in/tirupathi-rao-lukalapu-a719912aa/" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="mr-2 h-5 w-5" />
+                LinkedIn
+              </a>
             </Button>
           </div>
         </div>
