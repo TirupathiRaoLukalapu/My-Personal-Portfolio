@@ -1,10 +1,12 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Github, Linkedin, Mail, Database, Code, Terminal, ChartBar } from "lucide-react";
+import { Github, Linkedin, Mail, Database, Code, Terminal, ChartBar, Server, Network } from "lucide-react";
+import DataFlowAnimation from "@/components/DataFlowAnimation";
+import TechStackGrid from "@/components/TechStackGrid";
+import DataMetrics from "@/components/DataMetrics";
 
 const Index = () => {
   const [typedText, setTypedText] = useState("");
@@ -196,7 +198,11 @@ const Index = () => {
                 </a>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative space-y-6">
+              {/* Data Flow Animation */}
+              <DataFlowAnimation />
+              
+              {/* Terminal */}
               <div className="bg-slate-100 rounded-lg p-6 border border-slate-200">
                 <div className="flex items-center mb-4">
                   <Terminal className="h-4 w-4 text-slate-600 mr-2" />
@@ -210,6 +216,22 @@ const Index = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Data Engineering Metrics Section */}
+      <section className="py-16 px-6 bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl font-bold text-center mb-12 text-slate-800">Data Engineering Impact</h2>
+          <DataMetrics />
+        </div>
+      </section>
+
+      {/* Tech Stack Grid */}
+      <section className="py-16 px-6 bg-slate-50">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl font-bold text-center mb-12 text-slate-800">Technology Stack</h2>
+          <TechStackGrid />
         </div>
       </section>
 
@@ -262,7 +284,11 @@ const Index = () => {
               <Card key={index} className="bg-white border-slate-200 hover:border-slate-400 transition-all duration-300 group hover:shadow-lg">
                 <div className="relative overflow-hidden">
                   <div className="w-full h-48 bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
-                    <Database className="h-16 w-16 text-slate-400" />
+                    <div className="flex space-x-4">
+                      <Database className="h-12 w-12 text-slate-400" />
+                      <Server className="h-12 w-12 text-slate-500" />
+                      <Network className="h-12 w-12 text-slate-400" />
+                    </div>
                   </div>
                   <div className="absolute top-4 right-4">
                     <Badge className="bg-slate-700 text-white">{project.date}</Badge>
