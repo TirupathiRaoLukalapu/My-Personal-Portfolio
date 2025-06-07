@@ -124,18 +124,18 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-gray-50 text-gray-900">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-200">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-xl font-bold text-black">Tirupathi Rao</div>
+          <div className="text-xl font-bold text-slate-800">Tirupathi Rao</div>
           <div className="hidden md:flex space-x-6">
-            <a href="#about" className="hover:text-gray-600 transition-colors font-medium">About</a>
-            <a href="#skills" className="hover:text-gray-600 transition-colors font-medium">Skills</a>
-            <a href="#projects" className="hover:text-gray-600 transition-colors font-medium">Projects</a>
-            <a href="#experience" className="hover:text-gray-600 transition-colors font-medium">Experience</a>
-            <a href="#education" className="hover:text-gray-600 transition-colors font-medium">Education</a>
-            <a href="#contact" className="hover:text-gray-600 transition-colors font-medium">Contact</a>
+            <a href="#about" className="text-slate-600 hover:text-slate-800 transition-colors font-medium">About</a>
+            <a href="#skills" className="text-slate-600 hover:text-slate-800 transition-colors font-medium">Skills</a>
+            <a href="#projects" className="text-slate-600 hover:text-slate-800 transition-colors font-medium">Projects</a>
+            <a href="#experience" className="text-slate-600 hover:text-slate-800 transition-colors font-medium">Experience</a>
+            <a href="#education" className="text-slate-600 hover:text-slate-800 transition-colors font-medium">Education</a>
+            <a href="#contact" className="text-slate-600 hover:text-slate-800 transition-colors font-medium">Contact</a>
           </div>
         </div>
       </nav>
@@ -149,63 +149,63 @@ const Index = () => {
                 <img 
                   src="/lovable-uploads/d206bf2a-1923-4603-b939-9d3ca5f66ee4.png" 
                   alt="Tirupathi Rao"
-                  className="w-20 h-20 rounded-full object-cover border-2 border-black"
+                  className="w-20 h-20 rounded-full object-cover border-2 border-slate-300"
                 />
                 <div>
-                  <p className="text-lg text-gray-700 mb-2">Hi! I am Tirupathi Rao</p>
-                  <p className="text-sm text-gray-600">Recently a Masters graduate, ready to join immediately</p>
+                  <p className="text-lg text-slate-700 mb-2">Hi! I am Tirupathi Rao</p>
+                  <p className="text-sm text-slate-600">Recently a Masters graduate, ready to join immediately</p>
                 </div>
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-black">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-slate-800">
                 Data Engineer
               </h1>
-              <div className="text-lg mb-8 text-gray-700 leading-relaxed">
+              <div className="text-lg mb-8 text-slate-700 leading-relaxed">
                 <p className="mb-4">
-                  Results-driven Data Engineer with <span className="text-black font-semibold">3 years of experience</span> in developing scalable data solutions in finance and E-commerce.
+                  Results-driven Data Engineer with <span className="text-slate-800 font-semibold">3 years of experience</span> in developing scalable data solutions in finance and E-commerce.
                 </p>
                 <p className="mb-4">
-                  Proficient in <span className="text-black">Python, SQL, Data Modeling, Data warehousing concepts, Azure (ADF, Databricks), Apache Spark, Kafka, Tableau, and Snowflake</span>.
+                  Proficient in <span className="text-slate-800">Python, SQL, Data Modeling, Data warehousing concepts, Azure (ADF, Databricks), Apache Spark, Kafka, Tableau, and Snowflake</span>.
                 </p>
                 <p className="mb-4">
-                  Automated data workflows and orchestrated real-time pipelines that improved processing efficiency by <span className="text-black font-semibold">10–30%</span>.
+                  Automated data workflows and orchestrated real-time pipelines that improved processing efficiency by <span className="text-slate-800 font-semibold">10–30%</span>.
                 </p>
                 <p>
                   Adept at cross-functional collaboration and passionate about building end-to-end pipelines that transform raw data into actionable insights.
                 </p>
               </div>
               <div className="flex space-x-4 mb-8">
-                <Button className="bg-black hover:bg-gray-800 text-white" asChild>
+                <Button className="bg-slate-800 hover:bg-slate-700 text-white" asChild>
                   <a href="mailto:tirupathiraolukalapu08@gmail.com">
                     <Mail className="mr-2 h-4 w-4" />
                     Contact Me
                   </a>
                 </Button>
-                <Button variant="outline" className="border-black text-black hover:bg-gray-50">
+                <Button variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50">
                   View Resume
                 </Button>
               </div>
               <div className="flex space-x-4">
                 <a href="https://github.com/TirupathiRaoLukalapu" target="_blank" rel="noopener noreferrer">
-                  <Github className="h-6 w-6 text-gray-600 hover:text-black cursor-pointer transition-colors" />
+                  <Github className="h-6 w-6 text-slate-600 hover:text-slate-800 cursor-pointer transition-colors" />
                 </a>
                 <a href="https://www.linkedin.com/in/tirupathi-rao-lukalapu-a719912aa/" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="h-6 w-6 text-gray-600 hover:text-black cursor-pointer transition-colors" />
+                  <Linkedin className="h-6 w-6 text-slate-600 hover:text-blue-600 cursor-pointer transition-colors" />
                 </a>
                 <a href="mailto:tirupathiraolukalapu08@gmail.com">
-                  <Mail className="h-6 w-6 text-gray-600 hover:text-black cursor-pointer transition-colors" />
+                  <Mail className="h-6 w-6 text-slate-600 hover:text-slate-800 cursor-pointer transition-colors" />
                 </a>
               </div>
             </div>
             <div className="relative">
-              <div className="bg-gray-100 rounded-lg p-6 border border-gray-200">
+              <div className="bg-slate-100 rounded-lg p-6 border border-slate-200">
                 <div className="flex items-center mb-4">
-                  <Terminal className="h-4 w-4 text-black mr-2" />
-                  <span className="text-black font-medium">terminal</span>
+                  <Terminal className="h-4 w-4 text-slate-600 mr-2" />
+                  <span className="text-slate-700 font-medium">terminal</span>
                 </div>
                 <div className="font-mono text-sm">
-                  <span className="text-gray-600">$ </span>
-                  <span className="text-black">{typedText}</span>
-                  <span className="animate-pulse">|</span>
+                  <span className="text-slate-500">$ </span>
+                  <span className="text-slate-800">{typedText}</span>
+                  <span className="animate-pulse text-slate-600">|</span>
                 </div>
               </div>
             </div>
@@ -214,19 +214,19 @@ const Index = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-16 px-6 bg-gray-50">
+      <section id="skills" className="py-16 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12 text-black">Technical Skills</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-slate-800">Technical Skills</h2>
           
           {/* Skill Progress Bars */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {skills.map((skill, index) => (
               <div key={skill.name} className="space-y-2">
                 <div className="flex justify-between">
-                  <span className="text-black font-medium">{skill.name}</span>
-                  <span className="text-gray-600">{skill.level}%</span>
+                  <span className="text-slate-700 font-medium">{skill.name}</span>
+                  <span className="text-slate-600">{skill.level}%</span>
                 </div>
-                <Progress value={skill.level} className="h-3 bg-gray-200" />
+                <Progress value={skill.level} className="h-3 bg-slate-200" />
               </div>
             ))}
           </div>
@@ -234,14 +234,14 @@ const Index = () => {
           {/* Detailed Skills by Category */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skillCategories.map((category, index) => (
-              <Card key={index} className="bg-white border-gray-200">
+              <Card key={index} className="bg-slate-50 border-slate-200 hover:border-slate-300 transition-colors">
                 <CardHeader>
-                  <CardTitle className="text-black text-lg">{category.category}</CardTitle>
+                  <CardTitle className="text-slate-800 text-lg">{category.category}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2">
                     {category.skills.map((skill, skillIndex) => (
-                      <Badge key={skillIndex} variant="secondary" className="bg-gray-100 text-gray-700 mr-2 mb-2">
+                      <Badge key={skillIndex} variant="secondary" className="bg-slate-200 text-slate-700 mr-2 mb-2 hover:bg-slate-300">
                         {skill}
                       </Badge>
                     ))}
@@ -254,28 +254,28 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-16 px-6">
+      <section id="projects" className="py-16 px-6 bg-slate-50">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12 text-black">Featured Projects</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-slate-800">Featured Projects</h2>
           <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="bg-white border-gray-200 hover:border-black transition-all duration-300 group">
+              <Card key={index} className="bg-white border-slate-200 hover:border-slate-400 transition-all duration-300 group hover:shadow-lg">
                 <div className="relative overflow-hidden">
-                  <div className="w-full h-48 bg-gray-100 flex items-center justify-center">
-                    <Database className="h-16 w-16 text-gray-400" />
+                  <div className="w-full h-48 bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
+                    <Database className="h-16 w-16 text-slate-400" />
                   </div>
                   <div className="absolute top-4 right-4">
-                    <Badge className="bg-black text-white">{project.date}</Badge>
+                    <Badge className="bg-slate-700 text-white">{project.date}</Badge>
                   </div>
                 </div>
                 <CardHeader>
-                  <CardTitle className="text-black">{project.title}</CardTitle>
-                  <CardDescription className="text-gray-600">{project.description}</CardDescription>
+                  <CardTitle className="text-slate-800">{project.title}</CardTitle>
+                  <CardDescription className="text-slate-600">{project.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech) => (
-                      <Badge key={tech} variant="outline" className="border-gray-300 text-gray-700">
+                      <Badge key={tech} variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-100">
                         {tech}
                       </Badge>
                     ))}
@@ -288,26 +288,26 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-16 px-6 bg-gray-50">
+      <section id="experience" className="py-16 px-6 bg-white">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12 text-black">Experience</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-slate-800">Experience</h2>
           <div className="space-y-8">
             {experience.map((exp, index) => (
-              <div key={index} className="relative pl-8 border-l-2 border-black">
-                <div className="absolute w-4 h-4 bg-black rounded-full -left-2 top-0"></div>
-                <div className="bg-white rounded-lg p-6 border border-gray-200">
-                  <h3 className="text-xl font-bold text-black mb-2">{exp.role}</h3>
+              <div key={index} className="relative pl-8 border-l-2 border-slate-300">
+                <div className="absolute w-4 h-4 bg-slate-600 rounded-full -left-2 top-0"></div>
+                <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
+                  <h3 className="text-xl font-bold text-slate-800 mb-2">{exp.role}</h3>
                   <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                    <span className="text-black font-medium">{exp.company}</span>
-                    <div className="text-gray-600 text-sm">
+                    <span className="text-slate-700 font-medium">{exp.company}</span>
+                    <div className="text-slate-600 text-sm">
                       <div>{exp.period}</div>
                       <div>{exp.location}</div>
                     </div>
                   </div>
-                  <ul className="text-gray-700 space-y-2">
+                  <ul className="text-slate-700 space-y-2">
                     {exp.description.map((item, itemIndex) => (
                       <li key={itemIndex} className="flex items-start">
-                        <span className="text-black mr-2 mt-1">•</span>
+                        <span className="text-slate-600 mr-2 mt-1">•</span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -320,18 +320,18 @@ const Index = () => {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-16 px-6">
+      <section id="education" className="py-16 px-6 bg-slate-50">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12 text-black">Education</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-slate-800">Education</h2>
           <div className="space-y-8">
             {education.map((edu, index) => (
-              <div key={index} className="relative pl-8 border-l-2 border-black">
-                <div className="absolute w-4 h-4 bg-black rounded-full -left-2 top-0"></div>
-                <div className="bg-white rounded-lg p-6 border border-gray-200">
-                  <h3 className="text-xl font-bold text-black mb-2">{edu.degree}</h3>
+              <div key={index} className="relative pl-8 border-l-2 border-slate-300">
+                <div className="absolute w-4 h-4 bg-slate-600 rounded-full -left-2 top-0"></div>
+                <div className="bg-white rounded-lg p-6 border border-slate-200">
+                  <h3 className="text-xl font-bold text-slate-800 mb-2">{edu.degree}</h3>
                   <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-3">
-                    <span className="text-black font-medium">{edu.institution}</span>
-                    <div className="text-gray-600 text-sm">
+                    <span className="text-slate-700 font-medium">{edu.institution}</span>
+                    <div className="text-slate-600 text-sm">
                       <div>{edu.period}</div>
                       <div>{edu.location}</div>
                     </div>
@@ -344,20 +344,20 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 px-6 bg-gray-50">
+      <section id="contact" className="py-16 px-6 bg-white">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold mb-8 text-black">Let's Connect</h2>
-          <p className="text-xl text-gray-700 mb-8">
+          <h2 className="text-3xl font-bold mb-8 text-slate-800">Let's Connect</h2>
+          <p className="text-xl text-slate-700 mb-8">
             Ready to discuss data engineering opportunities? Let's build something amazing together.
           </p>
           <div className="flex justify-center space-x-6">
-            <Button size="lg" className="bg-black hover:bg-gray-800 text-white" asChild>
+            <Button size="lg" className="bg-slate-800 hover:bg-slate-700 text-white" asChild>
               <a href="mailto:tirupathiraolukalapu08@gmail.com">
                 <Mail className="mr-2 h-5 w-5" />
                 Email Me
               </a>
             </Button>
-            <Button size="lg" variant="outline" className="border-black text-black hover:bg-gray-50" asChild>
+            <Button size="lg" variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50" asChild>
               <a href="https://www.linkedin.com/in/tirupathi-rao-lukalapu-a719912aa/" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="mr-2 h-5 w-5" />
                 LinkedIn
@@ -368,8 +368,8 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-gray-200">
-        <div className="container mx-auto text-center text-gray-600">
+      <footer className="py-8 px-6 border-t border-slate-200 bg-slate-50">
+        <div className="container mx-auto text-center text-slate-600">
           <p>&copy; 2024 Tirupathi Rao. Built with passion for data engineering.</p>
         </div>
       </footer>
