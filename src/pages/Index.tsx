@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -126,9 +127,9 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 text-gray-900">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-200">
+      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-200 shadow-sm">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-xl font-bold text-slate-800">Tirupathi Rao</div>
           <div className="hidden md:flex space-x-6">
@@ -142,68 +143,112 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="pt-20 pb-16 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="flex items-center gap-4 mb-6">
-                <img 
-                  src="/lovable-uploads/d206bf2a-1923-4603-b939-9d3ca5f66ee4.png" 
-                  alt="Tirupathi Rao"
-                  className="w-20 h-20 rounded-full object-cover border-2 border-slate-300"
-                />
-                <div>
-                  <p className="text-lg text-slate-700 mb-2">Hi! I am Tirupathi Rao</p>
-                  <p className="text-sm text-slate-600">Recently a Masters graduate, ready to join immediately</p>
+      {/* Hero Section with 3D Photo */}
+      <section className="pt-20 pb-16 px-6 relative overflow-hidden">
+        {/* Background geometric elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+          <div className="absolute top-40 right-10 w-72 h-72 bg-gradient-to-r from-yellow-100 to-pink-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-gradient-to-r from-green-100 to-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" style={{ animationDelay: '4s' }}></div>
+        </div>
+
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center mb-16">
+            {/* 3D Photo Container */}
+            <div className="relative inline-block mb-8">
+              {/* 3D Background layers */}
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-200 to-slate-300 rounded-3xl transform rotate-3 scale-105 opacity-30"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-300 to-slate-400 rounded-3xl transform -rotate-2 scale-102 opacity-40"></div>
+              
+              {/* Main photo container */}
+              <div className="relative bg-white p-2 rounded-3xl shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-3xl">
+                <div className="relative overflow-hidden rounded-2xl">
+                  <img 
+                    src="/lovable-uploads/5396458f-722b-457a-9bd2-9d51a3561425.png" 
+                    alt="Tirupathi Rao - Data Engineer"
+                    className="w-80 h-80 object-cover transition-transform duration-300 hover:scale-110"
+                  />
+                  {/* Overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
                 </div>
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-slate-800">
+
+              {/* Floating tech icons around photo */}
+              <div className="absolute -top-4 -right-4 bg-blue-100 text-blue-600 p-3 rounded-full shadow-lg animate-bounce">
+                <Database className="h-6 w-6" />
+              </div>
+              <div className="absolute -bottom-4 -left-4 bg-green-100 text-green-600 p-3 rounded-full shadow-lg animate-bounce" style={{ animationDelay: '1s' }}>
+                <Server className="h-6 w-6" />
+              </div>
+              <div className="absolute top-10 -left-8 bg-purple-100 text-purple-600 p-3 rounded-full shadow-lg animate-bounce" style={{ animationDelay: '2s' }}>
+                <Code className="h-6 w-6" />
+              </div>
+              <div className="absolute top-10 -right-8 bg-yellow-100 text-yellow-600 p-3 rounded-full shadow-lg animate-bounce" style={{ animationDelay: '0.5s' }}>
+                <ChartBar className="h-6 w-6" />
+              </div>
+            </div>
+
+            {/* Text content */}
+            <div className="max-w-4xl mx-auto">
+              <p className="text-lg text-slate-700 mb-4">Hi! I am Tirupathi Rao</p>
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 text-slate-800 bg-gradient-to-r from-slate-800 via-slate-600 to-slate-800 bg-clip-text text-transparent">
                 Data Engineer
               </h1>
-              <div className="text-lg mb-8 text-slate-700 leading-relaxed">
-                <p className="mb-4">
+              <div className="text-lg mb-8 text-slate-700 leading-relaxed space-y-4 max-w-3xl mx-auto">
+                <p>
                   Results-driven Data Engineer with <span className="text-slate-800 font-semibold">3 years of experience</span> in developing scalable data solutions in finance and E-commerce.
                 </p>
-                <p className="mb-4">
+                <p>
                   Proficient in <span className="text-slate-800">Python, SQL, Data Modeling, Data warehousing concepts, Azure (ADF, Databricks), Apache Spark, Kafka, Tableau, and Snowflake</span>.
                 </p>
-                <p className="mb-4">
+                <p>
                   Automated data workflows and orchestrated real-time pipelines that improved processing efficiency by <span className="text-slate-800 font-semibold">10–30%</span>.
                 </p>
-                <p>
-                  Adept at cross-functional collaboration and passionate about building end-to-end pipelines that transform raw data into actionable insights.
-                </p>
               </div>
-              <div className="flex space-x-4 mb-8">
-                <Button className="bg-slate-800 hover:bg-slate-700 text-white" asChild>
+
+              {/* Action buttons */}
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+                <Button className="bg-slate-800 hover:bg-slate-700 text-white shadow-lg transform transition-all duration-200 hover:scale-105" asChild>
                   <a href="mailto:tirupathiraolukalapu08@gmail.com">
                     <Mail className="mr-2 h-4 w-4" />
                     Contact Me
                   </a>
                 </Button>
-                <Button variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50">
+                <Button variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50 shadow-lg transform transition-all duration-200 hover:scale-105">
                   View Resume
                 </Button>
               </div>
-              <div className="flex space-x-4">
-                <a href="https://github.com/TirupathiRaoLukalapu" target="_blank" rel="noopener noreferrer">
-                  <Github className="h-6 w-6 text-slate-600 hover:text-slate-800 cursor-pointer transition-colors" />
+
+              {/* Social links */}
+              <div className="flex justify-center space-x-6">
+                <a 
+                  href="https://github.com/TirupathiRaoLukalapu" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110"
+                >
+                  <Github className="h-6 w-6 text-slate-600 hover:text-slate-800" />
                 </a>
-                <a href="https://www.linkedin.com/in/tirupathi-rao-lukalapu-a719912aa/" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="h-6 w-6 text-slate-600 hover:text-blue-600 cursor-pointer transition-colors" />
+                <a 
+                  href="https://www.linkedin.com/in/tirupathi-rao-lukalapu-a719912aa/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110"
+                >
+                  <Linkedin className="h-6 w-6 text-slate-600 hover:text-blue-600" />
                 </a>
-                <a href="mailto:tirupathiraolukalapu08@gmail.com">
-                  <Mail className="h-6 w-6 text-slate-600 hover:text-slate-800 cursor-pointer transition-colors" />
+                <a 
+                  href="mailto:tirupathiraolukalapu08@gmail.com"
+                  className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110"
+                >
+                  <Mail className="h-6 w-6 text-slate-600 hover:text-slate-800" />
                 </a>
               </div>
             </div>
-            <div className="relative space-y-6">
-              {/* Data Flow Animation */}
-              <DataFlowAnimation />
-              
-              {/* Terminal */}
-              <div className="bg-slate-100 rounded-lg p-6 border border-slate-200">
+
+            {/* Terminal section */}
+            <div className="mt-16 max-w-2xl mx-auto">
+              <div className="bg-slate-100 rounded-lg p-6 border border-slate-200 shadow-lg">
                 <div className="flex items-center mb-4">
                   <Terminal className="h-4 w-4 text-slate-600 mr-2" />
                   <span className="text-slate-700 font-medium">terminal</span>
