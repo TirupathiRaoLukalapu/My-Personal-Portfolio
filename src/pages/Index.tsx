@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -55,6 +56,7 @@ const Index = () => {
   const skills = [
     { name: "Python (PySpark)", level: 95 },
     { name: "SQL", level: 95 },
+    { name: "Java", level: 80 },
     { name: "Apache Spark", level: 90 },
     { name: "Snowflake", level: 90 },
     { name: "dbt", level: 85 },
@@ -137,7 +139,11 @@ const Index = () => {
   const skillCategories = [
     {
       category: "Programming Languages",
-      skills: ["Python (NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, TensorFlow)", "SQL", "PySpark", "R", "Bash"]
+      skills: ["Python (NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, TensorFlow)", "SQL", "PySpark", "Java", "R", "Bash"]
+    },
+    {
+      category: "Frontend Technologies",
+      skills: ["HTML", "CSS"]
     },
     {
       category: "Big Data & Frameworks",
@@ -145,7 +151,7 @@ const Index = () => {
     },
     {
       category: "Databases & Storage",
-      skills: ["MongoDB", "Snowflake", "Azure Data Lake Storage Gen2", "AWS S3", "PostgreSQL"]
+      skills: ["MongoDB", "Redis", "ChromaDB", "Snowflake", "Azure Data Lake Storage Gen2", "AWS S3", "PostgreSQL"]
     },
     {
       category: "Cloud Platforms",
