@@ -12,9 +12,9 @@ import DataMetrics from "@/components/DataMetrics";
 const Index = () => {
   const [typedText, setTypedText] = useState("");
   const codeSnippets = [
-    "import pandas as pd",
+    "import pyspark as spark",
     "from airflow import DAG",
-    "spark.sql('SELECT * FROM data')",
+    "dbt run --models+",
     "pipeline.transform(df)",
   ];
 
@@ -39,54 +39,62 @@ const Index = () => {
   }, []);
 
   const skills = [
-    { name: "Python", level: 95 },
-    { name: "SQL", level: 90 },
+    { name: "Python (PySpark)", level: 95 },
+    { name: "SQL", level: 95 },
     { name: "Apache Spark", level: 90 },
+    { name: "Snowflake", level: 90 },
+    { name: "dbt", level: 85 },
+    { name: "Apache Airflow", level: 90 },
     { name: "Azure (ADF, Databricks)", level: 85 },
-    { name: "Apache Kafka", level: 85 },
-    { name: "Snowflake", level: 80 },
-    { name: "Tableau", level: 85 },
-    { name: "Apache Airflow", level: 80 },
-    { name: "AWS", level: 75 },
-    { name: "Power BI", level: 80 },
+    { name: "AWS (Glue, S3, EMR)", level: 85 },
+    { name: "Apache Kafka", level: 80 },
+    { name: "Data Modeling", level: 90 },
   ];
 
   const projects = [
     {
       title: "Real-Time Data Streaming Pipeline",
-      description: "Designed and implemented a real-time ETL pipeline using Apache Kafka and Apache Spark to process over 300,000 financial transactions daily. Reduced fraud response time by 25% and achieved 15% reduction in data latency.",
-      tech: ["Apache Kafka", "AWS", "Snowflake", "Snowpipe", "Python", "Apache Spark"],
-      date: "December 2024",
+      description: "Developed a cloud-based real-time pipeline integrating Spotify APIs with AWS Lambda, Glue, and Snowflake. Optimized schema consistency and processing time by 30%, reducing data availability lag from hours to minutes.",
+      tech: ["Apache Spark", "Amazon S3", "Snowflake", "Snowpipe", "AWS Lambda", "AWS Glue"],
+      date: "August 2024",
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800&h=400"
     },
     {
       title: "E-commerce Data Pipeline on Azure",
-      description: "Built end-to-end data pipeline to ingest 100 GB of daily e-commerce sales data. Orchestrated 15+ workflows using Apache Airflow and achieved 30% improvement in data processing time.",
-      tech: ["Azure Data Factory", "Azure Databricks", "Apache Spark", "Apache Airflow", "Delta Lake"],
-      date: "May 2022",
+      description: "Designed end-to-end pipeline to process 100 GB of daily e-commerce data. Achieved 30% improvement in processing time using Azure Data Factory, Databricks, and Delta Lake for optimized performance.",
+      tech: ["Azure Data Factory", "Azure Databricks", "Apache Spark", "Delta Lake", "Azure Data Lake Gen2"],
+      date: "February 2025",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=800&h=400"
-    },
-    {
-      title: "Automated Risk-Based Fraud Detection System",
-      description: "Implemented real-time system to analyze 300,000 daily financial transactions with risk-based rules. Reduced manual review by 35% and accelerated fraud identification by 25%.",
-      tech: ["Apache Kafka", "Python", "Apache Spark", "Azure Databricks", "Azure Logic Apps"],
-      date: "January 2021",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800&h=400"
     }
   ];
 
   const experience = [
     {
       role: "Data Engineer",
-      company: "TeamTech Solutions",
-      period: "Aug 2023 – May 2025",
-      location: "Columbia, Kentucky",
+      company: "Innovaccer Inc.",
+      period: "Sep 2023 – Mar 2025",
+      location: "California, United States",
       description: [
-        "Performed in-depth analysis of large financial transaction datasets to identify key performance indicators (KPIs) and trends affecting revenue and profitability, delivering actionable insights that informed strategic decision-making and improved forecasting accuracy by 5%",
-        "Designed, developed, and maintained interactive dashboards using Tableau to visualize critical financial data, including loan performance and customer behavior, enabling stakeholders to effectively monitor performance and assess risk",
-        "Streamlined data analysis and reporting processes by automating routine tasks with Python scripts, achieving a 20% reduction in manual effort and freeing up the team to pursue complex analytical projects",
-        "Led comprehensive data quality audits to identify and resolve data discrepancies, enhancing data reliability by 15% and ensuring the accuracy of financial reporting and analysis",
-        "Collaborated with cross-functional teams to define data requirements for new product launches, resulting in the development of targeted customer segmentation models that increased marketing campaign efficiency by 10%"
+        "Built and maintained scalable ETL pipelines using PySpark and AWS Glue to ingest and transform large-scale healthcare data across multiple vendor sources",
+        "Designed reusable data pipeline components and implemented workflow orchestration with Apache Airflow, improving operational efficiency and data freshness",
+        "Developed ELT workflows with dbt and optimized Snowflake schemas, resulting in 40% faster query execution and improved reporting accuracy",
+        "Applied data quality validation using Great Expectations and implemented automated monitoring and alerting for data anomalies",
+        "Worked in Agile teams to support product features and data requirements across analytics and technology teams, following CI/CD practices using Git and Jenkins",
+        "Collaborated with stakeholders to ensure HIPAA-compliant data governance, version control, and secure cloud architecture on AWS and Databricks"
+      ]
+    },
+    {
+      role: "Data Engineer",
+      company: "Teamtech Solutions",
+      period: "Mar 2021 – Jun 2023",
+      location: "Hyderabad, Telangana",
+      description: [
+        "Designed and developed data pipelines using Azure Data Factory to extract, transform, and load structured and unstructured financial datasets into Snowflake and SQL Server",
+        "Integrated internal databases and third-party APIs to support loan analytics and fraud detection workflows, reducing eligibility processing time by 50%",
+        "Created reusable data models, stored procedures, UDFs, and views; improved data lineage tracking and metadata documentation across data assets",
+        "Implemented CI/CD pipelines and version control with Azure DevOps and Git; actively supported data testing and production deployment processes",
+        "Conducted data profiling and validation using Python and SQL to ensure data quality, consistency, and accuracy in compliance with partner bank standards",
+        "Supported Power BI dashboard development by enabling curated datasets and ensuring data availability through monitored pipelines"
       ]
     }
   ];
@@ -97,12 +105,6 @@ const Index = () => {
       institution: "Lindsey Wilson College",
       period: "Aug 2023 – May 2025",
       location: "Columbia, Kentucky"
-    },
-    {
-      degree: "Bachelor of Technology in Electronics and Communication Engineering",
-      institution: "MLR Institute Of Technology",
-      period: "June 2018 – June 2022",
-      location: "Hyderabad, Telangana"
     }
   ];
 
@@ -121,11 +123,15 @@ const Index = () => {
     },
     {
       category: "Cloud Platforms",
-      skills: ["Azure (ADF, Databricks, ADLS Gen2)", "AWS (S3, EC2, EMR)", "Snowflake"]
+      skills: ["Azure (ADF, Databricks, ADLS Gen2)", "AWS (S3, EC2, EMR, Glue)", "Snowflake"]
     },
     {
-      category: "Visualization & Tools",
-      skills: ["Power BI", "Tableau", "GitHub", "Azure Data Factory"]
+      category: "Orchestration & Tools",
+      skills: ["Apache Airflow", "Azure Data Factory", "dbt", "Great Expectations", "Power BI", "Tableau", "GitHub", "Jenkins"]
+    },
+    {
+      category: "Other Skills",
+      skills: ["Data Cleaning", "Data Modeling", "Patient Data Analytics", "KPI Reporting", "Agile Environment", "CI/CD"]
     }
   ];
 
@@ -199,13 +205,13 @@ const Index = () => {
               </h1>
               <div className="text-lg mb-8 text-slate-700 leading-relaxed space-y-4 max-w-3xl mx-auto">
                 <p>
-                  Results-driven Data Engineer with <span className="text-blue-600 font-semibold">3 years of experience</span> in developing scalable data solutions in finance and E-commerce.
+                  Results-driven Data Engineer with <span className="text-blue-600 font-semibold">3+ years of experience</span> designing, building, and optimizing scalable data pipelines across <span className="text-purple-600 font-medium">healthcare and fintech domains</span>.
                 </p>
                 <p>
-                  Proficient in <span className="text-purple-600 font-medium">Python, SQL, Data Modeling, Data warehousing concepts, Azure (ADF, Databricks), Apache Spark, Kafka, Tableau, and Snowflake</span>.
+                  Proven expertise in <span className="text-green-600 font-medium">ETL/ELT development, data modeling, and orchestration</span> using tools like PySpark, Snowflake, dbt, Apache Airflow, and Azure Data Factory.
                 </p>
                 <p>
-                  Automated data workflows and orchestrated real-time pipelines that improved processing efficiency by <span className="text-green-600 font-semibold">10–30%</span>.
+                  Skilled in <span className="text-blue-600 font-medium">cloud platforms including AWS and Azure</span>, with a strong foundation in SQL, Python, and CI/CD practices. Committed to enabling business insights through automation and collaboration.
                 </p>
               </div>
 
@@ -327,7 +333,7 @@ const Index = () => {
       <section id="projects" className="py-16 px-6 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-12 text-slate-800">Featured Projects</h2>
-          <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <Card key={index} className="bg-white border-slate-200 hover:border-blue-400 transition-all duration-300 group hover:shadow-xl transform hover:scale-105">
                 <div className="relative overflow-hidden">
