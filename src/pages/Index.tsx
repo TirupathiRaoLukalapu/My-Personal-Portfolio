@@ -173,7 +173,7 @@ const Index = () => {
               <div className="relative bg-white p-2 rounded-3xl shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-3xl">
                 <div className="relative overflow-hidden rounded-2xl">
                   <img 
-                    src="/lovable-uploads/5396458f-722b-457a-9bd2-9d51a3561425.png" 
+                    src="./lovable-uploads/5396458f-722b-457a-9bd2-9d51a3561425.png" 
                     alt="Tirupathi Rao - Data Engineer"
                     className="w-80 h-80 object-cover transition-transform duration-300 hover:scale-110"
                   />
