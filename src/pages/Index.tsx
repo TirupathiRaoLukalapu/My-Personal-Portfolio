@@ -1,16 +1,19 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Github, Linkedin, Mail, Database, Code, Terminal, ChartBar, Server, Network } from "lucide-react";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+import { Github, Linkedin, Mail, Database, Code, Terminal, ChartBar, Server, Network, ArrowUp, ExternalLink } from "lucide-react";
 import DataFlowAnimation from "@/components/DataFlowAnimation";
 import TechStackGrid from "@/components/TechStackGrid";
 import DataMetrics from "@/components/DataMetrics";
+import BackToTop from "@/components/BackToTop";
 
 const Index = () => {
   const [typedText, setTypedText] = useState("");
+  const [isNavSticky, setIsNavSticky] = useState(false);
+
   const codeSnippets = [
     "import pyspark as spark",
     "from airflow import DAG",
@@ -38,6 +41,17 @@ const Index = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Handle sticky navigation
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      setIsNavSticky(offset > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const skills = [
     { name: "Python (PySpark)", level: 95 },
     { name: "SQL", level: 95 },
@@ -54,17 +68,29 @@ const Index = () => {
   const projects = [
     {
       title: "Real-Time Data Streaming Pipeline",
-      description: "Developed a cloud-based real-time pipeline integrating Spotify APIs with AWS Lambda, Glue, and Snowflake. Optimized schema consistency and processing time by 30%, reducing data availability lag from hours to minutes.",
+      description: "Developed a cloud-based real-time pipeline integrating Spotify APIs with AWS Lambda, Glue, and Snowflake. The project emphasized seamless data integration, schema design, and scalable transformation logic, aligning closely with enterprise-grade healthcare data ingestion patterns. Stored raw JSON data in Amazon S3 and transformed 100% of records using AWS Glue (PySpark), optimizing schema consistency and processing time by 30%.",
       tech: ["Apache Spark", "Amazon S3", "Snowflake", "Snowpipe", "AWS Lambda", "AWS Glue"],
       date: "August 2024",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800&h=400"
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800&h=400",
+      techIcons: [
+        { name: "Apache Spark", icon: Database, color: "text-orange-600" },
+        { name: "AWS S3", icon: Server, color: "text-blue-600" },
+        { name: "Snowflake", icon: Database, color: "text-cyan-600" },
+        { name: "Lambda", icon: Code, color: "text-yellow-600" }
+      ]
     },
     {
       title: "E-commerce Data Pipeline on Azure",
-      description: "Designed end-to-end pipeline to process 100 GB of daily e-commerce data. Achieved 30% improvement in processing time using Azure Data Factory, Databricks, and Delta Lake for optimized performance.",
+      description: "Designed and implemented an end-to-end data pipeline to ingest approximately 100 GB of daily e-commerce sales data, perform critical data transformations and enrichments, and load the processed data into a data lake for efficient analytical consumption. Enabled efficient processing resulting in a 30% improvement in data processing time and providing timely insights for business intelligence reporting and analysis.",
       tech: ["Azure Data Factory", "Azure Databricks", "Apache Spark", "Delta Lake", "Azure Data Lake Gen2"],
       date: "February 2025",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=800&h=400"
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=800&h=400",
+      techIcons: [
+        { name: "Azure", icon: Network, color: "text-blue-600" },
+        { name: "Databricks", icon: ChartBar, color: "text-red-600" },
+        { name: "Apache Spark", icon: Database, color: "text-orange-600" },
+        { name: "Delta Lake", icon: Server, color: "text-green-600" }
+      ]
     }
   ];
 
@@ -138,7 +164,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 text-gray-900">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-200 shadow-sm">
+      <nav className={`fixed top-0 w-full z-50 border-b border-gray-200 transition-all duration-300 ${
+        isNavSticky ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-white/95 backdrop-blur-sm shadow-sm'
+      }`}>
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-xl font-bold text-slate-800">Tirupathi Rao</div>
           <div className="hidden md:flex space-x-6">
@@ -211,7 +239,7 @@ const Index = () => {
                   Proven expertise in <span className="text-green-600 font-medium">ETL/ELT development, data modeling, and orchestration</span> using tools like PySpark, Snowflake, dbt, Apache Airflow, and Azure Data Factory.
                 </p>
                 <p>
-                  Skilled in <span className="text-blue-600 font-medium">cloud platforms including AWS and Azure</span>, with a strong foundation in SQL, Python, and CI/CD practices. Committed to enabling business insights through automation and collaboration.
+                  Skilled in <span className="text-blue-600 font-medium">cloud platforms including AWS and Azure</span>, with a strong foundation in SQL, Python, and CI/CD practices. Adept at working in Agile teams to deliver high-quality data solutions, enforce data governance, and enable analytics through curated data products.
                 </p>
               </div>
 
@@ -223,12 +251,19 @@ const Index = () => {
                     Contact Me
                   </a>
                 </Button>
-                <Button variant="outline" className="border-purple-300 text-purple-700 hover:bg-purple-50 shadow-lg transform transition-all duration-200 hover:scale-105">
-                  View Resume
+                <Button variant="outline" className="border-purple-300 text-purple-700 hover:bg-purple-50 shadow-lg transform transition-all duration-200 hover:scale-105" asChild>
+                  <a 
+                    href="https://github.com/TirupathiRaoLukalapu/Tiru_resume_data_engineer/blob/main/Tirupathi_resume_data_engineer.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    View Resume
+                  </a>
                 </Button>
               </div>
 
-              {/* Social links */}
+              {/* Social links with improved LinkedIn hover */}
               <div className="flex justify-center space-x-6">
                 <a 
                   href="https://github.com/TirupathiRaoLukalapu" 
@@ -238,14 +273,36 @@ const Index = () => {
                 >
                   <Github className="h-6 w-6 text-slate-600 hover:text-slate-800" />
                 </a>
-                <a 
-                  href="https://www.linkedin.com/in/tirupathi-rao-lukalapu-a719912aa/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 border border-blue-200 hover:border-blue-400"
-                >
-                  <Linkedin className="h-6 w-6 text-blue-600 hover:text-blue-700" />
-                </a>
+                
+                <HoverCard>
+                  <HoverCardTrigger asChild>
+                    <a 
+                      href="https://www.linkedin.com/in/tirupathi-rao-lukalapu-a719912aa/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 border border-blue-200 hover:border-blue-400"
+                    >
+                      <Linkedin className="h-6 w-6 text-blue-600 hover:text-blue-700" />
+                    </a>
+                  </HoverCardTrigger>
+                  <HoverCardContent className="w-80">
+                    <div className="flex justify-between space-x-4">
+                      <div className="space-y-1">
+                        <h4 className="text-sm font-semibold">Tirupathi Rao Lukalapu</h4>
+                        <p className="text-sm text-muted-foreground">
+                          Data Engineer at Innovaccer Inc.
+                        </p>
+                        <div className="flex items-center pt-2">
+                          <Linkedin className="mr-2 h-4 w-4 opacity-70" />
+                          <span className="text-xs text-muted-foreground">
+                            Connect on LinkedIn to see my professional updates and network
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </HoverCardContent>
+                </HoverCard>
+
                 <a 
                   href="mailto:tirupathiraolukalapu08@gmail.com"
                   className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 border border-red-200 hover:border-red-400"
@@ -359,12 +416,28 @@ const Index = () => {
                   <CardDescription className="text-slate-600">{project.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <Badge key={tech} variant="outline" className="border-blue-300 text-blue-700 hover:bg-blue-50 transition-colors">
-                        {tech}
-                      </Badge>
-                    ))}
+                  <div className="space-y-4">
+                    {/* Tech Stack Badges */}
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-blue-300 text-blue-700 hover:bg-blue-50 transition-colors">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                    
+                    {/* Tech Icons Highlights */}
+                    <div className="border-t border-slate-200 pt-4">
+                      <p className="text-sm font-medium text-slate-700 mb-3">Key Technologies:</p>
+                      <div className="flex flex-wrap gap-3">
+                        {project.techIcons.map((tech, techIndex) => (
+                          <div key={techIndex} className="flex items-center space-x-2 bg-slate-50 rounded-lg px-3 py-2 hover:bg-slate-100 transition-colors">
+                            <tech.icon className={`h-5 w-5 ${tech.color}`} />
+                            <span className="text-sm font-medium text-slate-700">{tech.name}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -459,6 +532,9 @@ const Index = () => {
           <p>&copy; 2024 Tirupathi Rao. Built with passion for data engineering.</p>
         </div>
       </footer>
+
+      {/* Back to Top Button */}
+      <BackToTop />
     </div>
   );
 };
