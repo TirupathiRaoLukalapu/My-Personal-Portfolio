@@ -9,6 +9,8 @@ import DataFlowAnimation from "@/components/DataFlowAnimation";
 import TechStackGrid from "@/components/TechStackGrid";
 import DataMetrics from "@/components/DataMetrics";
 import BackToTop from "@/components/BackToTop";
+import ContactMessageBar from "@/components/ContactMessageBar";
+
 const Index = () => {
   const [typedText, setTypedText] = useState("");
   const [isNavSticky, setIsNavSticky] = useState(false);
@@ -612,6 +614,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Contact Message Bar */}
+      <ContactMessageBar />
+
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-slate-200 bg-slate-50">
         <div className="container mx-auto text-center text-slate-600">
@@ -623,4 +628,5 @@ const Index = () => {
       <BackToTop />
     </div>;
 };
+
 export default Index;
