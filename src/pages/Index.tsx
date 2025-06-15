@@ -166,7 +166,7 @@ const Index = () => {
   const certifications = [{
     title: "Python Programming Certification",
     provider: "Udemy",
-    date: "2024",
+    date: "2025",
     description: "Comprehensive Python programming course covering advanced concepts, data structures, and real-world applications",
     certificateUrl: "https://www.udemy.com/certificate/UC-ce768d0b-5492-4a11-9c0d-0bc61c572dcf/",
     skills: ["Python", "Data Structures", "Object-Oriented Programming", "Libraries & Frameworks"],
@@ -174,7 +174,7 @@ const Index = () => {
   }, {
     title: "SQL Database Management Certification",
     provider: "Udemy",
-    date: "2024",
+    date: "2025",
     description: "Advanced SQL certification covering database design, query optimization, and data analysis techniques",
     certificateUrl: "https://www.udemy.com/certificate/UC-ce768d0b-5492-4a11-9c0d-0bc61c572dcf/",
     skills: ["SQL Queries", "Database Design", "Data Analysis", "Query Optimization"],
