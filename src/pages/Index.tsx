@@ -1,11 +1,10 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
-import { Github, Linkedin, Mail, Database, Code, Terminal, ChartBar, Server, Network, ArrowUp, ExternalLink } from "lucide-react";
+import { Github, Linkedin, Mail, Database, Code, Terminal, ChartBar, Server, Network, ArrowUp, ExternalLink, Award, Calendar, GraduationCap } from "lucide-react";
 import DataFlowAnimation from "@/components/DataFlowAnimation";
 import TechStackGrid from "@/components/TechStackGrid";
 import DataMetrics from "@/components/DataMetrics";
@@ -167,6 +166,27 @@ const Index = () => {
     }
   ];
 
+  const certifications = [
+    {
+      title: "Python Programming Certification",
+      provider: "Udemy",
+      date: "2024",
+      description: "Comprehensive Python programming course covering advanced concepts, data structures, and real-world applications",
+      certificateUrl: "https://www.udemy.com/certificate/UC-ce768d0b-5492-4a11-9c0d-0bc61c572dcf/",
+      skills: ["Python", "Data Structures", "Object-Oriented Programming", "Libraries & Frameworks"],
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      title: "SQL Database Management Certification",
+      provider: "Udemy", 
+      date: "2024",
+      description: "Advanced SQL certification covering database design, query optimization, and data analysis techniques",
+      certificateUrl: "https://www.udemy.com/certificate/UC-ce768d0b-5492-4a11-9c0d-0bc61c572dcf/",
+      skills: ["SQL Queries", "Database Design", "Data Analysis", "Query Optimization"],
+      color: "from-purple-500 to-pink-500"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 text-gray-900">
       {/* Navigation */}
@@ -178,6 +198,7 @@ const Index = () => {
           <div className="hidden md:flex space-x-6">
             <a href="#about" className="text-slate-600 hover:text-blue-600 transition-colors font-medium">About</a>
             <a href="#skills" className="text-slate-600 hover:text-green-600 transition-colors font-medium">Skills</a>
+            <a href="#certifications" className="text-slate-600 hover:text-amber-600 transition-colors font-medium">Certifications</a>
             <a href="#projects" className="text-slate-600 hover:text-purple-600 transition-colors font-medium">Projects</a>
             <a href="#experience" className="text-slate-600 hover:text-orange-600 transition-colors font-medium">Experience</a>
             <a href="#education" className="text-slate-600 hover:text-indigo-600 transition-colors font-medium">Education</a>
@@ -388,6 +409,139 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section id="certifications" className="py-16 px-6 bg-gradient-to-br from-amber-50 to-orange-50">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center justify-center p-3 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full mb-4 shadow-lg animate-pulse">
+              <Award className="h-8 w-8 text-white" />
+            </div>
+            <h2 className="text-3xl font-bold text-slate-800 mb-4">Professional Certifications</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Continuously expanding my expertise through industry-recognized certifications
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+            {certifications.map((cert, index) => (
+              <div key={index} className="group relative">
+                {/* Animated background gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-r ${cert.color} rounded-2xl opacity-75 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-105 blur-sm group-hover:blur-none`}></div>
+                
+                {/* Main certificate card */}
+                <Card className="relative bg-white/95 backdrop-blur-sm border-0 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group-hover:scale-105">
+                  {/* Certificate ribbon */}
+                  <div className="absolute -top-3 -right-3 z-10">
+                    <div className="bg-gradient-to-r from-amber-400 to-orange-500 text-white px-4 py-2 rounded-full shadow-lg transform rotate-12 group-hover:rotate-0 transition-transform duration-300">
+                      <div className="flex items-center space-x-1">
+                        <GraduationCap className="h-4 w-4" />
+                        <span className="font-bold text-sm">CERTIFIED</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <CardHeader className="pb-4">
+                    <div className="flex items-start justify-between">
+                      <div className="space-y-2 flex-1">
+                        <CardTitle className="text-xl font-bold text-slate-800 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-amber-600 group-hover:to-orange-600 group-hover:bg-clip-text transition-all duration-300">
+                          {cert.title}
+                        </CardTitle>
+                        <div className="flex items-center space-x-2 text-slate-600">
+                          <Badge variant="outline" className="border-amber-300 text-amber-700 bg-amber-50">
+                            {cert.provider}
+                          </Badge>
+                          <div className="flex items-center space-x-1">
+                            <Calendar className="h-4 w-4" />
+                            <span className="text-sm font-medium">{cert.date}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <CardDescription className="text-slate-600 leading-relaxed">
+                      {cert.description}
+                    </CardDescription>
+                  </CardHeader>
+
+                  <CardContent className="space-y-4">
+                    {/* Skills covered */}
+                    <div>
+                      <h4 className="font-semibold text-slate-700 mb-2 flex items-center">
+                        <Code className="h-4 w-4 mr-2 text-amber-600" />
+                        Skills Covered
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {cert.skills.map((skill, skillIndex) => (
+                          <Badge 
+                            key={skillIndex} 
+                            className="bg-gradient-to-r from-amber-100 to-orange-100 text-amber-800 border-amber-200 hover:from-amber-200 hover:to-orange-200 transition-all duration-200 transform hover:scale-105"
+                          >
+                            {skill}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* View certificate button */}
+                    <div className="pt-4 border-t border-slate-200">
+                      <Button 
+                        className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white shadow-lg transform transition-all duration-200 hover:scale-105 group-hover:shadow-2xl" 
+                        asChild
+                      >
+                        <a 
+                          href={cert.certificateUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center"
+                        >
+                          <Award className="mr-2 h-4 w-4" />
+                          View Certificate
+                          <ExternalLink className="ml-2 h-4 w-4" />
+                        </a>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Floating animation dots */}
+                <div className="absolute -top-2 -left-2 w-4 h-4 bg-amber-400 rounded-full opacity-0 group-hover:opacity-100 animate-ping transition-opacity duration-300"></div>
+                <div className="absolute -bottom-2 -right-2 w-3 h-3 bg-orange-400 rounded-full opacity-0 group-hover:opacity-100 animate-ping transition-opacity duration-300" style={{ animationDelay: '0.5s' }}></div>
+              </div>
+            ))}
+          </div>
+
+          {/* Achievement stats */}
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center group">
+              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <div className="bg-gradient-to-r from-blue-500 to-purple-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:animate-pulse">
+                  <Award className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-800 mb-2">2+</h3>
+                <p className="text-slate-600">Professional Certifications</p>
+              </div>
+            </div>
+            <div className="text-center group">
+              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <div className="bg-gradient-to-r from-green-500 to-teal-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:animate-pulse">
+                  <Code className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-800 mb-2">10+</h3>
+                <p className="text-slate-600">Technical Skills Validated</p>
+              </div>
+            </div>
+            <div className="text-center group">
+              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <div className="bg-gradient-to-r from-amber-500 to-orange-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:animate-pulse">
+                  <GraduationCap className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-800 mb-2">100%</h3>
+                <p className="text-slate-600">Course Completion Rate</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
