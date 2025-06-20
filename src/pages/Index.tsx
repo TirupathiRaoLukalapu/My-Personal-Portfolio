@@ -43,128 +43,138 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  const skills = [{
-    name: "Python (PySpark)",
-    level: 95
-  }, {
-    name: "SQL",
-    level: 95
-  }, {
-    name: "Java",
-    level: 80
-  }, {
-    name: "Apache Spark",
-    level: 90
-  }, {
-    name: "Snowflake",
-    level: 90
-  }, {
-    name: "dbt",
-    level: 85
-  }, {
-    name: "Apache Airflow",
-    level: 90
-  }, {
-    name: "Azure (ADF, Databricks)",
-    level: 85
-  }, {
-    name: "AWS (Glue, S3, EMR)",
-    level: 85
-  }, {
-    name: "Apache Kafka",
-    level: 80
-  }, {
-    name: "Data Modeling",
-    level: 90
-  }];
-  const projects = [{
-    title: "Real-Time Data Streaming Pipeline",
-    description: "Developed a cloud-based real-time pipeline integrating Spotify APIs with AWS Lambda, Glue, and Snowflake. The project emphasized seamless data integration, schema design, and scalable transformation logic, aligning closely with enterprise-grade healthcare data ingestion patterns. Stored raw JSON data in Amazon S3 and transformed 100% of records using AWS Glue (PySpark), optimizing schema consistency and processing time by 30%.",
-    tech: ["Apache Spark", "Amazon S3", "Snowflake", "Snowpipe", "AWS Lambda", "AWS Glue"],
-    date: "August 2024",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800&h=400",
-    techIcons: [{
-      name: "Apache Spark",
-      icon: Database,
-      color: "text-orange-600"
+  const skills = [
+    {
+      name: "Python (PySpark)",
+      level: 95
     }, {
-      name: "AWS S3",
-      icon: Server,
-      color: "text-blue-600"
+      name: "SQL",
+      level: 95
+    }, {
+      name: "Java",
+      level: 80
+    }, {
+      name: "Apache Spark",
+      level: 90
     }, {
       name: "Snowflake",
-      icon: Database,
-      color: "text-cyan-600"
+      level: 90
     }, {
-      name: "Lambda",
-      icon: Code,
-      color: "text-yellow-600"
-    }]
-  }, {
-    title: "E-commerce Data Pipeline on Azure",
-    description: "Designed and implemented an end-to-end data pipeline to ingest approximately 100 GB of daily e-commerce sales data, perform critical data transformations and enrichments, and load the processed data into a data lake for efficient analytical consumption. Enabled efficient processing resulting in a 30% improvement in data processing time and providing timely insights for business intelligence reporting and analysis.",
-    tech: ["Azure Data Factory", "Azure Databricks", "Apache Spark", "Delta Lake", "Azure Data Lake Gen2"],
-    date: "February 2025",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=800&h=400",
-    techIcons: [{
-      name: "Azure",
-      icon: Network,
-      color: "text-blue-600"
+      name: "dbt",
+      level: 85
     }, {
-      name: "Databricks",
-      icon: ChartBar,
-      color: "text-red-600"
+      name: "Apache Airflow",
+      level: 90
     }, {
-      name: "Apache Spark",
-      icon: Database,
-      color: "text-orange-600"
+      name: "Azure (ADF, Databricks)",
+      level: 85
     }, {
-      name: "Delta Lake",
-      icon: Server,
-      color: "text-green-600"
-    }]
-  }];
-  const experience = [{
-    role: "Data Engineer",
-    company: "Innovaccer Inc.",
-    period: "Sep 2023 – Mar 2025",
-    location: "California, United States",
-    description: ["Built and maintained scalable ETL pipelines using PySpark and AWS Glue to ingest and transform large-scale healthcare data across multiple vendor sources", "Designed reusable data pipeline components and implemented workflow orchestration with Apache Airflow, improving operational efficiency and data freshness", "Developed ELT workflows with dbt and optimized Snowflake schemas, resulting in 40% faster query execution and improved reporting accuracy", "Applied data quality validation using Great Expectations and implemented automated monitoring and alerting for data anomalies", "Worked in Agile teams to support product features and data requirements across analytics and technology teams, following CI/CD practices using Git and Jenkins", "Collaborated with stakeholders to ensure HIPAA-compliant data governance, version control, and secure cloud architecture on AWS and Databricks"]
-  }, {
-    role: "Data Engineer",
-    company: "Teamtech Solutions",
-    period: "Mar 2021 – Jun 2023",
-    location: "Hyderabad, Telangana",
-    description: ["Designed and developed data pipelines using Azure Data Factory to extract, transform, and load structured and unstructured financial datasets into Snowflake and SQL Server", "Integrated internal databases and third-party APIs to support loan analytics and fraud detection workflows, reducing eligibility processing time by 50%", "Created reusable data models, stored procedures, UDFs, and views; improved data lineage tracking and metadata documentation across data assets", "Implemented CI/CD pipelines and version control with Azure DevOps and Git; actively supported data testing and production deployment processes", "Conducted data profiling and validation using Python and SQL to ensure data quality, consistency, and accuracy in compliance with partner bank standards", "Supported Power BI dashboard development by enabling curated datasets and ensuring data availability through monitored pipelines"]
-  }];
-  const education = [{
-    degree: "Master's in Computer/Information Technology Administration and Management",
-    institution: "Lindsey Wilson College",
-    period: "Aug 2023 – May 2025",
-    location: "Columbia, Kentucky"
-  }];
-  const skillCategories = [{
-    category: "Programming Languages",
-    skills: ["Python (NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, TensorFlow)", "SQL", "PySpark", "Java", "R", "Bash"]
-  }, {
-    category: "Frontend Technologies",
-    skills: ["HTML", "CSS"]
-  }, {
-    category: "Big Data & Frameworks",
-    skills: ["Apache Spark", "Apache Kafka", "Apache Hive", "Hadoop", "HDFS", "Apache Airflow"]
-  }, {
-    category: "Databases & Storage",
-    skills: ["MongoDB", "Redis", "ChromaDB", "Snowflake", "Azure Data Lake Storage Gen2", "AWS S3", "PostgreSQL"]
-  }, {
-    category: "Cloud Platforms",
-    skills: ["Azure (ADF, Databricks, ADLS Gen2)", "AWS (S3, EC2, EMR, Glue)", "Snowflake"]
-  }, {
-    category: "Orchestration & Tools",
-    skills: ["Apache Airflow", "Azure Data Factory", "dbt", "Great Expectations", "Power BI", "Tableau", "GitHub", "Jenkins"]
-  }, {
-    category: "Other Skills",
-    skills: ["Data Cleaning", "Data Modeling", "Patient Data Analytics", "KPI Reporting", "Agile Environment", "CI/CD"]
-  }];
+      name: "AWS (Glue, S3, EMR)",
+      level: 85
+    }, {
+      name: "Apache Kafka",
+      level: 80
+    }, {
+      name: "Data Modeling",
+      level: 90
+    }
+  ];
+  const projects = [
+    {
+      title: "Real-Time Data Streaming Pipeline",
+      description: "Developed a cloud-based real-time pipeline integrating Spotify APIs with AWS Lambda, Glue, and Snowflake. The project emphasized seamless data integration, schema design, and scalable transformation logic, aligning closely with enterprise-grade healthcare data ingestion patterns. Stored raw JSON data in Amazon S3 and transformed 100% of records using AWS Glue (PySpark), optimizing schema consistency and processing time by 30%.",
+      tech: ["Apache Spark", "Amazon S3", "Snowflake", "Snowpipe", "AWS Lambda", "AWS Glue"],
+      date: "August 2024",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800&h=400",
+      techIcons: [{
+        name: "Apache Spark",
+        icon: Database,
+        color: "text-orange-600"
+      }, {
+        name: "AWS S3",
+        icon: Server,
+        color: "text-blue-600"
+      }, {
+        name: "Snowflake",
+        icon: Database,
+        color: "text-cyan-600"
+      }, {
+        name: "Lambda",
+        icon: Code,
+        color: "text-yellow-600"
+      }]
+    }, {
+      title: "E-commerce Data Pipeline on Azure",
+      description: "Designed and implemented an end-to-end data pipeline to ingest approximately 100 GB of daily e-commerce sales data, perform critical data transformations and enrichments, and load the processed data into a data lake for efficient analytical consumption. Enabled efficient processing resulting in a 30% improvement in data processing time and providing timely insights for business intelligence reporting and analysis.",
+      tech: ["Azure Data Factory", "Azure Databricks", "Apache Spark", "Delta Lake", "Azure Data Lake Gen2"],
+      date: "February 2025",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=800&h=400",
+      techIcons: [{
+        name: "Azure",
+        icon: Network,
+        color: "text-blue-600"
+      }, {
+        name: "Databricks",
+        icon: ChartBar,
+        color: "text-red-600"
+      }, {
+        name: "Apache Spark",
+        icon: Database,
+        color: "text-orange-600"
+      }, {
+        name: "Delta Lake",
+        icon: Server,
+        color: "text-green-600"
+      }]
+    }
+  ];
+  const experience = [
+    {
+      role: "Data Engineer",
+      company: "Innovaccer Inc.",
+      period: "Sep 2023 – Mar 2025",
+      location: "California, United States",
+      description: ["Built and maintained scalable ETL pipelines using PySpark and AWS Glue to ingest and transform large-scale healthcare data across multiple vendor sources", "Designed reusable data pipeline components and implemented workflow orchestration with Apache Airflow, improving operational efficiency and data freshness", "Developed ELT workflows with dbt and optimized Snowflake schemas, resulting in 40% faster query execution and improved reporting accuracy", "Applied data quality validation using Great Expectations and implemented automated monitoring and alerting for data anomalies", "Worked in Agile teams to support product features and data requirements across analytics and technology teams, following CI/CD practices using Git and Jenkins", "Collaborated with stakeholders to ensure HIPAA-compliant data governance, version control, and secure cloud architecture on AWS and Databricks"]
+    }, {
+      role: "Data Engineer",
+      company: "Teamtech Solutions",
+      period: "Mar 2021 – Jun 2023",
+      location: "Hyderabad, Telangana",
+      description: ["Designed and developed data pipelines using Azure Data Factory to extract, transform, and load structured and unstructured financial datasets into Snowflake and SQL Server", "Integrated internal databases and third-party APIs to support loan analytics and fraud detection workflows, reducing eligibility processing time by 50%", "Created reusable data models, stored procedures, UDFs, and views; improved data lineage tracking and metadata documentation across data assets", "Implemented CI/CD pipelines and version control with Azure DevOps and Git; actively supported data testing and production deployment processes", "Conducted data profiling and validation using Python and SQL to ensure data quality, consistency, and accuracy in compliance with partner bank standards", "Supported Power BI dashboard development by enabling curated datasets and ensuring data availability through monitored pipelines"]
+    }
+  ];
+  const education = [
+    {
+      degree: "Master's in Computer/Information Technology Administration and Management",
+      institution: "Lindsey Wilson College",
+      period: "Aug 2023 – May 2025",
+      location: "Columbia, Kentucky"
+    }
+  ];
+  const skillCategories = [
+    {
+      category: "Programming Languages",
+      skills: ["Python (NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, TensorFlow)", "SQL", "PySpark", "Java", "R", "Bash"]
+    }, {
+      category: "Frontend Technologies",
+      skills: ["HTML", "CSS"]
+    }, {
+      category: "Big Data & Frameworks",
+      skills: ["Apache Spark", "Apache Kafka", "Apache Hive", "Hadoop", "HDFS", "Apache Airflow"]
+    }, {
+      category: "Databases & Storage",
+      skills: ["MongoDB", "Redis", "ChromaDB", "Snowflake", "Azure Data Lake Storage Gen2", "AWS S3", "PostgreSQL"]
+    }, {
+      category: "Cloud Platforms",
+      skills: ["Azure (ADF, Databricks, ADLS Gen2)", "AWS (S3, EC2, EMR, Glue)", "Snowflake"]
+    }, {
+      category: "Orchestration & Tools",
+      skills: ["Apache Airflow", "Azure Data Factory", "dbt", "Great Expectations", "Power BI", "Tableau", "GitHub", "Jenkins"]
+    }, {
+      category: "Other Skills",
+      skills: ["Data Cleaning", "Data Modeling", "Patient Data Analytics", "KPI Reporting", "Agile Environment", "CI/CD"]
+    }
+  ];
   const certifications = [{
     title: "Python Programming Certification",
     provider: "Udemy",
@@ -389,102 +399,174 @@ const Index = () => {
       </section>
 
       {/* Certifications Section */}
-      <section id="certifications" className="py-16 px-6 bg-gradient-to-br from-amber-50 to-orange-50">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center p-3 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full mb-4 shadow-lg animate-pulse">
-              <Award className="h-8 w-8 text-white" />
+      <section id="certifications" className="py-20 px-6 relative overflow-hidden">
+        {/* Elegant background with 3D depth */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(120,119,198,0.3),transparent)] animate-pulse"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.1),transparent)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_80%,rgba(59,130,246,0.2),transparent)] animate-pulse" style={{animationDelay: '2s'}}></div>
+          
+          {/* Floating geometric shapes for depth */}
+          <div className="absolute top-20 left-10 w-32 h-32 border border-white/10 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
+          <div className="absolute bottom-20 right-20 w-24 h-24 border border-blue-300/20 rounded-lg rotate-45 animate-pulse"></div>
+          <div className="absolute top-1/2 right-10 w-16 h-16 border border-purple-300/20 rotate-12 animate-bounce" style={{animationDelay: '1s'}}></div>
+        </div>
+
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center mb-16">
+            {/* 3D Header with elegant typography */}
+            <div className="relative mb-8">
+              <div className="absolute inset-0 blur-lg">
+                <h2 className="text-4xl font-bold bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-400 bg-clip-text text-transparent">
+                  Professional Certifications
+                </h2>
+              </div>
+              <h2 className="relative text-4xl font-bold bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-400 bg-clip-text text-transparent mb-4">
+                Professional Certifications
+              </h2>
             </div>
-            <h2 className="text-3xl font-bold text-slate-800 mb-4">Professional Certifications</h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">
-              Continuously expanding my expertise through industry-recognized certifications
-            </p>
+
+            {/* Elegant subtitle */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-blue-200/20 blur-xl rounded-full"></div>
+              <p className="relative text-white/90 max-w-2xl mx-auto text-lg leading-relaxed font-light">
+                Distinguished achievements in technology excellence, validated through industry-recognized certifications
+              </p>
+            </div>
+
+            {/* Decorative line with 3D effect */}
+            <div className="mt-8 flex justify-center">
+              <div className="relative">
+                <div className="w-24 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent"></div>
+                <div className="absolute inset-0 w-24 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent blur-sm"></div>
+              </div>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
-            {certifications.map((cert, index) => <div key={index} className="group relative">
-                {/* Animated background gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-r ${cert.color} rounded-2xl opacity-75 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-105 blur-sm group-hover:blur-none`}></div>
-                
-                {/* Main certificate card */}
-                <Card className="relative bg-white/95 backdrop-blur-sm border-0 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group-hover:scale-105">
-                  {/* Certificate ribbon */}
-                  <div className="absolute -top-3 -right-3 z-10">
-                    <div className="bg-gradient-to-r from-amber-400 to-orange-500 text-white px-4 py-2 rounded-full shadow-lg transform rotate-12 group-hover:rotate-0 transition-transform duration-300">
-                      <div className="flex items-center space-x-1">
-                        <GraduationCap className="h-4 w-4" />
-                        <span className="font-bold text-sm">CERTIFIED</span>
-                      </div>
+          {/* 3D Certificate Cards */}
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-12 perspective-1000">
+            {certifications.map((cert, index) => (
+              <div key={index} className="group relative transform-gpu">
+                {/* 3D Card Container with perspective */}
+                <div className="relative preserve-3d group-hover:rotate-y-12 transition-all duration-700 ease-out">
+                  
+                  {/* Card Shadow Layers for 3D depth */}
+                  <div className="absolute inset-0 bg-black/20 rounded-2xl transform translate-x-4 translate-y-4 blur-xl"></div>
+                  <div className="absolute inset-0 bg-black/10 rounded-2xl transform translate-x-2 translate-y-2 blur-lg"></div>
+                  
+                  {/* Main Certificate Card */}
+                  <div className="relative bg-gradient-to-br from-white via-gray-50 to-white rounded-2xl border border-white/20 shadow-2xl backdrop-blur-sm overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-3xl">
+                    
+                    {/* Premium border effect */}
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-amber-400/20 via-transparent to-purple-400/20 p-[1px]">
+                      <div className="h-full w-full rounded-2xl bg-gradient-to-br from-white via-gray-50 to-white"></div>
                     </div>
-                  </div>
 
-                  <CardHeader className="pb-4">
-                    <div className="flex items-start justify-between">
-                      <div className="space-y-2 flex-1">
-                        <CardTitle className="text-xl font-bold text-slate-800 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-amber-600 group-hover:to-orange-600 group-hover:bg-clip-text transition-all duration-300">
-                          {cert.title}
-                        </CardTitle>
-                        <div className="flex items-center space-x-2 text-slate-600">
-                          <Badge variant="outline" className="border-amber-300 text-amber-700 bg-amber-50">
-                            {cert.provider}
-                          </Badge>
-                          <div className="flex items-center space-x-1">
-                            <Calendar className="h-4 w-4" />
-                            <span className="text-sm font-medium">{cert.date}</span>
+                    {/* Certificate Header with ribbon */}
+                    <div className="relative p-8 pb-6">
+                      {/* Premium ribbon */}
+                      <div className="absolute -top-2 -right-2 z-20">
+                        <div className="bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-6 py-3 rounded-full shadow-lg transform rotate-12 group-hover:rotate-0 transition-transform duration-500">
+                          <div className="flex items-center space-x-2">
+                            <Award className="h-5 w-5" />
+                            <span className="font-bold text-sm tracking-wide">CERTIFIED</span>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <CardDescription className="text-slate-600 leading-relaxed">
-                      {cert.description}
-                    </CardDescription>
-                  </CardHeader>
 
-                  <CardContent className="space-y-4">
-                    {/* Skills covered */}
-                    <div>
-                      <h4 className="font-semibold text-slate-700 mb-2 flex items-center">
-                        <Code className="h-4 w-4 mr-2 text-amber-600" />
-                        Skills Covered
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {cert.skills.map((skill, skillIndex) => <Badge key={skillIndex} className="bg-gradient-to-r from-amber-100 to-orange-100 text-amber-800 border-amber-200 hover:from-amber-200 hover:to-orange-200 transition-all duration-200 transform hover:scale-105">
-                            {skill}
-                          </Badge>)}
+                      {/* Institution badge */}
+                      <div className="mb-4">
+                        <Badge className="bg-gradient-to-r from-slate-700 to-slate-600 text-white border-0 px-4 py-2 text-sm font-medium tracking-wide shadow-lg">
+                          {cert.provider}
+                        </Badge>
+                      </div>
+
+                      {/* Certificate title with 3D text effect */}
+                      <div className="relative mb-4">
+                        <h3 className="text-2xl font-bold text-gray-800 mb-2 leading-tight">
+                          {cert.title}
+                        </h3>
+                        <div className="flex items-center space-x-3 text-gray-600">
+                          <div className="flex items-center space-x-1">
+                            <Calendar className="h-4 w-4" />
+                            <span className="font-medium">{cert.date}</span>
+                          </div>
+                          <div className="w-1 h-1 rounded-full bg-gray-400"></div>
+                          <span className="text-sm">Professional Level</span>
+                        </div>
+                      </div>
+
+                      {/* Description */}
+                      <p className="text-gray-700 leading-relaxed text-sm mb-6">
+                        {cert.description}
+                      </p>
+
+                      {/* Skills with elegant badges */}
+                      <div className="space-y-3">
+                        <h4 className="font-semibold text-gray-800 flex items-center text-sm">
+                          <Code className="h-4 w-4 mr-2 text-blue-600" />
+                          Core Competencies
+                        </h4>
+                        <div className="grid grid-cols-2 gap-2">
+                          {cert.skills.map((skill, skillIndex) => (
+                            <div key={skillIndex} className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-lg px-3 py-2 text-center">
+                              <span className="text-blue-800 font-medium text-sm">{skill}</span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
 
-                    {/* View certificate button */}
-                    <div className="pt-4 border-t border-slate-200">
-                      <Button className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white shadow-lg transform transition-all duration-200 hover:scale-105 group-hover:shadow-2xl" asChild>
-                        <a href={cert.certificateUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                          <Award className="mr-2 h-4 w-4" />
-                          View Certificate
-                          <ExternalLink className="ml-2 h-4 w-4" />
-                        </a>
-                      </Button>
+                    {/* Certificate Action */}
+                    <div className="px-8 pb-8">
+                      <div className="border-t border-gray-200 pt-6">
+                        <Button 
+                          className="w-full bg-gradient-to-r from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 text-white shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl font-medium tracking-wide" 
+                          asChild
+                        >
+                          <a href={cert.certificateUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2">
+                            <GraduationCap className="h-5 w-5" />
+                            <span>View Certificate</span>
+                            <ExternalLink className="h-4 w-4" />
+                          </a>
+                        </Button>
+                      </div>
                     </div>
-                  </CardContent>
-                </Card>
 
-                {/* Floating animation dots */}
-                <div className="absolute -top-2 -left-2 w-4 h-4 bg-amber-400 rounded-full opacity-0 group-hover:opacity-100 animate-ping transition-opacity duration-300"></div>
-                <div className="absolute -bottom-2 -right-2 w-3 h-3 bg-orange-400 rounded-full opacity-0 group-hover:opacity-100 animate-ping transition-opacity duration-300" style={{
-              animationDelay: '0.5s'
-            }}></div>
-              </div>)}
+                    {/* Subtle glow effect */}
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-400/5 via-transparent to-purple-400/5 pointer-events-none"></div>
+                  </div>
+
+                  {/* Floating certification seal */}
+                  <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 z-10">
+                    <Award className="h-10 w-10 text-white" />
+                  </div>
+                </div>
+
+                {/* Ambient light effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-2xl blur-3xl group-hover:blur-2xl transition-all duration-500 -z-10"></div>
+              </div>
+            ))}
           </div>
 
-          {/* Achievement stats */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center group">
-              
-            </div>
-            <div className="text-center group">
-              
-            </div>
-            <div className="text-center group">
-              
+          {/* Elegant stats footer */}
+          <div className="mt-20 text-center">
+            <div className="inline-flex items-center space-x-8 bg-white/10 backdrop-blur-sm rounded-full px-8 py-4 border border-white/20">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-amber-400">{certifications.length}</div>
+                <div className="text-white/80 text-sm font-medium">Certifications</div>
+              </div>
+              <div className="w-px h-8 bg-white/20"></div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-blue-400">2025</div>
+                <div className="text-white/80 text-sm font-medium">Latest Year</div>
+              </div>
+              <div className="w-px h-8 bg-white/20"></div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-purple-400">100%</div>
+                <div className="text-white/80 text-sm font-medium">Completion</div>
+              </div>
             </div>
           </div>
         </div>
