@@ -132,16 +132,45 @@ const Index = () => {
   const experience = [
     {
       role: "Data Engineer",
-      company: "Innovaccer Inc.",
-      period: "Sep 2023 – Mar 2025",
+      company: "Innovaccer",
+      period: "Dec 2023 – Apr 2025",
       location: "California, United States",
-      description: ["Built and maintained scalable ETL pipelines using PySpark and AWS Glue to ingest and transform large-scale healthcare data across multiple vendor sources", "Designed reusable data pipeline components and implemented workflow orchestration with Apache Airflow, improving operational efficiency and data freshness", "Developed ELT workflows with dbt and optimized Snowflake schemas, resulting in 40% faster query execution and improved reporting accuracy", "Applied data quality validation using Great Expectations and implemented automated monitoring and alerting for data anomalies", "Worked in Agile teams to support product features and data requirements across analytics and technology teams, following CI/CD practices using Git and Jenkins", "Collaborated with stakeholders to ensure HIPAA-compliant data governance, version control, and secure cloud architecture on AWS and Databricks"]
-    }, {
+      description: [
+        "Built HIPAA-compliant data pipelines using AWS Glue, Python, and Spark, processing 10TB+ of EHR data monthly, improving data availability by 35%",
+        "Automated data validation with Python reducing errors by 25% and accelerating data source onboarding by 40%",
+        "Migrated on-premise data to AWS S3/Redshift, cutting storage costs by 25% while boosting query speed by 40%",
+        "Implemented Medallion Architecture in Delta Lake, enabling self-service analytics for 50+ researchers and reducing ad-hoc requests by 20%",
+        "Pioneered FHIR-compliant data integrations for EHR systems (Epic, Cerner), standardizing clinical data from 50+ hospitals into Innovaccer's unified data model, accelerating analytics readiness by 35%",
+        "Optimized cloud infrastructure costs by 20% through auto-scaling AWS Glue jobs and partitioning Delta Lake tables, aligning with Innovaccer's focus on 'scalable, sustainable solutions'",
+        "Co-led agile workshops with clinical stakeholders to define data requirements for population health analytics, directly supporting Innovaccer's mission to 'activate data flow for better health outcomes'"
+      ]
+    },
+    {
       role: "Data Engineer",
+      company: "Capgemini",
+      period: "Oct 2021 – Jun 2023",
+      location: "Hyderabad, India",
+      description: [
+        "Engineered real-time AML monitoring pipelines using Spark Streaming and Kafka, reducing fraud detection latency to less than 2 seconds and aligning with Capgemini's emphasis on 'risk exposure mitigation'",
+        "Optimized Snowflake data warehouse through partitioning/materialized views, slashing report generation from 2 hours to 12 minutes",
+        "Modernized legacy data warehouses to Snowflake using Azure Data Factory, achieving 99.9% pipeline reliability and supporting Capgemini's 'cloud-first' client transformation initiatives",
+        "Built CI/CD pipelines with Azure DevOps, reducing deployment failures by 35% and accelerating releases to hourly cycles",
+        "Implemented dbt models to standardize transformations, boosting team productivity by 15% while ensuring GDPR compliance",
+        "Reduced Snowflake costs by $18K/year via auto-scaling and query tuning"
+      ]
+    },
+    {
+      role: "Data Analyst",
       company: "Teamtech Solutions",
-      period: "Mar 2021 – Jun 2023",
-      location: "Hyderabad, Telangana",
-      description: ["Designed and developed data pipelines using Azure Data Factory to extract, transform, and load structured and unstructured financial datasets into Snowflake and SQL Server", "Integrated internal databases and third-party APIs to support loan analytics and fraud detection workflows, reducing eligibility processing time by 50%", "Created reusable data models, stored procedures, UDFs, and views; improved data lineage tracking and metadata documentation across data assets", "Implemented CI/CD pipelines and version control with Azure DevOps and Git; actively supported data testing and production deployment processes", "Conducted data profiling and validation using Python and SQL to ensure data quality, consistency, and accuracy in compliance with partner bank standards", "Supported Power BI dashboard development by enabling curated datasets and ensuring data availability through monitored pipelines"]
+      period: "Jun 2020 – Aug 2021",
+      location: "Hyderabad, India",
+      description: [
+        "Built startup's first analytics infrastructure from zero using Python/SQL, unifying 7+ data sources (Salesforce, Stripe, Mixpanel) into a central Redshift warehouse, enabling data-driven decisions across product/sales teams",
+        "Created 10+ executive dashboards in Power BI tracking MRR, CAC, and feature adoption, directly influencing a pivot that reduced churn by 15% and retained $120K in annual revenue",
+        "Automated manual revenue reporting with Python scripts, reducing CFO's financial close time from 3 days → 4 hours and freeing capacity for Series A fundraising",
+        "Identified upsell opportunities through cohort analysis of 2,500+ free-tier users, driving targeted campaigns that converted 18% to paid plans ($45K ARR increase)",
+        "Trained non-technical teams on self-service analytics (Power BI/Excel), increasing data adoption by 50% and reducing ad-hoc requests by 30%"
+      ]
     }
   ];
   const education = [
