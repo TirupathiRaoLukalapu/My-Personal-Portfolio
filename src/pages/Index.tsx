@@ -10,12 +10,10 @@ import TechStackGrid from "@/components/TechStackGrid";
 import DataMetrics from "@/components/DataMetrics";
 import BackToTop from "@/components/BackToTop";
 import ContactMessageBar from "@/components/ContactMessageBar";
-
 const Index = () => {
   const [typedText, setTypedText] = useState("");
   const [isNavSticky, setIsNavSticky] = useState(false);
   const codeSnippets = ["import pyspark as spark", "from airflow import DAG", "dbt run --models+", "pipeline.transform(df)"];
-  
   useEffect(() => {
     let currentSnippet = 0;
     let currentChar = 0;
@@ -34,7 +32,6 @@ const Index = () => {
     const interval = setInterval(typeText, 100);
     return () => clearInterval(interval);
   }, []);
-
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
@@ -43,7 +40,6 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const skills = [{
     name: "Python (PySpark)",
     level: 95
@@ -190,7 +186,6 @@ const Index = () => {
     skills: ["SQL Queries", "Database Design", "Data Analysis", "Query Optimization"],
     color: "from-purple-500 to-pink-500"
   }];
-
   return <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 text-gray-900">
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 border-b border-gray-200 transition-all duration-300 ${isNavSticky ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-white/95 backdrop-blur-sm shadow-sm'}`}>
@@ -267,7 +262,7 @@ const Index = () => {
               </h1>
               <div className="text-lg mb-6 text-slate-700 leading-relaxed space-y-3 max-w-3xl mx-auto">
                 <p>
-                  Results-driven Data Engineer with <span className="text-blue-600 font-semibold">3+ years of experience</span> designing, building, and optimizing scalable data pipelines across <span className="text-purple-600 font-medium">healthcare and fintech domains</span>.
+                  Results-driven Data Engineer with <span className="text-blue-600 font-semibold">4+ years of experience</span> designing, building, and optimizing scalable data pipelines across <span className="text-purple-600 font-medium">healthcare and fintech domains</span>.
                 </p>
                 <p>
                   Proven expertise in <span className="text-green-600 font-medium">ETL/ELT development, data modeling, and orchestration</span> using tools like PySpark, Snowflake, dbt, Apache Airflow, and Azure Data Factory.
@@ -705,5 +700,4 @@ const Index = () => {
       <BackToTop />
     </div>;
 };
-
 export default Index;
