@@ -86,6 +86,7 @@ const Index = () => {
       tech: ["Apache Spark", "Amazon S3", "Snowflake", "Snowpipe", "AWS Lambda", "AWS Glue"],
       date: "August 2024",
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800&h=400",
+      githubUrl: "https://github.com/TirupathiRaoLukalapu/Real-Time-Data-Streaming-Pipeline",
       techIcons: [{
         name: "Apache Spark",
         icon: Database,
@@ -585,10 +586,22 @@ const Index = () => {
                     <Badge className="bg-blue-600 text-white shadow-lg">{project.date}</Badge>
                   </div>
                   <div className="absolute bottom-4 left-4 right-4">
-                    <div className="flex space-x-2">
-                      <Database className="h-8 w-8 text-white opacity-80" />
-                      <Server className="h-8 w-8 text-white opacity-80" />
-                      <Network className="h-8 w-8 text-white opacity-80" />
+                    <div className="flex justify-between items-center">
+                      <div className="flex space-x-2">
+                        <Database className="h-8 w-8 text-white opacity-80" />
+                        <Server className="h-8 w-8 text-white opacity-80" />
+                        <Network className="h-8 w-8 text-white opacity-80" />
+                      </div>
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all duration-200 rounded-full p-2 group/github"
+                        >
+                          <Github className="h-5 w-5 text-white group-hover/github:scale-110 transition-transform duration-200" />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
