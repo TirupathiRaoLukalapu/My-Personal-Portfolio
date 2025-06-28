@@ -10,10 +10,12 @@ import TechStackGrid from "@/components/TechStackGrid";
 import DataMetrics from "@/components/DataMetrics";
 import BackToTop from "@/components/BackToTop";
 import ContactMessageBar from "@/components/ContactMessageBar";
+
 const Index = () => {
   const [typedText, setTypedText] = useState("");
   const [isNavSticky, setIsNavSticky] = useState(false);
   const codeSnippets = ["import pyspark as spark", "from airflow import DAG", "dbt run --models+", "pipeline.transform(df)"];
+  
   useEffect(() => {
     let currentSnippet = 0;
     let currentChar = 0;
@@ -33,7 +35,6 @@ const Index = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Handle sticky navigation
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
@@ -42,6 +43,7 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   const skills = [{
     name: "Python (PySpark)",
     level: 95
@@ -188,10 +190,11 @@ const Index = () => {
     skills: ["SQL Queries", "Database Design", "Data Analysis", "Query Optimization"],
     color: "from-purple-500 to-pink-500"
   }];
+
   return <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 text-gray-900">
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 border-b border-gray-200 transition-all duration-300 ${isNavSticky ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-white/95 backdrop-blur-sm shadow-sm'}`}>
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="container mx-auto px-6 py-3 flex justify-between items-center">
           <div className="text-xl font-bold text-slate-800">Tirupathi Rao</div>
           <div className="hidden md:flex space-x-6">
             <a href="#about" className="text-slate-600 hover:text-blue-600 transition-colors font-medium">About</a>
@@ -206,7 +209,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section with 3D Photo */}
-      <section className="pt-20 pb-16 px-6 relative overflow-hidden">
+      <section className="pt-16 pb-12 px-6 relative overflow-hidden">
         {/* Background geometric elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
@@ -219,9 +222,9 @@ const Index = () => {
         </div>
 
         <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             {/* 3D Photo Container */}
-            <div className="relative inline-block mb-8">
+            <div className="relative inline-block mb-6">
               {/* 3D Background layers */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-purple-200 rounded-3xl transform rotate-3 scale-105 opacity-30"></div>
               <div className="absolute inset-0 bg-gradient-to-r from-purple-300 to-blue-300 rounded-3xl transform -rotate-2 scale-102 opacity-40"></div>
@@ -258,11 +261,11 @@ const Index = () => {
 
             {/* Text content */}
             <div className="max-w-4xl mx-auto">
-              <p className="text-lg text-slate-700 mb-4">Hi! I am Tirupathi Rao</p>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 text-slate-800 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+              <p className="text-lg text-slate-700 mb-3">Hi! I am Tirupathi Rao</p>
+              <h1 className="text-5xl md:text-7xl font-bold mb-4 text-slate-800 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
                 Data Engineer
               </h1>
-              <div className="text-lg mb-8 text-slate-700 leading-relaxed space-y-4 max-w-3xl mx-auto">
+              <div className="text-lg mb-6 text-slate-700 leading-relaxed space-y-3 max-w-3xl mx-auto">
                 <p>
                   Results-driven Data Engineer with <span className="text-blue-600 font-semibold">3+ years of experience</span> designing, building, and optimizing scalable data pipelines across <span className="text-purple-600 font-medium">healthcare and fintech domains</span>.
                 </p>
@@ -275,7 +278,7 @@ const Index = () => {
               </div>
 
               {/* Action buttons */}
-              <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
                 <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg transform transition-all duration-200 hover:scale-105" asChild>
                   <a href="mailto:tirupathiraolukalapu08@gmail.com">
                     <Mail className="mr-2 h-4 w-4" />
@@ -291,7 +294,7 @@ const Index = () => {
               </div>
 
               {/* Social links with improved LinkedIn hover */}
-              <div className="flex justify-center space-x-6">
+              <div className="flex justify-center space-x-6 mb-8">
                 <a href="https://github.com/TirupathiRaoLukalapu" target="_blank" rel="noopener noreferrer" className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 border border-gray-200 hover:border-gray-300">
                   <Github className="h-6 w-6 text-slate-600 hover:text-slate-800" />
                 </a>
@@ -327,9 +330,9 @@ const Index = () => {
             </div>
 
             {/* Terminal section */}
-            <div className="mt-16 max-w-2xl mx-auto">
-              <div className="bg-slate-900 rounded-lg p-6 border border-slate-700 shadow-lg">
-                <div className="flex items-center mb-4">
+            <div className="max-w-2xl mx-auto">
+              <div className="bg-slate-900 rounded-lg p-4 border border-slate-700 shadow-lg">
+                <div className="flex items-center mb-3">
                   <Terminal className="h-4 w-4 text-green-400 mr-2" />
                   <span className="text-green-400 font-medium">terminal</span>
                 </div>
@@ -344,26 +347,21 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Data Engineering Metrics Section */}
-      <section className="py-16 px-6 bg-white">
-        
-      </section>
-
       {/* Tech Stack Grid */}
-      <section className="py-16 px-6 bg-slate-50">
+      <section className="py-12 px-6 bg-slate-50">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12 text-slate-800">Technology Stack</h2>
+          <h2 className="text-3xl font-bold text-center mb-8 text-slate-800">Technology Stack</h2>
           <TechStackGrid />
         </div>
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-16 px-6 bg-white">
+      <section id="skills" className="py-12 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12 text-slate-800">Technical Skills</h2>
+          <h2 className="text-3xl font-bold text-center mb-8 text-slate-800">Technical Skills</h2>
           
           {/* Skill Progress Bars */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-6 mb-10">
             {skills.map((skill, index) => <div key={skill.name} className="space-y-2">
                 <div className="flex justify-between">
                   <span className="text-slate-700 font-medium">{skill.name}</span>
@@ -374,9 +372,9 @@ const Index = () => {
           </div>
 
           {/* Detailed Skills by Category */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {skillCategories.map((category, index) => <Card key={index} className="bg-gradient-to-br from-slate-50 to-gray-50 border-slate-200 hover:border-blue-300 transition-all duration-300 hover:shadow-lg">
-                <CardHeader>
+                <CardHeader className="pb-3">
                   <CardTitle className="text-slate-800 text-lg bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">{category.category}</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -392,7 +390,7 @@ const Index = () => {
       </section>
 
       {/* Certifications Section */}
-      <section id="certifications" className="py-20 px-6 relative overflow-hidden">
+      <section id="certifications" className="py-16 px-6 relative overflow-hidden">
         {/* Elegant background with 3D depth */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900"></div>
@@ -413,15 +411,15 @@ const Index = () => {
         </div>
 
         <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             {/* 3D Header with elegant typography */}
-            <div className="relative mb-8">
+            <div className="relative mb-6">
               <div className="absolute inset-0 blur-lg">
                 <h2 className="text-4xl font-bold bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-400 bg-clip-text text-transparent">
                   Professional Certifications
                 </h2>
               </div>
-              <h2 className="relative text-4xl font-bold bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-400 bg-clip-text text-transparent mb-4">
+              <h2 className="relative text-4xl font-bold bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-400 bg-clip-text text-transparent mb-3">
                 Professional Certifications
               </h2>
             </div>
@@ -435,7 +433,7 @@ const Index = () => {
             </div>
 
             {/* Decorative line with 3D effect */}
-            <div className="mt-8 flex justify-center">
+            <div className="mt-6 flex justify-center">
               <div className="relative">
                 <div className="w-24 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent"></div>
                 <div className="absolute inset-0 w-24 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent blur-sm"></div>
@@ -444,7 +442,7 @@ const Index = () => {
           </div>
 
           {/* 3D Certificate Cards */}
-          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-12 perspective-1000">
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 perspective-1000">
             {certifications.map((cert, index) => <div key={index} className="group relative transform-gpu">
                 {/* 3D Card Container with perspective */}
                 <div className="relative preserve-3d group-hover:rotate-y-12 transition-all duration-700 ease-out">
@@ -462,27 +460,27 @@ const Index = () => {
                     </div>
 
                     {/* Certificate Header with ribbon */}
-                    <div className="relative p-8 pb-6">
+                    <div className="relative p-6 pb-4">
                       {/* Premium ribbon */}
                       <div className="absolute -top-2 -right-2 z-20">
-                        <div className="bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-6 py-3 rounded-full shadow-lg transform rotate-12 group-hover:rotate-0 transition-transform duration-500">
+                        <div className="bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-4 py-2 rounded-full shadow-lg transform rotate-12 group-hover:rotate-0 transition-transform duration-500">
                           <div className="flex items-center space-x-2">
-                            <Award className="h-5 w-5" />
-                            <span className="font-bold text-sm tracking-wide">CERTIFIED</span>
+                            <Award className="h-4 w-4" />
+                            <span className="font-bold text-xs tracking-wide">CERTIFIED</span>
                           </div>
                         </div>
                       </div>
 
                       {/* Institution badge */}
-                      <div className="mb-4">
-                        <Badge className="bg-gradient-to-r from-slate-700 to-slate-600 text-white border-0 px-4 py-2 text-sm font-medium tracking-wide shadow-lg">
+                      <div className="mb-3">
+                        <Badge className="bg-gradient-to-r from-slate-700 to-slate-600 text-white border-0 px-3 py-1 text-sm font-medium tracking-wide shadow-lg">
                           {cert.provider}
                         </Badge>
                       </div>
 
                       {/* Certificate title with 3D text effect */}
-                      <div className="relative mb-4">
-                        <h3 className="text-2xl font-bold text-gray-800 mb-2 leading-tight">
+                      <div className="relative mb-3">
+                        <h3 className="text-xl font-bold text-gray-800 mb-2 leading-tight">
                           {cert.title}
                         </h3>
                         <div className="flex items-center space-x-3 text-gray-600">
@@ -496,7 +494,7 @@ const Index = () => {
                       </div>
 
                       {/* Description */}
-                      <p className="text-gray-700 leading-relaxed text-sm mb-6">
+                      <p className="text-gray-700 leading-relaxed text-sm mb-4">
                         {cert.description}
                       </p>
 
@@ -515,8 +513,8 @@ const Index = () => {
                     </div>
 
                     {/* Certificate Action */}
-                    <div className="px-8 pb-8">
-                      <div className="border-t border-gray-200 pt-6">
+                    <div className="px-6 pb-6">
+                      <div className="border-t border-gray-200 pt-4">
                         <Button className="w-full bg-gradient-to-r from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 text-white shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl font-medium tracking-wide" asChild>
                           <a href={cert.certificateUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2">
                             <GraduationCap className="h-5 w-5" />
@@ -532,8 +530,8 @@ const Index = () => {
                   </div>
 
                   {/* Floating certification seal */}
-                  <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 z-10">
-                    <Award className="h-10 w-10 text-white" />
+                  <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 z-10">
+                    <Award className="h-8 w-8 text-white" />
                   </div>
                 </div>
 
@@ -543,8 +541,8 @@ const Index = () => {
           </div>
 
           {/* Elegant stats footer */}
-          <div className="mt-20 text-center">
-            <div className="inline-flex items-center space-x-8 bg-white/10 backdrop-blur-sm rounded-full px-8 py-4 border border-white/20">
+          <div className="mt-16 text-center">
+            <div className="inline-flex items-center space-x-8 bg-white/10 backdrop-blur-sm rounded-full px-8 py-3 border border-white/20">
               <div className="text-center">
                 <div className="text-2xl font-bold text-amber-400">{certifications.length}</div>
                 <div className="text-white/80 text-sm font-medium">Certifications</div>
@@ -565,10 +563,10 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-16 px-6 bg-gradient-to-br from-slate-50 to-blue-50">
+      <section id="projects" className="py-12 px-6 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12 text-slate-800">Featured Projects</h2>
-          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+          <h2 className="text-3xl font-bold text-center mb-8 text-slate-800">Featured Projects</h2>
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
             {projects.map((project, index) => <Card key={index} className="bg-white border-slate-200 hover:border-blue-400 transition-all duration-300 group hover:shadow-xl transform hover:scale-105">
                 <div className="relative overflow-hidden">
                   <img src={project.image} alt={project.title} className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110" />
@@ -589,12 +587,12 @@ const Index = () => {
                     </div>
                   </div>
                 </div>
-                <CardHeader>
+                <CardHeader className="pb-3">
                   <CardTitle className="text-slate-800 group-hover:text-blue-700 transition-colors">{project.title}</CardTitle>
                   <CardDescription className="text-slate-600">{project.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     {/* Tech Stack Badges */}
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map(tech => <Badge key={tech} variant="outline" className="border-blue-300 text-blue-700 hover:bg-blue-50 transition-colors">
@@ -603,9 +601,9 @@ const Index = () => {
                     </div>
                     
                     {/* Tech Icons Highlights */}
-                    <div className="border-t border-slate-200 pt-4">
-                      <p className="text-sm font-medium text-slate-700 mb-3">Key Technologies:</p>
-                      <div className="flex flex-wrap gap-3">
+                    <div className="border-t border-slate-200 pt-3">
+                      <p className="text-sm font-medium text-slate-700 mb-2">Key Technologies:</p>
+                      <div className="flex flex-wrap gap-2">
                         {project.techIcons.map((tech, techIndex) => <div key={techIndex} className="flex items-center space-x-2 bg-slate-50 rounded-lg px-3 py-2 hover:bg-slate-100 transition-colors">
                             <tech.icon className={`h-5 w-5 ${tech.color}`} />
                             <span className="text-sm font-medium text-slate-700">{tech.name}</span>
@@ -620,22 +618,22 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-16 px-6 bg-white">
+      <section id="experience" className="py-12 px-6 bg-white">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12 text-slate-800">Experience</h2>
-          <div className="space-y-8">
+          <h2 className="text-3xl font-bold text-center mb-8 text-slate-800">Experience</h2>
+          <div className="space-y-6">
             {experience.map((exp, index) => <div key={index} className="relative pl-8 border-l-2 border-blue-300">
                 <div className="absolute w-4 h-4 bg-blue-600 rounded-full -left-2 top-0 shadow-lg"></div>
-                <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-6 border border-blue-200 hover:border-blue-300 transition-colors">
+                <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-5 border border-blue-200 hover:border-blue-300 transition-colors">
                   <h3 className="text-xl font-bold text-slate-800 mb-2">{exp.role}</h3>
-                  <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-3">
                     <span className="text-blue-700 font-medium">{exp.company}</span>
                     <div className="text-slate-600 text-sm">
                       <div className="font-medium">{exp.period}</div>
                       <div>{exp.location}</div>
                     </div>
                   </div>
-                  <ul className="text-slate-700 space-y-2">
+                  <ul className="text-slate-700 space-y-1">
                     {exp.description.map((item, itemIndex) => <li key={itemIndex} className="flex items-start">
                         <span className="text-blue-600 mr-2 mt-1">•</span>
                         <span>{item}</span>
@@ -648,15 +646,15 @@ const Index = () => {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-16 px-6 bg-gradient-to-br from-slate-50 to-purple-50">
+      <section id="education" className="py-12 px-6 bg-gradient-to-br from-slate-50 to-purple-50">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12 text-slate-800">Education</h2>
-          <div className="space-y-8">
+          <h2 className="text-3xl font-bold text-center mb-8 text-slate-800">Education</h2>
+          <div className="space-y-6">
             {education.map((edu, index) => <div key={index} className="relative pl-8 border-l-2 border-purple-300">
                 <div className="absolute w-4 h-4 bg-purple-600 rounded-full -left-2 top-0 shadow-lg"></div>
-                <div className="bg-white rounded-lg p-6 border border-purple-200 hover:border-purple-300 transition-colors shadow-md">
+                <div className="bg-white rounded-lg p-5 border border-purple-200 hover:border-purple-300 transition-colors shadow-md">
                   <h3 className="text-xl font-bold text-slate-800 mb-2">{edu.degree}</h3>
-                  <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-3">
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
                     <span className="text-purple-700 font-medium">{edu.institution}</span>
                     <div className="text-slate-600 text-sm">
                       <div className="font-medium">{edu.period}</div>
@@ -670,10 +668,10 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 px-6 bg-gradient-to-br from-blue-600 to-purple-700 text-white">
+      <section id="contact" className="py-12 px-6 bg-gradient-to-br from-blue-600 to-purple-700 text-white">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold mb-8">Let's Connect</h2>
-          <p className="text-xl mb-8 text-blue-100">
+          <h2 className="text-3xl font-bold mb-6">Let's Connect</h2>
+          <p className="text-xl mb-6 text-blue-100">
             Ready to discuss data engineering opportunities? Let's build something amazing together.
           </p>
           <div className="flex justify-center space-x-6">
@@ -697,7 +695,7 @@ const Index = () => {
       <ContactMessageBar />
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-slate-200 bg-slate-50">
+      <footer className="py-6 px-6 border-t border-slate-200 bg-slate-50">
         <div className="container mx-auto text-center text-slate-600">
           <p>&copy; 2024 Tirupathi Rao. Built with passion for data engineering.</p>
         </div>
@@ -707,4 +705,5 @@ const Index = () => {
       <BackToTop />
     </div>;
 };
+
 export default Index;
