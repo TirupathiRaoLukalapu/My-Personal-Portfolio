@@ -10,7 +10,6 @@ import TechStackGrid from "@/components/TechStackGrid";
 import DataMetrics from "@/components/DataMetrics";
 import BackToTop from "@/components/BackToTop";
 import ContactMessageBar from "@/components/ContactMessageBar";
-
 const Index = () => {
   const [typedText, setTypedText] = useState("");
   const [isNavSticky, setIsNavSticky] = useState(false);
@@ -43,168 +42,135 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  const skills = [
-    {
-      name: "Python (PySpark)",
-      level: 95
-    }, {
-      name: "SQL",
-      level: 95
-    }, {
-      name: "Java",
-      level: 80
-    }, {
+  const skills = [{
+    name: "Python (PySpark)",
+    level: 95
+  }, {
+    name: "SQL",
+    level: 95
+  }, {
+    name: "Java",
+    level: 80
+  }, {
+    name: "Apache Spark",
+    level: 90
+  }, {
+    name: "Snowflake",
+    level: 90
+  }, {
+    name: "dbt",
+    level: 85
+  }, {
+    name: "Apache Airflow",
+    level: 90
+  }, {
+    name: "Azure (ADF, Databricks)",
+    level: 85
+  }, {
+    name: "AWS (Glue, S3, EMR)",
+    level: 85
+  }, {
+    name: "Apache Kafka",
+    level: 80
+  }, {
+    name: "Data Modeling",
+    level: 90
+  }];
+  const projects = [{
+    title: "Real-Time Data Streaming Pipeline",
+    description: "Developed a cloud-based real-time pipeline integrating Spotify APIs with AWS Lambda, Glue, and Snowflake. The project emphasized seamless data integration, schema design, and scalable transformation logic, aligning closely with enterprise-grade healthcare data ingestion patterns. Stored raw JSON data in Amazon S3 and transformed 100% of records using AWS Glue (PySpark), optimizing schema consistency and processing time by 30%.",
+    tech: ["Apache Spark", "Amazon S3", "Snowflake", "Snowpipe", "AWS Lambda", "AWS Glue"],
+    date: "August 2024",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800&h=400",
+    githubUrl: "https://github.com/TirupathiRaoLukalapu/Real-Time-Data-Streaming-Pipeline",
+    techIcons: [{
       name: "Apache Spark",
-      level: 90
+      icon: Database,
+      color: "text-orange-600"
+    }, {
+      name: "AWS S3",
+      icon: Server,
+      color: "text-blue-600"
     }, {
       name: "Snowflake",
-      level: 90
+      icon: Database,
+      color: "text-cyan-600"
     }, {
-      name: "dbt",
-      level: 85
+      name: "Lambda",
+      icon: Code,
+      color: "text-yellow-600"
+    }]
+  }, {
+    title: "E-commerce Data Pipeline on Azure",
+    description: "Designed and implemented an end-to-end data pipeline to ingest approximately 100 GB of daily e-commerce sales data, perform critical data transformations and enrichments, and load the processed data into a data lake for efficient analytical consumption. Enabled efficient processing resulting in a 30% improvement in data processing time and providing timely insights for business intelligence reporting and analysis.",
+    tech: ["Azure Data Factory", "Azure Databricks", "Apache Spark", "Delta Lake", "Azure Data Lake Gen2"],
+    date: "February 2025",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=800&h=400",
+    techIcons: [{
+      name: "Azure",
+      icon: Network,
+      color: "text-blue-600"
     }, {
-      name: "Apache Airflow",
-      level: 90
+      name: "Databricks",
+      icon: ChartBar,
+      color: "text-red-600"
     }, {
-      name: "Azure (ADF, Databricks)",
-      level: 85
+      name: "Apache Spark",
+      icon: Database,
+      color: "text-orange-600"
     }, {
-      name: "AWS (Glue, S3, EMR)",
-      level: 85
-    }, {
-      name: "Apache Kafka",
-      level: 80
-    }, {
-      name: "Data Modeling",
-      level: 90
-    }
-  ];
-  const projects = [
-    {
-      title: "Real-Time Data Streaming Pipeline",
-      description: "Developed a cloud-based real-time pipeline integrating Spotify APIs with AWS Lambda, Glue, and Snowflake. The project emphasized seamless data integration, schema design, and scalable transformation logic, aligning closely with enterprise-grade healthcare data ingestion patterns. Stored raw JSON data in Amazon S3 and transformed 100% of records using AWS Glue (PySpark), optimizing schema consistency and processing time by 30%.",
-      tech: ["Apache Spark", "Amazon S3", "Snowflake", "Snowpipe", "AWS Lambda", "AWS Glue"],
-      date: "August 2024",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800&h=400",
-      githubUrl: "https://github.com/TirupathiRaoLukalapu/Real-Time-Data-Streaming-Pipeline",
-      techIcons: [{
-        name: "Apache Spark",
-        icon: Database,
-        color: "text-orange-600"
-      }, {
-        name: "AWS S3",
-        icon: Server,
-        color: "text-blue-600"
-      }, {
-        name: "Snowflake",
-        icon: Database,
-        color: "text-cyan-600"
-      }, {
-        name: "Lambda",
-        icon: Code,
-        color: "text-yellow-600"
-      }]
-    }, {
-      title: "E-commerce Data Pipeline on Azure",
-      description: "Designed and implemented an end-to-end data pipeline to ingest approximately 100 GB of daily e-commerce sales data, perform critical data transformations and enrichments, and load the processed data into a data lake for efficient analytical consumption. Enabled efficient processing resulting in a 30% improvement in data processing time and providing timely insights for business intelligence reporting and analysis.",
-      tech: ["Azure Data Factory", "Azure Databricks", "Apache Spark", "Delta Lake", "Azure Data Lake Gen2"],
-      date: "February 2025",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=800&h=400",
-      techIcons: [{
-        name: "Azure",
-        icon: Network,
-        color: "text-blue-600"
-      }, {
-        name: "Databricks",
-        icon: ChartBar,
-        color: "text-red-600"
-      }, {
-        name: "Apache Spark",
-        icon: Database,
-        color: "text-orange-600"
-      }, {
-        name: "Delta Lake",
-        icon: Server,
-        color: "text-green-600"
-      }]
-    }
-  ];
-  const experience = [
-    {
-      role: "Data Engineer",
-      company: "Innovaccer",
-      period: "Dec 2023 – Apr 2025",
-      location: "California, United States",
-      description: [
-        "Built HIPAA-compliant data pipelines using AWS Glue, Python, and Spark, processing 10TB+ of EHR data monthly, improving data availability by 35%",
-        "Automated data validation with Python reducing errors by 25% and accelerating data source onboarding by 40%",
-        "Migrated on-premise data to AWS S3/Redshift, cutting storage costs by 25% while boosting query speed by 40%",
-        "Implemented Medallion Architecture in Delta Lake, enabling self-service analytics for 50+ researchers and reducing ad-hoc requests by 20%",
-        "Pioneered FHIR-compliant data integrations for EHR systems (Epic, Cerner), standardizing clinical data from 50+ hospitals into Innovaccer's unified data model, accelerating analytics readiness by 35%",
-        "Optimized cloud infrastructure costs by 20% through auto-scaling AWS Glue jobs and partitioning Delta Lake tables, aligning with Innovaccer's focus on 'scalable, sustainable solutions'",
-        "Co-led agile workshops with clinical stakeholders to define data requirements for population health analytics, directly supporting Innovaccer's mission to 'activate data flow for better health outcomes'"
-      ]
-    },
-    {
-      role: "Data Engineer",
-      company: "Capgemini",
-      period: "Oct 2021 – Jun 2023",
-      location: "Hyderabad, India",
-      description: [
-        "Engineered real-time AML monitoring pipelines using Spark Streaming and Kafka, reducing fraud detection latency to less than 2 seconds and aligning with Capgemini's emphasis on 'risk exposure mitigation'",
-        "Optimized Snowflake data warehouse through partitioning/materialized views, slashing report generation from 2 hours to 12 minutes",
-        "Modernized legacy data warehouses to Snowflake using Azure Data Factory, achieving 99.9% pipeline reliability and supporting Capgemini's 'cloud-first' client transformation initiatives",
-        "Built CI/CD pipelines with Azure DevOps, reducing deployment failures by 35% and accelerating releases to hourly cycles",
-        "Implemented dbt models to standardize transformations, boosting team productivity by 15% while ensuring GDPR compliance",
-        "Reduced Snowflake costs by $18K/year via auto-scaling and query tuning"
-      ]
-    },
-    {
-      role: "Data Analyst",
-      company: "Teamtech Solutions",
-      period: "Jun 2020 – Aug 2021",
-      location: "Hyderabad, India",
-      description: [
-        "Built startup's first analytics infrastructure from zero using Python/SQL, unifying 7+ data sources (Salesforce, Stripe, Mixpanel) into a central Redshift warehouse, enabling data-driven decisions across product/sales teams",
-        "Created 10+ executive dashboards in Power BI tracking MRR, CAC, and feature adoption, directly influencing a pivot that reduced churn by 15% and retained $120K in annual revenue",
-        "Automated manual revenue reporting with Python scripts, reducing CFO's financial close time from 3 days → 4 hours and freeing capacity for Series A fundraising",
-        "Identified upsell opportunities through cohort analysis of 2,500+ free-tier users, driving targeted campaigns that converted 18% to paid plans ($45K ARR increase)",
-        "Trained non-technical teams on self-service analytics (Power BI/Excel), increasing data adoption by 50% and reducing ad-hoc requests by 30%"
-      ]
-    }
-  ];
-  const education = [
-    {
-      degree: "Master's in Computer/Information Technology Administration and Management",
-      institution: "Lindsey Wilson College",
-      period: "Aug 2023 – May 2025",
-      location: "Columbia, Kentucky"
-    }
-  ];
-  const skillCategories = [
-    {
-      category: "Programming Languages",
-      skills: ["Python (NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, TensorFlow)", "SQL", "PySpark", "Java", "R", "Bash"]
-    }, {
-      category: "Frontend Technologies",
-      skills: ["HTML", "CSS"]
-    }, {
-      category: "Big Data & Frameworks",
-      skills: ["Apache Spark", "Apache Kafka", "Apache Hive", "Hadoop", "HDFS", "Apache Airflow"]
-    }, {
-      category: "Databases & Storage",
-      skills: ["MongoDB", "Redis", "ChromaDB", "Snowflake", "Azure Data Lake Storage Gen2", "AWS S3", "PostgreSQL"]
-    }, {
-      category: "Cloud Platforms",
-      skills: ["Azure (ADF, Databricks, ADLS Gen2)", "AWS (S3, EC2, EMR, Glue)", "Snowflake"]
-    }, {
-      category: "Orchestration & Tools",
-      skills: ["Apache Airflow", "Azure Data Factory", "dbt", "Great Expectations", "Power BI", "Tableau", "GitHub", "Jenkins"]
-    }, {
-      category: "Other Skills",
-      skills: ["Data Cleaning", "Data Modeling", "Patient Data Analytics", "KPI Reporting", "Agile Environment", "CI/CD"]
-    }
-  ];
+      name: "Delta Lake",
+      icon: Server,
+      color: "text-green-600"
+    }]
+  }];
+  const experience = [{
+    role: "Data Engineer",
+    company: "Innovaccer",
+    period: "Dec 2023 – Apr 2025",
+    location: "California, United States",
+    description: ["Built HIPAA-compliant data pipelines using AWS Glue, Python, and Spark, processing 10TB+ of EHR data monthly, improving data availability by 35%", "Automated data validation with Python reducing errors by 25% and accelerating data source onboarding by 40%", "Migrated on-premise data to AWS S3/Redshift, cutting storage costs by 25% while boosting query speed by 40%", "Implemented Medallion Architecture in Delta Lake, enabling self-service analytics for 50+ researchers and reducing ad-hoc requests by 20%", "Pioneered FHIR-compliant data integrations for EHR systems (Epic, Cerner), standardizing clinical data from 50+ hospitals into Innovaccer's unified data model, accelerating analytics readiness by 35%", "Optimized cloud infrastructure costs by 20% through auto-scaling AWS Glue jobs and partitioning Delta Lake tables, aligning with Innovaccer's focus on 'scalable, sustainable solutions'", "Co-led agile workshops with clinical stakeholders to define data requirements for population health analytics, directly supporting Innovaccer's mission to 'activate data flow for better health outcomes'"]
+  }, {
+    role: "Data Engineer",
+    company: "Capgemini",
+    period: "Oct 2021 – Jun 2023",
+    location: "Hyderabad, India",
+    description: ["Engineered real-time AML monitoring pipelines using Spark Streaming and Kafka, reducing fraud detection latency to less than 2 seconds and aligning with Capgemini's emphasis on 'risk exposure mitigation'", "Optimized Snowflake data warehouse through partitioning/materialized views, slashing report generation from 2 hours to 12 minutes", "Modernized legacy data warehouses to Snowflake using Azure Data Factory, achieving 99.9% pipeline reliability and supporting Capgemini's 'cloud-first' client transformation initiatives", "Built CI/CD pipelines with Azure DevOps, reducing deployment failures by 35% and accelerating releases to hourly cycles", "Implemented dbt models to standardize transformations, boosting team productivity by 15% while ensuring GDPR compliance", "Reduced Snowflake costs by $18K/year via auto-scaling and query tuning"]
+  }, {
+    role: "Data Analyst",
+    company: "Teamtech Solutions",
+    period: "Jun 2020 – Aug 2021",
+    location: "Hyderabad, India",
+    description: ["Built startup's first analytics infrastructure from zero using Python/SQL, unifying 7+ data sources (Salesforce, Stripe, Mixpanel) into a central Redshift warehouse, enabling data-driven decisions across product/sales teams", "Created 10+ executive dashboards in Power BI tracking MRR, CAC, and feature adoption, directly influencing a pivot that reduced churn by 15% and retained $120K in annual revenue", "Automated manual revenue reporting with Python scripts, reducing CFO's financial close time from 3 days → 4 hours and freeing capacity for Series A fundraising", "Identified upsell opportunities through cohort analysis of 2,500+ free-tier users, driving targeted campaigns that converted 18% to paid plans ($45K ARR increase)", "Trained non-technical teams on self-service analytics (Power BI/Excel), increasing data adoption by 50% and reducing ad-hoc requests by 30%"]
+  }];
+  const education = [{
+    degree: "Master's in Computer/Information Technology Administration and Management",
+    institution: "Lindsey Wilson College",
+    period: "Aug 2023 – May 2025",
+    location: "Columbia, Kentucky"
+  }];
+  const skillCategories = [{
+    category: "Programming Languages",
+    skills: ["Python (NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, TensorFlow)", "SQL", "PySpark", "Java", "R", "Bash"]
+  }, {
+    category: "Frontend Technologies",
+    skills: ["HTML", "CSS"]
+  }, {
+    category: "Big Data & Frameworks",
+    skills: ["Apache Spark", "Apache Kafka", "Apache Hive", "Hadoop", "HDFS", "Apache Airflow"]
+  }, {
+    category: "Databases & Storage",
+    skills: ["MongoDB", "Redis", "ChromaDB", "Snowflake", "Azure Data Lake Storage Gen2", "AWS S3", "PostgreSQL"]
+  }, {
+    category: "Cloud Platforms",
+    skills: ["Azure (ADF, Databricks, ADLS Gen2)", "AWS (S3, EC2, EMR, Glue)", "Snowflake"]
+  }, {
+    category: "Orchestration & Tools",
+    skills: ["Apache Airflow", "Azure Data Factory", "dbt", "Great Expectations", "Power BI", "Tableau", "GitHub", "Jenkins"]
+  }, {
+    category: "Other Skills",
+    skills: ["Data Cleaning", "Data Modeling", "Patient Data Analytics", "KPI Reporting", "Agile Environment", "CI/CD"]
+  }];
   const certifications = [{
     title: "Python Programming Certification",
     provider: "Udemy",
@@ -380,10 +346,7 @@ const Index = () => {
 
       {/* Data Engineering Metrics Section */}
       <section className="py-16 px-6 bg-white">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12 text-slate-800">Data Engineering Impact</h2>
-          <DataMetrics />
-        </div>
+        
       </section>
 
       {/* Tech Stack Grid */}
@@ -435,12 +398,18 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(120,119,198,0.3),transparent)] animate-pulse"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.1),transparent)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_80%,rgba(59,130,246,0.2),transparent)] animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_80%,rgba(59,130,246,0.2),transparent)] animate-pulse" style={{
+          animationDelay: '2s'
+        }}></div>
           
           {/* Floating geometric shapes for depth */}
-          <div className="absolute top-20 left-10 w-32 h-32 border border-white/10 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
+          <div className="absolute top-20 left-10 w-32 h-32 border border-white/10 rounded-full animate-spin" style={{
+          animationDuration: '20s'
+        }}></div>
           <div className="absolute bottom-20 right-20 w-24 h-24 border border-blue-300/20 rounded-lg rotate-45 animate-pulse"></div>
-          <div className="absolute top-1/2 right-10 w-16 h-16 border border-purple-300/20 rotate-12 animate-bounce" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 right-10 w-16 h-16 border border-purple-300/20 rotate-12 animate-bounce" style={{
+          animationDelay: '1s'
+        }}></div>
         </div>
 
         <div className="container mx-auto max-w-6xl relative z-10">
@@ -476,8 +445,7 @@ const Index = () => {
 
           {/* 3D Certificate Cards */}
           <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-12 perspective-1000">
-            {certifications.map((cert, index) => (
-              <div key={index} className="group relative transform-gpu">
+            {certifications.map((cert, index) => <div key={index} className="group relative transform-gpu">
                 {/* 3D Card Container with perspective */}
                 <div className="relative preserve-3d group-hover:rotate-y-12 transition-all duration-700 ease-out">
                   
@@ -539,11 +507,9 @@ const Index = () => {
                           Core Competencies
                         </h4>
                         <div className="grid grid-cols-2 gap-2">
-                          {cert.skills.map((skill, skillIndex) => (
-                            <div key={skillIndex} className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-lg px-3 py-2 text-center">
+                          {cert.skills.map((skill, skillIndex) => <div key={skillIndex} className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-lg px-3 py-2 text-center">
                               <span className="text-blue-800 font-medium text-sm">{skill}</span>
-                            </div>
-                          ))}
+                            </div>)}
                         </div>
                       </div>
                     </div>
@@ -551,10 +517,7 @@ const Index = () => {
                     {/* Certificate Action */}
                     <div className="px-8 pb-8">
                       <div className="border-t border-gray-200 pt-6">
-                        <Button 
-                          className="w-full bg-gradient-to-r from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 text-white shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl font-medium tracking-wide" 
-                          asChild
-                        >
+                        <Button className="w-full bg-gradient-to-r from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 text-white shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl font-medium tracking-wide" asChild>
                           <a href={cert.certificateUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2">
                             <GraduationCap className="h-5 w-5" />
                             <span>View Certificate</span>
@@ -576,8 +539,7 @@ const Index = () => {
 
                 {/* Ambient light effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-2xl blur-3xl group-hover:blur-2xl transition-all duration-500 -z-10"></div>
-              </div>
-            ))}
+              </div>)}
           </div>
 
           {/* Elegant stats footer */}
@@ -621,16 +583,9 @@ const Index = () => {
                         <Server className="h-8 w-8 text-white opacity-80" />
                         <Network className="h-8 w-8 text-white opacity-80" />
                       </div>
-                      {project.githubUrl && (
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all duration-200 rounded-full p-2 group/github"
-                        >
+                      {project.githubUrl && <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all duration-200 rounded-full p-2 group/github">
                           <Github className="h-5 w-5 text-white group-hover/github:scale-110 transition-transform duration-200" />
-                        </a>
-                      )}
+                        </a>}
                     </div>
                   </div>
                 </div>
@@ -752,5 +707,4 @@ const Index = () => {
       <BackToTop />
     </div>;
 };
-
 export default Index;
