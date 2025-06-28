@@ -281,7 +281,7 @@ const Index = () => {
                   </a>
                 </Button>
                 <Button variant="outline" className="border-purple-300 text-purple-700 hover:bg-purple-50 shadow-lg transform transition-all duration-200 hover:scale-105" asChild>
-                  <a href="https://github.com/TirupathiRaoLukalapu/Tiru_resume_data_engineer/blob/main/Tirupathi_resume_data_engineer.pdf" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/TirupathiRaoLukalapu/Tiru_resume_data_engineer/blob/main/TirupathiRaoLukalapu_Resume.pdf" target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-4 w-4" />
                     View Resume
                   </a>
