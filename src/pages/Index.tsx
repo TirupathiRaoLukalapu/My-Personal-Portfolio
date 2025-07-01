@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Github, Linkedin, Mail, Database, Code, Terminal, ChartBar, Server, Network, ArrowUp, ExternalLink, Award, Calendar, GraduationCap } from "lucide-react";
 import DataFlowAnimation from "@/components/DataFlowAnimation";
@@ -10,6 +9,7 @@ import TechStackGrid from "@/components/TechStackGrid";
 import DataMetrics from "@/components/DataMetrics";
 import BackToTop from "@/components/BackToTop";
 import ContactMessageBar from "@/components/ContactMessageBar";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Index = () => {
   const [typedText, setTypedText] = useState("");
@@ -195,18 +195,19 @@ const Index = () => {
       color: "from-purple-500 to-pink-500"
     }
   ];
-  return <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 text-gray-900">
+  return <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 text-gray-900 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 dark:text-gray-100">
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 border-b border-gray-200 transition-all duration-300 ${isNavSticky ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-white/95 backdrop-blur-sm shadow-sm'}`}>
+      <nav className={`fixed top-0 w-full z-50 border-b border-gray-200 dark:border-gray-700 transition-all duration-300 ${isNavSticky ? 'bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm shadow-lg' : 'bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm shadow-sm'}`}>
         <div className="container mx-auto px-6 py-3 flex justify-between items-center">
-          <div className="text-xl font-bold text-slate-800">Tirupathi Rao</div>
-          <div className="hidden md:flex space-x-6">
-            <a href="#about" className="text-slate-600 hover:text-blue-600 transition-colors font-medium">About</a>
-            <a href="#certifications" className="text-slate-600 hover:text-amber-600 transition-colors font-medium">Certifications</a>
-            <a href="#projects" className="text-slate-600 hover:text-purple-600 transition-colors font-medium">Projects</a>
-            <a href="#experience" className="text-slate-600 hover:text-orange-600 transition-colors font-medium">Experience</a>
-            <a href="#education" className="text-slate-600 hover:text-indigo-600 transition-colors font-medium">Education</a>
-            <a href="#contact" className="text-slate-600 hover:text-red-600 transition-colors font-medium">Contact</a>
+          <div className="text-xl font-bold text-slate-800 dark:text-slate-200">Tirupathi Rao</div>
+          <div className="hidden md:flex space-x-6 items-center">
+            <a href="#about" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">About</a>
+            <a href="#certifications" className="text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors font-medium">Certifications</a>
+            <a href="#projects" className="text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors font-medium">Projects</a>
+            <a href="#experience" className="text-slate-600 dark:text-slate-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium">Experience</a>
+            <a href="#education" className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-medium">Education</a>
+            <a href="#contact" className="text-slate-600 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 transition-colors font-medium">Contact</a>
+            <ThemeToggle />
           </div>
         </div>
       </nav>
@@ -308,16 +309,16 @@ const Index = () => {
                       <Linkedin className="h-6 w-6 text-blue-600 hover:text-blue-700" />
                     </a>
                   </HoverCardTrigger>
-                  <HoverCardContent className="w-80">
+                  <HoverCardContent className="w-80 bg-white dark:bg-slate-800 border-gray-200 dark:border-gray-700">
                     <div className="flex justify-between space-x-4">
                       <div className="space-y-1">
-                        <h4 className="text-sm font-semibold">Tirupathi Rao Lukalapu</h4>
-                        <p className="text-sm text-muted-foreground">
+                        <h4 className="text-sm font-semibold dark:text-white">Tirupathi Rao Lukalapu</h4>
+                        <p className="text-sm text-muted-foreground dark:text-gray-300">
                           Data Engineer at Innovaccer Inc.
                         </p>
                         <div className="flex items-center pt-2">
-                          <Linkedin className="mr-2 h-4 w-4 opacity-70" />
-                          <span className="text-xs text-muted-foreground">
+                          <Linkedin className="mr-2 h-4 w-4 opacity-70 text-blue-600" />
+                          <span className="text-xs text-muted-foreground dark:text-gray-400">
                             Connect on LinkedIn to see my professional updates and network
                           </span>
                         </div>
@@ -334,7 +335,7 @@ const Index = () => {
 
             {/* Terminal section */}
             <div className="max-w-2xl mx-auto">
-              <div className="bg-slate-900 rounded-lg p-4 border border-slate-700 shadow-lg">
+              <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4 border border-slate-700 dark:border-slate-600 shadow-lg">
                 <div className="flex items-center mb-3">
                   <Terminal className="h-4 w-4 text-green-400 mr-2" />
                   <span className="text-green-400 font-medium">terminal</span>
@@ -351,38 +352,27 @@ const Index = () => {
       </section>
 
       {/* Tech Stack Grid */}
-      <section className="py-8 px-6 bg-slate-50">
+      <section className="py-8 px-6 bg-slate-50 dark:bg-slate-800">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-6 text-slate-800">Technology Stack</h2>
+          <h2 className="text-3xl font-bold text-center mb-6 text-slate-800 dark:text-slate-200">Technology Stack</h2>
           <TechStackGrid />
         </div>
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-8 px-6 bg-white">
+      <section id="skills" className="py-8 px-6 bg-white dark:bg-slate-900">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-8 text-slate-800">Technical Skills</h2>
+          <h2 className="text-3xl font-bold text-center mb-8 text-slate-800 dark:text-slate-200">Technical Skills</h2>
           
-          {/* Skill Progress Bars */}
-          <div className="grid md:grid-cols-2 gap-6 mb-10">
-            {skills.map((skill, index) => <div key={skill.name} className="space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-slate-700 font-medium">{skill.name}</span>
-                  <span className="text-blue-600 font-semibold">{skill.level}%</span>
-                </div>
-                <Progress value={skill.level} className="h-3 bg-slate-200" />
-              </div>)}
-          </div>
-
           {/* Detailed Skills by Category */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {skillCategories.map((category, index) => <Card key={index} className="bg-gradient-to-br from-slate-50 to-gray-50 border-slate-200 hover:border-blue-300 transition-all duration-300 hover:shadow-lg">
+            {skillCategories.map((category, index) => <Card key={index} className="bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-800 dark:to-slate-700 border-slate-200 dark:border-slate-600 hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-300 hover:shadow-lg">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-slate-800 text-lg bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">{category.category}</CardTitle>
+                  <CardTitle className="text-slate-800 dark:text-slate-200 text-lg bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">{category.category}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2">
-                    {category.skills.map((skill, skillIndex) => <Badge key={skillIndex} variant="secondary" className="bg-blue-100 text-blue-700 mr-2 mb-2 hover:bg-blue-200 transition-colors">
+                    {category.skills.map((skill, skillIndex) => <Badge key={skillIndex} variant="secondary" className="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 mr-2 mb-2 hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors">
                         {skill}
                       </Badge>)}
                   </div>
@@ -566,11 +556,11 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-8 px-6 bg-gradient-to-br from-slate-50 to-blue-50">
+      <section id="projects" className="py-8 px-6 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-800 dark:to-blue-900">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-8 text-slate-800">Featured Projects</h2>
+          <h2 className="text-3xl font-bold text-center mb-8 text-slate-800 dark:text-slate-200">Featured Projects</h2>
           <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
-            {projects.map((project, index) => <Card key={index} className="bg-white border-slate-200 hover:border-blue-400 transition-all duration-300 group hover:shadow-xl transform hover:scale-105">
+            {projects.map((project, index) => <Card key={index} className="bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-blue-400 transition-all duration-300 group hover:shadow-xl transform hover:scale-105">
                 <div className="relative overflow-hidden">
                   <img src={project.image} alt={project.title} className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
@@ -591,25 +581,25 @@ const Index = () => {
                   </div>
                 </div>
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-slate-800 group-hover:text-blue-700 transition-colors">{project.title}</CardTitle>
-                  <CardDescription className="text-slate-600">{project.description}</CardDescription>
+                  <CardTitle className="text-slate-800 dark:text-slate-200 group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">{project.title}</CardTitle>
+                  <CardDescription className="text-slate-600 dark:text-slate-400">{project.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
                     {/* Tech Stack Badges */}
                     <div className="flex flex-wrap gap-2">
-                      {project.tech.map(tech => <Badge key={tech} variant="outline" className="border-blue-300 text-blue-700 hover:bg-blue-50 transition-colors">
+                      {project.tech.map(tech => <Badge key={tech} variant="outline" className="border-blue-300 text-blue-700 hover:bg-blue-50 dark:hover:bg-blue-900 transition-colors">
                           {tech}
                         </Badge>)}
                     </div>
                     
                     {/* Tech Icons Highlights */}
-                    <div className="border-t border-slate-200 pt-3">
-                      <p className="text-sm font-medium text-slate-700 mb-2">Key Technologies:</p>
+                    <div className="border-t border-slate-200 dark:border-slate-700 pt-3">
+                      <p className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Key Technologies:</p>
                       <div className="flex flex-wrap gap-2">
-                        {project.techIcons.map((tech, techIndex) => <div key={techIndex} className="flex items-center space-x-2 bg-slate-50 rounded-lg px-3 py-2 hover:bg-slate-100 transition-colors">
+                        {project.techIcons.map((tech, techIndex) => <div key={techIndex} className="flex items-center space-x-2 bg-slate-50 dark:bg-slate-900 rounded-lg px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                             <tech.icon className={`h-5 w-5 ${tech.color}`} />
-                            <span className="text-sm font-medium text-slate-700">{tech.name}</span>
+                            <span className="text-sm font-medium text-slate-700 dark:text-slate-300">{tech.name}</span>
                           </div>)}
                       </div>
                     </div>
@@ -621,24 +611,24 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-8 px-6 bg-white">
+      <section id="experience" className="py-8 px-6 bg-white dark:bg-slate-900">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-8 text-slate-800">Experience</h2>
+          <h2 className="text-3xl font-bold text-center mb-8 text-slate-800 dark:text-slate-200">Experience</h2>
           <div className="space-y-6">
-            {experience.map((exp, index) => <div key={index} className="relative pl-8 border-l-2 border-blue-300">
-                <div className="absolute w-4 h-4 bg-blue-600 rounded-full -left-2 top-0 shadow-lg"></div>
-                <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-5 border border-blue-200 hover:border-blue-300 transition-colors">
-                  <h3 className="text-xl font-bold text-slate-800 mb-2">{exp.role}</h3>
+            {experience.map((exp, index) => <div key={index} className="relative pl-8 border-l-2 border-blue-300 dark:border-blue-600">
+                <div className="absolute w-4 h-4 bg-blue-600 dark:bg-blue-500 rounded-full -left-2 top-0 shadow-lg"></div>
+                <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900 dark:to-purple-900 rounded-lg p-5 border border-blue-200 dark:border-blue-700 hover:border-blue-300 dark:hover:border-blue-500 transition-colors">
+                  <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 mb-2">{exp.role}</h3>
                   <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-3">
-                    <span className="text-blue-700 font-medium">{exp.company}</span>
-                    <div className="text-slate-600 text-sm">
+                    <span className="text-blue-700 dark:text-blue-400 font-medium">{exp.company}</span>
+                    <div className="text-slate-600 dark:text-slate-400 text-sm">
                       <div className="font-medium">{exp.period}</div>
                       <div>{exp.location}</div>
                     </div>
                   </div>
-                  <ul className="text-slate-700 space-y-1">
+                  <ul className="text-slate-700 dark:text-slate-300 space-y-1">
                     {exp.description.map((item, itemIndex) => <li key={itemIndex} className="flex items-start">
-                        <span className="text-blue-600 mr-2 mt-1">•</span>
+                        <span className="text-blue-600 dark:text-blue-400 mr-2 mt-1">•</span>
                         <span>{item}</span>
                       </li>)}
                   </ul>
@@ -649,17 +639,17 @@ const Index = () => {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-8 px-6 bg-gradient-to-br from-slate-50 to-purple-50">
+      <section id="education" className="py-8 px-6 bg-gradient-to-br from-slate-50 to-purple-50 dark:from-slate-900 dark:to-purple-900">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-8 text-slate-800">Education</h2>
+          <h2 className="text-3xl font-bold text-center mb-8 text-slate-800 dark:text-slate-200">Education</h2>
           <div className="space-y-6">
-            {education.map((edu, index) => <div key={index} className="relative pl-8 border-l-2 border-purple-300">
-                <div className="absolute w-4 h-4 bg-purple-600 rounded-full -left-2 top-0 shadow-lg"></div>
-                <div className="bg-white rounded-lg p-5 border border-purple-200 hover:border-purple-300 transition-colors shadow-md">
-                  <h3 className="text-xl font-bold text-slate-800 mb-2">{edu.degree}</h3>
+            {education.map((edu, index) => <div key={index} className="relative pl-8 border-l-2 border-purple-300 dark:border-purple-600">
+                <div className="absolute w-4 h-4 bg-purple-600 dark:bg-purple-500 rounded-full -left-2 top-0 shadow-lg"></div>
+                <div className="bg-white dark:bg-slate-800 rounded-lg p-5 border border-purple-200 dark:border-purple-700 hover:border-purple-300 dark:hover:border-purple-500 transition-colors shadow-md">
+                  <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 mb-2">{edu.degree}</h3>
                   <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
-                    <span className="text-purple-700 font-medium">{edu.institution}</span>
-                    <div className="text-slate-600 text-sm">
+                    <span className="text-purple-700 dark:text-purple-400 font-medium">{edu.institution}</span>
+                    <div className="text-slate-600 dark:text-slate-400 text-sm">
                       <div className="font-medium">{edu.period}</div>
                       <div>{edu.location}</div>
                     </div>
@@ -677,6 +667,39 @@ const Index = () => {
           <p className="text-xl mb-6 text-blue-100">
             Ready to discuss data engineering opportunities? Let's build something amazing together.
           </p>
+          <div className="flex justify-center space-x-6 mb-8">
+            <a href="https://github.com/TirupathiRaoLukalapu" target="_blank" rel="noopener noreferrer" className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 border border-gray-200 hover:border-gray-300">
+              <Github className="h-6 w-6 text-slate-600 hover:text-slate-800" />
+            </a>
+            
+            <HoverCard>
+              <HoverCardTrigger asChild>
+                <a href="https://www.linkedin.com/in/tirupathi-rao-lukalapu-a719912aa/" target="_blank" rel="noopener noreferrer" className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 border border-blue-200 hover:border-blue-400">
+                  <Linkedin className="h-6 w-6 text-blue-600 hover:text-blue-700" />
+                </a>
+              </HoverCardTrigger>
+              <HoverCardContent className="w-80 bg-white dark:bg-slate-800 border-gray-200 dark:border-gray-700">
+                <div className="flex justify-between space-x-4">
+                  <div className="space-y-1">
+                    <h4 className="text-sm font-semibold dark:text-white">Tirupathi Rao Lukalapu</h4>
+                    <p className="text-sm text-muted-foreground dark:text-gray-300">
+                      Data Engineer at Innovaccer Inc.
+                    </p>
+                    <div className="flex items-center pt-2">
+                      <Linkedin className="mr-2 h-4 w-4 opacity-70 text-blue-600" />
+                      <span className="text-xs text-muted-foreground dark:text-gray-400">
+                        Connect on LinkedIn to see my professional updates and network
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </HoverCardContent>
+            </HoverCard>
+
+            <a href="mailto:tirupathiraolukalapu08@gmail.com" className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 border border-red-200 hover:border-red-400">
+              <Mail className="h-6 w-6 text-red-600 hover:text-red-700" />
+            </a>
+          </div>
           <div className="flex justify-center space-x-6">
             <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 border-0 shadow-lg" asChild>
               <a href="mailto:tirupathiraolukalapu08@gmail.com">
@@ -698,8 +721,8 @@ const Index = () => {
       <ContactMessageBar />
 
       {/* Footer */}
-      <footer className="py-4 px-6 border-t border-slate-200 bg-slate-50">
-        <div className="container mx-auto text-center text-slate-600">
+      <footer className="py-4 px-6 border-t border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
+        <div className="container mx-auto text-center text-slate-600 dark:text-slate-400">
           <p>&copy; 2024 Tirupathi Rao. Built with passion for data engineering.</p>
         </div>
       </footer>
