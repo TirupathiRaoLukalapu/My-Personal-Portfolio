@@ -2,9 +2,8 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
-import { Github, Linkedin, Mail, Database, Code, Terminal, ChartBar, Server, Network, ArrowUp, ExternalLink, Award, Calendar, GraduationCap } from "lucide-react";
+import { Github, Linkedin, Mail, Database, Code, Terminal, ChartBar, Server, Network, ExternalLink, Award, Calendar, GraduationCap } from "lucide-react";
 import DataFlowAnimation from "@/components/DataFlowAnimation";
 import TechStackGrid from "@/components/TechStackGrid";
 import DataMetrics from "@/components/DataMetrics";
@@ -41,40 +40,6 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  const skills = [{
-    name: "Python (PySpark)",
-    level: 95
-  }, {
-    name: "SQL",
-    level: 95
-  }, {
-    name: "Java",
-    level: 80
-  }, {
-    name: "Apache Spark",
-    level: 90
-  }, {
-    name: "Snowflake",
-    level: 90
-  }, {
-    name: "dbt",
-    level: 85
-  }, {
-    name: "Apache Airflow",
-    level: 90
-  }, {
-    name: "Azure (ADF, Databricks)",
-    level: 85
-  }, {
-    name: "AWS (Glue, S3, EMR)",
-    level: 85
-  }, {
-    name: "Apache Kafka",
-    level: 80
-  }, {
-    name: "Data Modeling",
-    level: 90
-  }];
   const projects = [
     {
       title: "Real-Time Data Streaming Pipeline",
@@ -154,28 +119,6 @@ const Index = () => {
       location: "Columbia, Kentucky"
     }
   ];
-  const skillCategories = [{
-    category: "Programming Languages",
-    skills: ["Python (NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, TensorFlow)", "SQL", "PySpark", "Java", "R", "Bash"]
-  }, {
-    category: "Frontend Technologies",
-    skills: ["HTML", "CSS"]
-  }, {
-    category: "Big Data & Frameworks",
-    skills: ["Apache Spark", "Apache Kafka", "Apache Hive", "Hadoop", "HDFS", "Apache Airflow"]
-  }, {
-    category: "Databases & Storage",
-    skills: ["MongoDB", "Redis", "ChromaDB", "Snowflake", "Azure Data Lake Storage Gen2", "AWS S3", "PostgreSQL"]
-  }, {
-    category: "Cloud Platforms",
-    skills: ["Azure (ADF, Databricks, ADLS Gen2)", "AWS (S3, EC2, EMR, Glue)", "Snowflake"]
-  }, {
-    category: "Orchestration & Tools",
-    skills: ["Apache Airflow", "Azure Data Factory", "dbt", "Great Expectations", "Power BI", "Tableau", "GitHub", "Jenkins"]
-  }, {
-    category: "Other Skills",
-    skills: ["Data Cleaning", "Data Modeling", "Patient Data Analytics", "KPI Reporting", "Agile Environment", "CI/CD"]
-  }];
   const certifications = [
     {
       title: "Python Programming Certification",
@@ -355,40 +298,6 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-6 text-slate-800">Technology Stack</h2>
           <TechStackGrid />
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section id="skills" className="py-8 px-6 bg-white">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-8 text-slate-800">Technical Skills</h2>
-          
-          {/* Skill Progress Bars */}
-          <div className="grid md:grid-cols-2 gap-6 mb-10">
-            {skills.map((skill, index) => <div key={skill.name} className="space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-slate-700 font-medium">{skill.name}</span>
-                  <span className="text-blue-600 font-semibold">{skill.level}%</span>
-                </div>
-                <Progress value={skill.level} className="h-3 bg-slate-200" />
-              </div>)}
-          </div>
-
-          {/* Detailed Skills by Category */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {skillCategories.map((category, index) => <Card key={index} className="bg-gradient-to-br from-slate-50 to-gray-50 border-slate-200 hover:border-blue-300 transition-all duration-300 hover:shadow-lg">
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-slate-800 text-lg bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">{category.category}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    {category.skills.map((skill, skillIndex) => <Badge key={skillIndex} variant="secondary" className="bg-blue-100 text-blue-700 mr-2 mb-2 hover:bg-blue-200 transition-colors">
-                        {skill}
-                      </Badge>)}
-                  </div>
-                </CardContent>
-              </Card>)}
-          </div>
         </div>
       </section>
 
