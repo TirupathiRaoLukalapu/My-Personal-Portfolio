@@ -2,78 +2,19 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Progress } from "@/components/ui/progress";
-import { Github, Linkedin, Mail, Database, Code, Terminal, ChartBar, Server, Network, ExternalLink, Award, Calendar, GraduationCap, Moon, Sun } from "lucide-react";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+import { Github, Linkedin, Mail, Database, Code, Terminal, ChartBar, Server, Network, ArrowUp, ExternalLink, Award, Calendar, GraduationCap } from "lucide-react";
 import DataFlowAnimation from "@/components/DataFlowAnimation";
 import TechStackGrid from "@/components/TechStackGrid";
 import DataMetrics from "@/components/DataMetrics";
 import BackToTop from "@/components/BackToTop";
 import ContactMessageBar from "@/components/ContactMessageBar";
-import ThemeToggle from "@/components/ThemeToggle";
 
 const Index = () => {
   const [typedText, setTypedText] = useState("");
   const [isNavSticky, setIsNavSticky] = useState(false);
   const codeSnippets = ["import pyspark as spark", "from airflow import DAG", "dbt run --models+", "pipeline.transform(df)"];
-
-  // Skills data
-  const skillCategories = [
-    {
-      category: "Programming Languages",
-      skills: [
-        { name: "Python", level: 95, description: "Advanced data processing, ETL pipelines, and automation" },
-        { name: "SQL", level: 90, description: "Complex queries, optimization, and database design" },
-        { name: "Scala", level: 75, description: "Spark applications and functional programming" },
-        { name: "R", level: 70, description: "Statistical analysis and data visualization" }
-      ]
-    },
-    {
-      category: "Big Data & Processing",
-      skills: [
-        { name: "Apache Spark", level: 90, description: "Large-scale data processing and PySpark" },
-        { name: "Apache Kafka", level: 85, description: "Real-time streaming and event processing" },
-        { name: "Apache Airflow", level: 88, description: "Workflow orchestration and scheduling" },
-        { name: "Hadoop", level: 75, description: "Distributed storage and MapReduce" }
-      ]
-    },
-    {
-      category: "Cloud Platforms",
-      skills: [
-        { name: "AWS", level: 85, description: "S3, Glue, Redshift, Lambda, and EC2" },
-        { name: "Azure", level: 88, description: "Data Factory, Databricks, and Data Lake" },
-        { name: "GCP", level: 70, description: "BigQuery, Dataflow, and Cloud Storage" }
-      ]
-    },
-    {
-      category: "Databases & Warehouses",
-      skills: [
-        { name: "Snowflake", level: 90, description: "Data warehousing and optimization" },
-        { name: "PostgreSQL", level: 85, description: "Advanced SQL and performance tuning" },
-        { name: "MongoDB", level: 75, description: "NoSQL database design and queries" },
-        { name: "Redis", level: 70, description: "Caching and session management" }
-      ]
-    },
-    {
-      category: "Data Tools & Frameworks",
-      skills: [
-        { name: "dbt", level: 87, description: "Data transformation and modeling" },
-        { name: "Docker", level: 80, description: "Containerization and deployment" },
-        { name: "Kubernetes", level: 72, description: "Container orchestration" },
-        { name: "Terraform", level: 75, description: "Infrastructure as Code" }
-      ]
-    },
-    {
-      category: "Analytics & Visualization",
-      skills: [
-        { name: "Tableau", level: 85, description: "Business intelligence and dashboards" },
-        { name: "Power BI", level: 80, description: "Data visualization and reporting" },
-        { name: "Looker", level: 75, description: "Modern BI and data platform" },
-        { name: "Apache Superset", level: 70, description: "Open-source data visualization" }
-      ]
-    }
-  ];
-
   useEffect(() => {
     let currentSnippet = 0;
     let currentChar = 0;
@@ -100,6 +41,40 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  const skills = [{
+    name: "Python (PySpark)",
+    level: 95
+  }, {
+    name: "SQL",
+    level: 95
+  }, {
+    name: "Java",
+    level: 80
+  }, {
+    name: "Apache Spark",
+    level: 90
+  }, {
+    name: "Snowflake",
+    level: 90
+  }, {
+    name: "dbt",
+    level: 85
+  }, {
+    name: "Apache Airflow",
+    level: 90
+  }, {
+    name: "Azure (ADF, Databricks)",
+    level: 85
+  }, {
+    name: "AWS (Glue, S3, EMR)",
+    level: 85
+  }, {
+    name: "Apache Kafka",
+    level: 80
+  }, {
+    name: "Data Modeling",
+    level: 90
+  }];
   const projects = [
     {
       title: "Real-Time Data Streaming Pipeline",
@@ -179,6 +154,28 @@ const Index = () => {
       location: "Columbia, Kentucky"
     }
   ];
+  const skillCategories = [{
+    category: "Programming Languages",
+    skills: ["Python (NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, TensorFlow)", "SQL", "PySpark", "Java", "R", "Bash"]
+  }, {
+    category: "Frontend Technologies",
+    skills: ["HTML", "CSS"]
+  }, {
+    category: "Big Data & Frameworks",
+    skills: ["Apache Spark", "Apache Kafka", "Apache Hive", "Hadoop", "HDFS", "Apache Airflow"]
+  }, {
+    category: "Databases & Storage",
+    skills: ["MongoDB", "Redis", "ChromaDB", "Snowflake", "Azure Data Lake Storage Gen2", "AWS S3", "PostgreSQL"]
+  }, {
+    category: "Cloud Platforms",
+    skills: ["Azure (ADF, Databricks, ADLS Gen2)", "AWS (S3, EC2, EMR, Glue)", "Snowflake"]
+  }, {
+    category: "Orchestration & Tools",
+    skills: ["Apache Airflow", "Azure Data Factory", "dbt", "Great Expectations", "Power BI", "Tableau", "GitHub", "Jenkins"]
+  }, {
+    category: "Other Skills",
+    skills: ["Data Cleaning", "Data Modeling", "Patient Data Analytics", "KPI Reporting", "Agile Environment", "CI/CD"]
+  }];
   const certifications = [
     {
       title: "Python Programming Certification",
@@ -198,20 +195,18 @@ const Index = () => {
       color: "from-purple-500 to-pink-500"
     }
   ];
-  return <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 text-gray-900 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 dark:text-gray-100 transition-colors duration-300">
+  return <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 text-gray-900">
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 border-b border-gray-200 dark:border-gray-700 transition-all duration-300 ${isNavSticky ? 'bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm shadow-lg' : 'bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm shadow-sm'}`}>
+      <nav className={`fixed top-0 w-full z-50 border-b border-gray-200 transition-all duration-300 ${isNavSticky ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-white/95 backdrop-blur-sm shadow-sm'}`}>
         <div className="container mx-auto px-6 py-3 flex justify-between items-center">
-          <div className="text-xl font-bold text-slate-800 dark:text-slate-200">Tirupathi Rao</div>
-          <div className="hidden md:flex space-x-6 items-center">
-            <a href="#about" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">About</a>
-            <a href="#skills" className="text-slate-600 dark:text-slate-300 hover:text-green-600 dark:hover:text-green-400 transition-colors font-medium">Skills</a>
-            <a href="#certifications" className="text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors font-medium">Certifications</a>
-            <a href="#projects" className="text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors font-medium">Projects</a>
-            <a href="#experience" className="text-slate-600 dark:text-slate-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium">Experience</a>
-            <a href="#education" className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-medium">Education</a>
-            <a href="#contact" className="text-slate-600 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 transition-colors font-medium">Contact</a>
-            <ThemeToggle />
+          <div className="text-xl font-bold text-slate-800">Tirupathi Rao</div>
+          <div className="hidden md:flex space-x-6">
+            <a href="#about" className="text-slate-600 hover:text-blue-600 transition-colors font-medium">About</a>
+            <a href="#certifications" className="text-slate-600 hover:text-amber-600 transition-colors font-medium">Certifications</a>
+            <a href="#projects" className="text-slate-600 hover:text-purple-600 transition-colors font-medium">Projects</a>
+            <a href="#experience" className="text-slate-600 hover:text-orange-600 transition-colors font-medium">Experience</a>
+            <a href="#education" className="text-slate-600 hover:text-indigo-600 transition-colors font-medium">Education</a>
+            <a href="#contact" className="text-slate-600 hover:text-red-600 transition-colors font-medium">Contact</a>
           </div>
         </div>
       </nav>
@@ -220,11 +215,11 @@ const Index = () => {
       <section className="pt-16 pb-8 px-6 relative overflow-hidden">
         {/* Background geometric elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-gradient-to-r from-yellow-100 to-pink-100 dark:from-yellow-900/20 dark:to-pink-900/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" style={{
+          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+          <div className="absolute top-40 right-10 w-72 h-72 bg-gradient-to-r from-yellow-100 to-pink-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" style={{
           animationDelay: '2s'
         }}></div>
-          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-gradient-to-r from-green-100 to-blue-100 dark:from-green-900/20 dark:to-blue-900/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" style={{
+          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-gradient-to-r from-green-100 to-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" style={{
           animationDelay: '4s'
         }}></div>
         </div>
@@ -234,11 +229,11 @@ const Index = () => {
             {/* 3D Photo Container */}
             <div className="relative inline-block mb-6">
               {/* 3D Background layers */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-purple-200 dark:from-blue-800/50 dark:to-purple-800/50 rounded-3xl transform rotate-3 scale-105 opacity-30"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-300 to-blue-300 dark:from-purple-700/50 dark:to-blue-700/50 rounded-3xl transform -rotate-2 scale-102 opacity-40"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-purple-200 rounded-3xl transform rotate-3 scale-105 opacity-30"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-300 to-blue-300 rounded-3xl transform -rotate-2 scale-102 opacity-40"></div>
               
               {/* Main photo container */}
-              <div className="relative bg-white dark:bg-slate-800 p-2 rounded-3xl shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-3xl">
+              <div className="relative bg-white p-2 rounded-3xl shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-3xl">
                 <div className="relative overflow-hidden rounded-2xl">
                   <img src="./lovable-uploads/5396458f-722b-457a-9bd2-9d51a3561425.png" alt="Tirupathi Rao - Data Engineer" className="w-80 h-80 object-cover transition-transform duration-300 hover:scale-110" />
                   {/* Overlay gradient */}
@@ -247,20 +242,20 @@ const Index = () => {
               </div>
 
               {/* Floating tech icons around photo */}
-              <div className="absolute -top-4 -right-4 bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 p-3 rounded-full shadow-lg animate-bounce">
+              <div className="absolute -top-4 -right-4 bg-blue-100 text-blue-600 p-3 rounded-full shadow-lg animate-bounce">
                 <Database className="h-6 w-6" />
               </div>
-              <div className="absolute -bottom-4 -left-4 bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400 p-3 rounded-full shadow-lg animate-bounce" style={{
+              <div className="absolute -bottom-4 -left-4 bg-green-100 text-green-600 p-3 rounded-full shadow-lg animate-bounce" style={{
               animationDelay: '1s'
             }}>
                 <Server className="h-6 w-6" />
               </div>
-              <div className="absolute top-10 -left-8 bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-400 p-3 rounded-full shadow-lg animate-bounce" style={{
+              <div className="absolute top-10 -left-8 bg-purple-100 text-purple-600 p-3 rounded-full shadow-lg animate-bounce" style={{
               animationDelay: '2s'
             }}>
                 <Code className="h-6 w-6" />
               </div>
-              <div className="absolute top-10 -right-8 bg-yellow-100 dark:bg-yellow-900/50 text-yellow-600 dark:text-yellow-400 p-3 rounded-full shadow-lg animate-bounce" style={{
+              <div className="absolute top-10 -right-8 bg-yellow-100 text-yellow-600 p-3 rounded-full shadow-lg animate-bounce" style={{
               animationDelay: '0.5s'
             }}>
                 <ChartBar className="h-6 w-6" />
@@ -269,19 +264,19 @@ const Index = () => {
 
             {/* Text content */}
             <div className="max-w-4xl mx-auto">
-              <p className="text-lg text-slate-700 dark:text-slate-300 mb-3">Hi! I am Tirupathi Rao</p>
-              <h1 className="text-5xl md:text-7xl font-bold mb-4 text-slate-800 dark:text-slate-200 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+              <p className="text-lg text-slate-700 mb-3">Hi! I am Tirupathi Rao</p>
+              <h1 className="text-5xl md:text-7xl font-bold mb-4 text-slate-800 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
                 Data Engineer
               </h1>
-              <div className="text-lg mb-6 text-slate-700 dark:text-slate-300 leading-relaxed space-y-3 max-w-3xl mx-auto">
+              <div className="text-lg mb-6 text-slate-700 leading-relaxed space-y-3 max-w-3xl mx-auto">
                 <p>
-                  Results-driven Data Engineer with <span className="text-blue-600 dark:text-blue-400 font-semibold">4+ years of experience</span> designing, building, and optimizing scalable data pipelines across <span className="text-purple-600 dark:text-purple-400 font-medium">healthcare and fintech domains</span>.
+                  Results-driven Data Engineer with <span className="text-blue-600 font-semibold">4+ years of experience</span> designing, building, and optimizing scalable data pipelines across <span className="text-purple-600 font-medium">healthcare and fintech domains</span>.
                 </p>
                 <p>
-                  Proven expertise in <span className="text-green-600 dark:text-green-400 font-medium">ETL/ELT development, data modeling, and orchestration</span> using tools like PySpark, Snowflake, dbt, Apache Airflow, and Azure Data Factory.
+                  Proven expertise in <span className="text-green-600 font-medium">ETL/ELT development, data modeling, and orchestration</span> using tools like PySpark, Snowflake, dbt, Apache Airflow, and Azure Data Factory.
                 </p>
                 <p>
-                  Skilled in <span className="text-blue-600 dark:text-blue-400 font-medium">cloud platforms including AWS and Azure</span>, with a strong foundation in SQL, Python, and CI/CD practices. Adept at working in Agile teams to deliver high-quality data solutions, enforce data governance, and enable analytics through curated data products.
+                  Skilled in <span className="text-blue-600 font-medium">cloud platforms including AWS and Azure</span>, with a strong foundation in SQL, Python, and CI/CD practices. Adept at working in Agile teams to deliver high-quality data solutions, enforce data governance, and enable analytics through curated data products.
                 </p>
               </div>
 
@@ -293,7 +288,7 @@ const Index = () => {
                     Contact Me
                   </a>
                 </Button>
-                <Button variant="outline" className="border-purple-300 dark:border-purple-600 text-purple-700 dark:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20 shadow-lg transform transition-all duration-200 hover:scale-105" asChild>
+                <Button variant="outline" className="border-purple-300 text-purple-700 hover:bg-purple-50 shadow-lg transform transition-all duration-200 hover:scale-105" asChild>
                   <a href="https://github.com/TirupathiRaoLukalapu/Tiru_resume_data_engineer" target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-4 w-4" />
                     View Resume
@@ -303,14 +298,14 @@ const Index = () => {
 
               {/* Social links with improved LinkedIn hover */}
               <div className="flex justify-center space-x-6 mb-8">
-                <a href="https://github.com/TirupathiRaoLukalapu" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-slate-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 border border-gray-200 dark:border-gray-600 hover:border-gray-300">
-                  <Github className="h-6 w-6 text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200" />
+                <a href="https://github.com/TirupathiRaoLukalapu" target="_blank" rel="noopener noreferrer" className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 border border-gray-200 hover:border-gray-300">
+                  <Github className="h-6 w-6 text-slate-600 hover:text-slate-800" />
                 </a>
                 
                 <HoverCard>
                   <HoverCardTrigger asChild>
-                    <a href="https://www.linkedin.com/in/tirupathi-rao-lukalapu-a719912aa/" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-slate-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 border border-blue-200 dark:border-blue-600 hover:border-blue-400">
-                      <Linkedin className="h-6 w-6 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300" />
+                    <a href="https://www.linkedin.com/in/tirupathi-rao-lukalapu-a719912aa/" target="_blank" rel="noopener noreferrer" className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 border border-blue-200 hover:border-blue-400">
+                      <Linkedin className="h-6 w-6 text-blue-600 hover:text-blue-700" />
                     </a>
                   </HoverCardTrigger>
                   <HoverCardContent className="w-80">
@@ -331,15 +326,15 @@ const Index = () => {
                   </HoverCardContent>
                 </HoverCard>
 
-                <a href="mailto:tirupathiraolukalapu08@gmail.com" className="p-3 bg-white dark:bg-slate-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 border border-red-200 dark:border-red-600 hover:border-red-400">
-                  <Mail className="h-6 w-6 text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300" />
+                <a href="mailto:tirupathiraolukalapu08@gmail.com" className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 border border-red-200 hover:border-red-400">
+                  <Mail className="h-6 w-6 text-red-600 hover:text-red-700" />
                 </a>
               </div>
             </div>
 
             {/* Terminal section */}
             <div className="max-w-2xl mx-auto">
-              <div className="bg-slate-900 dark:bg-slate-950 rounded-lg p-4 border border-slate-700 dark:border-slate-600 shadow-lg">
+              <div className="bg-slate-900 rounded-lg p-4 border border-slate-700 shadow-lg">
                 <div className="flex items-center mb-3">
                   <Terminal className="h-4 w-4 text-green-400 mr-2" />
                   <span className="text-green-400 font-medium">terminal</span>
@@ -356,45 +351,43 @@ const Index = () => {
       </section>
 
       {/* Tech Stack Grid */}
-      <section className="py-8 px-6 bg-slate-50 dark:bg-slate-800">
+      <section className="py-8 px-6 bg-slate-50">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-6 text-slate-800 dark:text-slate-200">Technology Stack</h2>
+          <h2 className="text-3xl font-bold text-center mb-6 text-slate-800">Technology Stack</h2>
           <TechStackGrid />
         </div>
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-12 px-6 bg-gradient-to-br from-slate-100 to-blue-100 dark:from-slate-900 dark:to-blue-900">
+      <section id="skills" className="py-8 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-slate-800 dark:text-slate-200">Technical Skills</h2>
-            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Comprehensive expertise across the modern data engineering stack, from data ingestion to visualization
-            </p>
-          </div>
+          <h2 className="text-3xl font-bold text-center mb-8 text-slate-800">Technical Skills</h2>
           
-          <div className="space-y-8">
-            {skillCategories.map((category, categoryIndex) => (
-              <div key={category.category} className="bg-white dark:bg-slate-800 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 overflow-hidden">
-                <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-4">
-                  <h3 className="text-xl font-bold text-white">{category.category}</h3>
+          {/* Skill Progress Bars */}
+          <div className="grid md:grid-cols-2 gap-6 mb-10">
+            {skills.map((skill, index) => <div key={skill.name} className="space-y-2">
+                <div className="flex justify-between">
+                  <span className="text-slate-700 font-medium">{skill.name}</span>
+                  <span className="text-blue-600 font-semibold">{skill.level}%</span>
                 </div>
-                <div className="p-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    {category.skills.map((skill, skillIndex) => (
-                      <div key={skill.name} className="space-y-3">
-                        <div className="flex justify-between items-center">
-                          <span className="font-semibold text-slate-800 dark:text-slate-200">{skill.name}</span>
-                          <span className="text-sm font-medium text-slate-600 dark:text-slate-400">{skill.level}%</span>
-                        </div>
-                        <Progress value={skill.level} className="h-2" />
-                        <p className="text-sm text-slate-600 dark:text-slate-400">{skill.description}</p>
-                      </div>
-                    ))}
+                <Progress value={skill.level} className="h-3 bg-slate-200" />
+              </div>)}
+          </div>
+
+          {/* Detailed Skills by Category */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {skillCategories.map((category, index) => <Card key={index} className="bg-gradient-to-br from-slate-50 to-gray-50 border-slate-200 hover:border-blue-300 transition-all duration-300 hover:shadow-lg">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-slate-800 text-lg bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">{category.category}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    {category.skills.map((skill, skillIndex) => <Badge key={skillIndex} variant="secondary" className="bg-blue-100 text-blue-700 mr-2 mb-2 hover:bg-blue-200 transition-colors">
+                        {skill}
+                      </Badge>)}
                   </div>
-                </div>
-              </div>
-            ))}
+                </CardContent>
+              </Card>)}
           </div>
         </div>
       </section>
@@ -573,11 +566,11 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-8 px-6 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-800 dark:to-blue-800">
+      <section id="projects" className="py-8 px-6 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-8 text-slate-800 dark:text-slate-200">Featured Projects</h2>
+          <h2 className="text-3xl font-bold text-center mb-8 text-slate-800">Featured Projects</h2>
           <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
-            {projects.map((project, index) => <Card key={index} className="bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300 group hover:shadow-xl transform hover:scale-105">
+            {projects.map((project, index) => <Card key={index} className="bg-white border-slate-200 hover:border-blue-400 transition-all duration-300 group hover:shadow-xl transform hover:scale-105">
                 <div className="relative overflow-hidden">
                   <img src={project.image} alt={project.title} className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
@@ -598,25 +591,25 @@ const Index = () => {
                   </div>
                 </div>
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-slate-800 dark:text-slate-200 group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">{project.title}</CardTitle>
-                  <CardDescription className="text-slate-600 dark:text-slate-400">{project.description}</CardDescription>
+                  <CardTitle className="text-slate-800 group-hover:text-blue-700 transition-colors">{project.title}</CardTitle>
+                  <CardDescription className="text-slate-600">{project.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
                     {/* Tech Stack Badges */}
                     <div className="flex flex-wrap gap-2">
-                      {project.tech.map(tech => <Badge key={tech} variant="outline" className="border-blue-300 dark:border-blue-600 text-blue-700 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors">
+                      {project.tech.map(tech => <Badge key={tech} variant="outline" className="border-blue-300 text-blue-700 hover:bg-blue-50 transition-colors">
                           {tech}
                         </Badge>)}
                     </div>
                     
                     {/* Tech Icons Highlights */}
-                    <div className="border-t border-slate-200 dark:border-slate-600 pt-3">
-                      <p className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Key Technologies:</p>
+                    <div className="border-t border-slate-200 pt-3">
+                      <p className="text-sm font-medium text-slate-700 mb-2">Key Technologies:</p>
                       <div className="flex flex-wrap gap-2">
-                        {project.techIcons.map((tech, techIndex) => <div key={techIndex} className="flex items-center space-x-2 bg-slate-50 dark:bg-slate-700 rounded-lg px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
+                        {project.techIcons.map((tech, techIndex) => <div key={techIndex} className="flex items-center space-x-2 bg-slate-50 rounded-lg px-3 py-2 hover:bg-slate-100 transition-colors">
                             <tech.icon className={`h-5 w-5 ${tech.color}`} />
-                            <span className="text-sm font-medium text-slate-700 dark:text-slate-300">{tech.name}</span>
+                            <span className="text-sm font-medium text-slate-700">{tech.name}</span>
                           </div>)}
                       </div>
                     </div>
@@ -628,24 +621,24 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-8 px-6 bg-white dark:bg-slate-900">
+      <section id="experience" className="py-8 px-6 bg-white">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-8 text-slate-800 dark:text-slate-200">Experience</h2>
+          <h2 className="text-3xl font-bold text-center mb-8 text-slate-800">Experience</h2>
           <div className="space-y-6">
-            {experience.map((exp, index) => <div key={index} className="relative pl-8 border-l-2 border-blue-300 dark:border-blue-600">
+            {experience.map((exp, index) => <div key={index} className="relative pl-8 border-l-2 border-blue-300">
                 <div className="absolute w-4 h-4 bg-blue-600 rounded-full -left-2 top-0 shadow-lg"></div>
-                <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg p-5 border border-blue-200 dark:border-blue-700 hover:border-blue-300 dark:hover:border-blue-600 transition-colors">
-                  <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 mb-2">{exp.role}</h3>
+                <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-5 border border-blue-200 hover:border-blue-300 transition-colors">
+                  <h3 className="text-xl font-bold text-slate-800 mb-2">{exp.role}</h3>
                   <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-3">
-                    <span className="text-blue-700 dark:text-blue-400 font-medium">{exp.company}</span>
-                    <div className="text-slate-600 dark:text-slate-400 text-sm">
+                    <span className="text-blue-700 font-medium">{exp.company}</span>
+                    <div className="text-slate-600 text-sm">
                       <div className="font-medium">{exp.period}</div>
                       <div>{exp.location}</div>
                     </div>
                   </div>
-                  <ul className="text-slate-700 dark:text-slate-300 space-y-1">
+                  <ul className="text-slate-700 space-y-1">
                     {exp.description.map((item, itemIndex) => <li key={itemIndex} className="flex items-start">
-                        <span className="text-blue-600 dark:text-blue-400 mr-2 mt-1">•</span>
+                        <span className="text-blue-600 mr-2 mt-1">•</span>
                         <span>{item}</span>
                       </li>)}
                   </ul>
@@ -656,17 +649,17 @@ const Index = () => {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-8 px-6 bg-gradient-to-br from-slate-50 to-purple-50 dark:from-slate-800 dark:to-purple-800">
+      <section id="education" className="py-8 px-6 bg-gradient-to-br from-slate-50 to-purple-50">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-8 text-slate-800 dark:text-slate-200">Education</h2>
+          <h2 className="text-3xl font-bold text-center mb-8 text-slate-800">Education</h2>
           <div className="space-y-6">
-            {education.map((edu, index) => <div key={index} className="relative pl-8 border-l-2 border-purple-300 dark:border-purple-600">
+            {education.map((edu, index) => <div key={index} className="relative pl-8 border-l-2 border-purple-300">
                 <div className="absolute w-4 h-4 bg-purple-600 rounded-full -left-2 top-0 shadow-lg"></div>
-                <div className="bg-white dark:bg-slate-800 rounded-lg p-5 border border-purple-200 dark:border-purple-700 hover:border-purple-300 dark:hover:border-purple-600 transition-colors shadow-md">
-                  <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 mb-2">{edu.degree}</h3>
+                <div className="bg-white rounded-lg p-5 border border-purple-200 hover:border-purple-300 transition-colors shadow-md">
+                  <h3 className="text-xl font-bold text-slate-800 mb-2">{edu.degree}</h3>
                   <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
-                    <span className="text-purple-700 dark:text-purple-400 font-medium">{edu.institution}</span>
-                    <div className="text-slate-600 dark:text-slate-400 text-sm">
+                    <span className="text-purple-700 font-medium">{edu.institution}</span>
+                    <div className="text-slate-600 text-sm">
                       <div className="font-medium">{edu.period}</div>
                       <div>{edu.location}</div>
                     </div>
@@ -705,8 +698,8 @@ const Index = () => {
       <ContactMessageBar />
 
       {/* Footer */}
-      <footer className="py-4 px-6 border-t border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
-        <div className="container mx-auto text-center text-slate-600 dark:text-slate-400">
+      <footer className="py-4 px-6 border-t border-slate-200 bg-slate-50">
+        <div className="container mx-auto text-center text-slate-600">
           <p>&copy; 2024 Tirupathi Rao. Built with passion for data engineering.</p>
         </div>
       </footer>
