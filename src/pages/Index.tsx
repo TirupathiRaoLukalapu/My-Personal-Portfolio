@@ -10,6 +10,7 @@ import TechStackGrid from "@/components/TechStackGrid";
 import DataMetrics from "@/components/DataMetrics";
 import BackToTop from "@/components/BackToTop";
 import ContactMessageBar from "@/components/ContactMessageBar";
+
 const Index = () => {
   const [typedText, setTypedText] = useState("");
   const [isNavSticky, setIsNavSticky] = useState(false);
@@ -74,79 +75,85 @@ const Index = () => {
     name: "Data Modeling",
     level: 90
   }];
-  const projects = [{
-    title: "Real-Time Data Streaming Pipeline",
-    description: "Developed a cloud-based real-time pipeline integrating Spotify APIs with AWS Lambda, Glue, and Snowflake. The project emphasized seamless data integration, schema design, and scalable transformation logic, aligning closely with enterprise-grade healthcare data ingestion patterns. Stored raw JSON data in Amazon S3 and transformed 100% of records using AWS Glue (PySpark), optimizing schema consistency and processing time by 30%.",
-    tech: ["Apache Spark", "Amazon S3", "Snowflake", "Snowpipe", "AWS Lambda", "AWS Glue"],
-    date: "August 2024",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800&h=400",
-    githubUrl: "https://github.com/TirupathiRaoLukalapu/Real-Time-Data-Streaming-Pipeline",
-    techIcons: [{
-      name: "Apache Spark",
-      icon: Database,
-      color: "text-orange-600"
+  const projects = [
+    {
+      title: "Real-Time Data Streaming Pipeline",
+      description: "Developed a cloud-based real-time pipeline integrating Spotify APIs with AWS Lambda, Glue, and Snowflake. The project emphasized seamless data integration, schema design, and scalable transformation logic, aligning closely with enterprise-grade healthcare data ingestion patterns. Stored raw JSON data in Amazon S3 and transformed 100% of records using AWS Glue (PySpark), optimizing schema consistency and processing time by 30%.",
+      tech: ["Apache Spark", "Amazon S3", "Snowflake", "Snowpipe", "AWS Lambda", "AWS Glue"],
+      date: "August 2024",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800&h=400",
+      githubUrl: "https://github.com/TirupathiRaoLukalapu/Real-Time-Data-Streaming-Pipeline",
+      techIcons: [{
+        name: "Apache Spark",
+        icon: Database,
+        color: "text-orange-600"
+      }, {
+        name: "AWS S3",
+        icon: Server,
+        color: "text-blue-600"
+      }, {
+        name: "Snowflake",
+        icon: Database,
+        color: "text-cyan-600"
+      }, {
+        name: "Lambda",
+        icon: Code,
+        color: "text-yellow-600"
+      }]
     }, {
-      name: "AWS S3",
-      icon: Server,
-      color: "text-blue-600"
+      title: "E-commerce Data Pipeline on Azure",
+      description: "Designed and implemented an end-to-end data pipeline to ingest approximately 100 GB of daily e-commerce sales data, perform critical data transformations and enrichments, and load the processed data into a data lake for efficient analytical consumption. Enabled efficient processing resulting in a 30% improvement in data processing time and providing timely insights for business intelligence reporting and analysis.",
+      tech: ["Azure Data Factory", "Azure Databricks", "Apache Spark", "Delta Lake", "Azure Data Lake Gen2"],
+      date: "February 2025",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=800&h=400",
+      techIcons: [{
+        name: "Azure",
+        icon: Network,
+        color: "text-blue-600"
+      }, {
+        name: "Databricks",
+        icon: ChartBar,
+        color: "text-red-600"
+      }, {
+        name: "Apache Spark",
+        icon: Database,
+        color: "text-orange-600"
+      }, {
+        name: "Delta Lake",
+        icon: Server,
+        color: "text-green-600"
+      }]
+    }
+  ];
+  const experience = [
+    {
+      role: "Data Engineer",
+      company: "Innovaccer",
+      period: "Dec 2023 – Apr 2025",
+      location: "California, United States",
+      description: ["Built HIPAA-compliant data pipelines using AWS Glue, Python, and Spark, processing 10TB+ of EHR data monthly, improving data availability by 35%", "Automated data validation with Python reducing errors by 25% and accelerating data source onboarding by 40%", "Migrated on-premise data to AWS S3/Redshift, cutting storage costs by 25% while boosting query speed by 40%", "Implemented Medallion Architecture in Delta Lake, enabling self-service analytics for 50+ researchers and reducing ad-hoc requests by 20%", "Pioneered FHIR-compliant data integrations for EHR systems (Epic, Cerner), standardizing clinical data from 50+ hospitals into Innovaccer's unified data model, accelerating analytics readiness by 35%", "Optimized cloud infrastructure costs by 20% through auto-scaling AWS Glue jobs and partitioning Delta Lake tables, aligning with Innovaccer's focus on 'scalable, sustainable solutions'", "Co-led agile workshops with clinical stakeholders to define data requirements for population health analytics, directly supporting Innovaccer's mission to 'activate data flow for better health outcomes'"]
     }, {
-      name: "Snowflake",
-      icon: Database,
-      color: "text-cyan-600"
+      role: "Data Engineer",
+      company: "Capgemini",
+      period: "Oct 2021 – Jun 2023",
+      location: "Hyderabad, India",
+      description: ["Engineered real-time AML monitoring pipelines using Spark Streaming and Kafka, reducing fraud detection latency to less than 2 seconds and aligning with Capgemini's emphasis on 'risk exposure mitigation'", "Optimized Snowflake data warehouse through partitioning/materialized views, slashing report generation from 2 hours to 12 minutes", "Modernized legacy data warehouses to Snowflake using Azure Data Factory, achieving 99.9% pipeline reliability and supporting Capgemini's 'cloud-first' client transformation initiatives", "Built CI/CD pipelines with Azure DevOps, reducing deployment failures by 35% and accelerating releases to hourly cycles", "Implemented dbt models to standardize transformations, boosting team productivity by 15% while ensuring GDPR compliance", "Reduced Snowflake costs by $18K/year via auto-scaling and query tuning"]
     }, {
-      name: "Lambda",
-      icon: Code,
-      color: "text-yellow-600"
-    }]
-  }, {
-    title: "E-commerce Data Pipeline on Azure",
-    description: "Designed and implemented an end-to-end data pipeline to ingest approximately 100 GB of daily e-commerce sales data, perform critical data transformations and enrichments, and load the processed data into a data lake for efficient analytical consumption. Enabled efficient processing resulting in a 30% improvement in data processing time and providing timely insights for business intelligence reporting and analysis.",
-    tech: ["Azure Data Factory", "Azure Databricks", "Apache Spark", "Delta Lake", "Azure Data Lake Gen2"],
-    date: "February 2025",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=800&h=400",
-    techIcons: [{
-      name: "Azure",
-      icon: Network,
-      color: "text-blue-600"
-    }, {
-      name: "Databricks",
-      icon: ChartBar,
-      color: "text-red-600"
-    }, {
-      name: "Apache Spark",
-      icon: Database,
-      color: "text-orange-600"
-    }, {
-      name: "Delta Lake",
-      icon: Server,
-      color: "text-green-600"
-    }]
-  }];
-  const experience = [{
-    role: "Data Engineer",
-    company: "Innovaccer",
-    period: "Dec 2023 – Apr 2025",
-    location: "California, United States",
-    description: ["Built HIPAA-compliant data pipelines using AWS Glue, Python, and Spark, processing 10TB+ of EHR data monthly, improving data availability by 35%", "Automated data validation with Python reducing errors by 25% and accelerating data source onboarding by 40%", "Migrated on-premise data to AWS S3/Redshift, cutting storage costs by 25% while boosting query speed by 40%", "Implemented Medallion Architecture in Delta Lake, enabling self-service analytics for 50+ researchers and reducing ad-hoc requests by 20%", "Pioneered FHIR-compliant data integrations for EHR systems (Epic, Cerner), standardizing clinical data from 50+ hospitals into Innovaccer's unified data model, accelerating analytics readiness by 35%", "Optimized cloud infrastructure costs by 20% through auto-scaling AWS Glue jobs and partitioning Delta Lake tables, aligning with Innovaccer's focus on 'scalable, sustainable solutions'", "Co-led agile workshops with clinical stakeholders to define data requirements for population health analytics, directly supporting Innovaccer's mission to 'activate data flow for better health outcomes'"]
-  }, {
-    role: "Data Engineer",
-    company: "Capgemini",
-    period: "Oct 2021 – Jun 2023",
-    location: "Hyderabad, India",
-    description: ["Engineered real-time AML monitoring pipelines using Spark Streaming and Kafka, reducing fraud detection latency to less than 2 seconds and aligning with Capgemini's emphasis on 'risk exposure mitigation'", "Optimized Snowflake data warehouse through partitioning/materialized views, slashing report generation from 2 hours to 12 minutes", "Modernized legacy data warehouses to Snowflake using Azure Data Factory, achieving 99.9% pipeline reliability and supporting Capgemini's 'cloud-first' client transformation initiatives", "Built CI/CD pipelines with Azure DevOps, reducing deployment failures by 35% and accelerating releases to hourly cycles", "Implemented dbt models to standardize transformations, boosting team productivity by 15% while ensuring GDPR compliance", "Reduced Snowflake costs by $18K/year via auto-scaling and query tuning"]
-  }, {
-    role: "Data Analyst",
-    company: "Teamtech Solutions",
-    period: "Jun 2020 – Aug 2021",
-    location: "Hyderabad, India",
-    description: ["Built startup's first analytics infrastructure from zero using Python/SQL, unifying 7+ data sources (Salesforce, Stripe, Mixpanel) into a central Redshift warehouse, enabling data-driven decisions across product/sales teams", "Created 10+ executive dashboards in Power BI tracking MRR, CAC, and feature adoption, directly influencing a pivot that reduced churn by 15% and retained $120K in annual revenue", "Automated manual revenue reporting with Python scripts, reducing CFO's financial close time from 3 days → 4 hours and freeing capacity for Series A fundraising", "Identified upsell opportunities through cohort analysis of 2,500+ free-tier users, driving targeted campaigns that converted 18% to paid plans ($45K ARR increase)", "Trained non-technical teams on self-service analytics (Power BI/Excel), increasing data adoption by 50% and reducing ad-hoc requests by 30%"]
-  }];
-  const education = [{
-    degree: "Master's in Computer/Information Technology Administration and Management",
-    institution: "Lindsey Wilson College",
-    period: "Aug 2023 – May 2025",
-    location: "Columbia, Kentucky"
-  }];
+      role: "Data Analyst",
+      company: "Teamtech Solutions",
+      period: "Jun 2020 – Aug 2021",
+      location: "Hyderabad, India",
+      description: ["Built startup's first analytics infrastructure from zero using Python/SQL, unifying 7+ data sources (Salesforce, Stripe, Mixpanel) into a central Redshift warehouse, enabling data-driven decisions across product/sales teams", "Created 10+ executive dashboards in Power BI tracking MRR, CAC, and feature adoption, directly influencing a pivot that reduced churn by 15% and retained $120K in annual revenue", "Automated manual revenue reporting with Python scripts, reducing CFO's financial close time from 3 days → 4 hours and freeing capacity for Series A fundraising", "Identified upsell opportunities through cohort analysis of 2,500+ free-tier users, driving targeted campaigns that converted 18% to paid plans ($45K ARR increase)", "Trained non-technical teams on self-service analytics (Power BI/Excel), increasing data adoption by 50% and reducing ad-hoc requests by 30%"]
+    }
+  ];
+  const education = [
+    {
+      degree: "Master's in Computer/Information Technology Administration and Management",
+      institution: "Lindsey Wilson College",
+      period: "Aug 2023 – May 2025",
+      location: "Columbia, Kentucky"
+    }
+  ];
   const skillCategories = [{
     category: "Programming Languages",
     skills: ["Python (NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, TensorFlow)", "SQL", "PySpark", "Java", "R", "Bash"]
@@ -169,23 +176,25 @@ const Index = () => {
     category: "Other Skills",
     skills: ["Data Cleaning", "Data Modeling", "Patient Data Analytics", "KPI Reporting", "Agile Environment", "CI/CD"]
   }];
-  const certifications = [{
-    title: "Python Programming Certification",
-    provider: "Udemy",
-    date: "2025",
-    description: "Comprehensive Python programming course covering advanced concepts, data structures, and real-world applications",
-    certificateUrl: "https://www.udemy.com/certificate/UC-ce768d0b-5492-4a11-9c0d-0bc61c572dcf/",
-    skills: ["Python", "Data Structures", "Object-Oriented Programming", "Libraries & Frameworks"],
-    color: "from-blue-500 to-cyan-500"
-  }, {
-    title: "SQL Database Management Certification",
-    provider: "Udemy",
-    date: "2025",
-    description: "Advanced SQL certification covering database design, query optimization, and data analysis techniques",
-    certificateUrl: "https://www.udemy.com/certificate/UC-ce768d0b-5492-4a11-9c0d-0bc61c572dcf/",
-    skills: ["SQL Queries", "Database Design", "Data Analysis", "Query Optimization"],
-    color: "from-purple-500 to-pink-500"
-  }];
+  const certifications = [
+    {
+      title: "Python Programming Certification",
+      provider: "Udemy",
+      date: "2025",
+      description: "Comprehensive Python programming course covering advanced concepts, data structures, and real-world applications",
+      certificateUrl: "https://www.udemy.com/certificate/UC-ce768d0b-5492-4a11-9c0d-0bc61c572dcf/",
+      skills: ["Python", "Data Structures", "Object-Oriented Programming", "Libraries & Frameworks"],
+      color: "from-blue-500 to-cyan-500"
+    }, {
+      title: "SQL Database Management Certification",
+      provider: "Udemy",
+      date: "2025",
+      description: "Advanced SQL certification covering database design, query optimization, and data analysis techniques",
+      certificateUrl: "https://www.udemy.com/certificate/UC-ce768d0b-5492-4a11-9c0d-0bc61c572dcf/",
+      skills: ["SQL Queries", "Database Design", "Data Analysis", "Query Optimization"],
+      color: "from-purple-500 to-pink-500"
+    }
+  ];
   return <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 text-gray-900">
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 border-b border-gray-200 transition-all duration-300 ${isNavSticky ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-white/95 backdrop-blur-sm shadow-sm'}`}>
@@ -193,7 +202,6 @@ const Index = () => {
           <div className="text-xl font-bold text-slate-800">Tirupathi Rao</div>
           <div className="hidden md:flex space-x-6">
             <a href="#about" className="text-slate-600 hover:text-blue-600 transition-colors font-medium">About</a>
-            <a href="#skills" className="text-slate-600 hover:text-green-600 transition-colors font-medium">Skills</a>
             <a href="#certifications" className="text-slate-600 hover:text-amber-600 transition-colors font-medium">Certifications</a>
             <a href="#projects" className="text-slate-600 hover:text-purple-600 transition-colors font-medium">Projects</a>
             <a href="#experience" className="text-slate-600 hover:text-orange-600 transition-colors font-medium">Experience</a>
@@ -204,7 +212,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section with 3D Photo */}
-      <section className="pt-16 pb-12 px-6 relative overflow-hidden">
+      <section className="pt-16 pb-8 px-6 relative overflow-hidden">
         {/* Background geometric elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
@@ -281,7 +289,7 @@ const Index = () => {
                   </a>
                 </Button>
                 <Button variant="outline" className="border-purple-300 text-purple-700 hover:bg-purple-50 shadow-lg transform transition-all duration-200 hover:scale-105" asChild>
-                  <a href="https://github.com/TirupathiRaoLukalapu/Tiru_resume_data_engineer/blob/main/TirupathiRaoLukalapu_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/TirupathiRaoLukalapu/Tiru_resume_data_engineer" target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-4 w-4" />
                     View Resume
                   </a>
@@ -343,15 +351,15 @@ const Index = () => {
       </section>
 
       {/* Tech Stack Grid */}
-      <section className="py-12 px-6 bg-slate-50">
+      <section className="py-8 px-6 bg-slate-50">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-8 text-slate-800">Technology Stack</h2>
+          <h2 className="text-3xl font-bold text-center mb-6 text-slate-800">Technology Stack</h2>
           <TechStackGrid />
         </div>
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-12 px-6 bg-white">
+      <section id="skills" className="py-8 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-8 text-slate-800">Technical Skills</h2>
           
@@ -385,7 +393,7 @@ const Index = () => {
       </section>
 
       {/* Certifications Section */}
-      <section id="certifications" className="py-16 px-6 relative overflow-hidden">
+      <section id="certifications" className="py-12 px-6 relative overflow-hidden">
         {/* Elegant background with 3D depth */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900"></div>
@@ -558,7 +566,7 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-12 px-6 bg-gradient-to-br from-slate-50 to-blue-50">
+      <section id="projects" className="py-8 px-6 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-8 text-slate-800">Featured Projects</h2>
           <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
@@ -613,7 +621,7 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-12 px-6 bg-white">
+      <section id="experience" className="py-8 px-6 bg-white">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold text-center mb-8 text-slate-800">Experience</h2>
           <div className="space-y-6">
@@ -641,7 +649,7 @@ const Index = () => {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-12 px-6 bg-gradient-to-br from-slate-50 to-purple-50">
+      <section id="education" className="py-8 px-6 bg-gradient-to-br from-slate-50 to-purple-50">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold text-center mb-8 text-slate-800">Education</h2>
           <div className="space-y-6">
@@ -663,7 +671,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-12 px-6 bg-gradient-to-br from-blue-600 to-purple-700 text-white">
+      <section id="contact" className="py-8 px-6 bg-gradient-to-br from-blue-600 to-purple-700 text-white">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold mb-6">Let's Connect</h2>
           <p className="text-xl mb-6 text-blue-100">
@@ -690,7 +698,7 @@ const Index = () => {
       <ContactMessageBar />
 
       {/* Footer */}
-      <footer className="py-6 px-6 border-t border-slate-200 bg-slate-50">
+      <footer className="py-4 px-6 border-t border-slate-200 bg-slate-50">
         <div className="container mx-auto text-center text-slate-600">
           <p>&copy; 2024 Tirupathi Rao. Built with passion for data engineering.</p>
         </div>
@@ -700,4 +708,5 @@ const Index = () => {
       <BackToTop />
     </div>;
 };
+
 export default Index;
