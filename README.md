@@ -25,14 +25,6 @@ This is my professional data engineering portfolio, built using the **Lovable AI
 - **Template**: Lovable AI Agent (customized)
 - **Deployment**: GitHub Pages
 
-- My-Personal-Portfolio/
-├── index.html
-├── /assets
-│ ├── /images
-│ └── /styles
-├── /scripts
-├── resume.pdf
-└── README.md
 
 I built this portfolio to share my journey, projects, and connect with like-minded professionals.
 
