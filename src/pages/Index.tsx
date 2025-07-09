@@ -106,6 +106,7 @@ const Index = () => {
       tech: ["Azure Data Factory", "Azure Databricks", "Apache Spark", "Delta Lake", "Azure Data Lake Gen2"],
       date: "February 2025",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=800&h=400",
+      githubUrl: "https://github.com/TirupathiRaoLukalapu/E-commerce-Data-Pipeline-on-Azure/tree/main",
       techIcons: [{
         name: "Azure",
         icon: Network,
