@@ -10,7 +10,6 @@ import DataMetrics from "@/components/DataMetrics";
 import BackToTop from "@/components/BackToTop";
 import ContactMessageBar from "@/components/ContactMessageBar";
 import { ThemeToggle } from "@/components/ThemeToggle";
-
 const Index = () => {
   const [typedText, setTypedText] = useState("");
   const [isNavSticky, setIsNavSticky] = useState(false);
@@ -75,176 +74,244 @@ const Index = () => {
     name: "Data Modeling",
     level: 90
   }];
-  const projects = [
-    {
-      title: "Real-Time Data Streaming Pipeline",
-      description: "Developed a cloud-based real-time pipeline integrating Spotify APIs with AWS Lambda, Glue, and Snowflake. The project emphasized seamless data integration, schema design, and scalable transformation logic, aligning closely with enterprise-grade healthcare data ingestion patterns. Stored raw JSON data in Amazon S3 and transformed 100% of records using AWS Glue (PySpark), optimizing schema consistency and processing time by 30%.",
-      tech: ["Apache Spark", "Amazon S3", "Snowflake", "Snowpipe", "AWS Lambda", "AWS Glue"],
-      date: "August 2024",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800&h=400",
-      githubUrl: "https://github.com/TirupathiRaoLukalapu/Real-Time-Data-Streaming-Pipeline",
-      techIcons: [{
-        name: "Apache Spark",
-        icon: Database,
-        color: "text-orange-600"
-      }, {
-        name: "AWS S3",
-        icon: Server,
-        color: "text-blue-600"
-      }, {
-        name: "Snowflake",
-        icon: Database,
-        color: "text-cyan-600"
-      }, {
-        name: "Lambda",
-        icon: Code,
-        color: "text-yellow-600"
-      }]
+  const projects = [{
+    title: "Real-Time Data Streaming Pipeline",
+    description: "Developed a cloud-based real-time pipeline integrating Spotify APIs with AWS Lambda, Glue, and Snowflake. The project emphasized seamless data integration, schema design, and scalable transformation logic, aligning closely with enterprise-grade healthcare data ingestion patterns. Stored raw JSON data in Amazon S3 and transformed 100% of records using AWS Glue (PySpark), optimizing schema consistency and processing time by 30%.",
+    tech: ["Apache Spark", "Amazon S3", "Snowflake", "Snowpipe", "AWS Lambda", "AWS Glue"],
+    date: "August 2024",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800&h=400",
+    githubUrl: "https://github.com/TirupathiRaoLukalapu/Real-Time-Data-Streaming-Pipeline",
+    techIcons: [{
+      name: "Apache Spark",
+      icon: Database,
+      color: "text-orange-600"
     }, {
-      title: "E-commerce Data Pipeline on Azure",
-      description: "Designed and implemented an end-to-end data pipeline to ingest approximately 100 GB of daily e-commerce sales data, perform critical data transformations and enrichments, and load the processed data into a data lake for efficient analytical consumption. Enabled efficient processing resulting in a 30% improvement in data processing time and providing timely insights for business intelligence reporting and analysis.",
-      tech: ["Azure Data Factory", "Azure Databricks", "Apache Spark", "Delta Lake", "Azure Data Lake Gen2"],
-      date: "February 2025",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=800&h=400",
-      githubUrl: "https://github.com/TirupathiRaoLukalapu/E-commerce-Data-Pipeline-on-Azure/tree/main",
-      techIcons: [{
-        name: "Azure",
-        icon: Network,
-        color: "text-blue-600"
-      }, {
-        name: "Databricks",
-        icon: ChartBar,
-        color: "text-red-600"
-      }, {
-        name: "Apache Spark",
-        icon: Database,
-        color: "text-orange-600"
-      }, {
-        name: "Delta Lake",
-        icon: Server,
-        color: "text-green-600"
-      }]
-    }
-  ];
-  const experience = [
-    {
-      role: "Data Engineer",
-      company: "Chicago Education Advocacy Cooperative",
-      period: "July 2025 – Present",
-      location: "Chicago, United States",
-      description: ["Design HIPAA-compliant data pipelines on AWS (S3/Glue) for 50+ schools, ensuring zero PII breaches via encryption, RBAC, and audit trails", "Develop scalable ETL workflows ingesting student records, curriculum data, and policy docs (Python/PySpark), optimizing costs 30% through partitioning/lifecycle policies", "Build predictive model pipelines (Scikit-learn) identifying learning gaps, driving interventions that reduce dropout risk by 18%", "Engineer real-time dashboards (Power BI/Shiny) for educators, slashing report generation from 8hrs to 15mins", "Automate data validation (Great Expectations) ensuring 99.8% accuracy in critical advocacy reports", "Migrate legacy district reports to cloud-based dashboards (Power BI), serving 200+ educators with real-time literacy/math metrics", "Develop data governance frameworks unifying records from 50+ schools into standardized schemas, reducing data reconciliation time by 65%", "Prevent $15K+ potential breach costs through PII safeguards and cybersecurity training for staff"]
-    },
-    {
-      role: "Data Engineer",
-      company: "Innovaccer",
-      period: "Dec 2023 – Apr 2025",
-      location: "California, United States",
-      description: ["Built HIPAA-compliant data pipelines using AWS Glue, Python, and Spark, processing 10TB+ of EHR data monthly, improving data availability by 35%", "Automated data validation with Python reducing errors by 25% and accelerating data source onboarding by 40%", "Migrated on-premise data to AWS S3/Redshift, cutting storage costs by 25% while boosting query speed by 40%", "Implemented Medallion Architecture in Delta Lake, enabling self-service analytics for 50+ researchers and reducing ad-hoc requests by 20%", "Pioneered FHIR-compliant data integrations for EHR systems (Epic, Cerner), standardizing clinical data from 50+ hospitals into Innovaccer's unified data model, accelerating analytics readiness by 35%", "Optimized cloud infrastructure costs by 20% through auto-scaling AWS Glue jobs and partitioning Delta Lake tables, aligning with Innovaccer's focus on 'scalable, sustainable solutions'", "Co-led agile workshops with clinical stakeholders to define data requirements for population health analytics, directly supporting Innovaccer's mission to 'activate data flow for better health outcomes'"]
+      name: "AWS S3",
+      icon: Server,
+      color: "text-blue-600"
     }, {
-      role: "Data Engineer",
-      company: "Capgemini",
-      period: "Oct 2021 – Jun 2023",
-      location: "Hyderabad, India",
-      description: ["Engineered real-time AML monitoring pipelines using Spark Streaming and Kafka, reducing fraud detection latency to less than 2 seconds and aligning with Capgemini's emphasis on 'risk exposure mitigation'", "Optimized Snowflake data warehouse through partitioning/materialized views, slashing report generation from 2 hours to 12 minutes", "Modernized legacy data warehouses to Snowflake using Azure Data Factory, achieving 99.9% pipeline reliability and supporting Capgemini's 'cloud-first' client transformation initiatives", "Built CI/CD pipelines with Azure DevOps, reducing deployment failures by 35% and accelerating releases to hourly cycles", "Implemented dbt models to standardize transformations, boosting team productivity by 15% while ensuring GDPR compliance", "Reduced Snowflake costs by $18K/year via auto-scaling and query tuning"]
+      name: "Snowflake",
+      icon: Database,
+      color: "text-cyan-600"
     }, {
-      role: "Data Analyst",
-      company: "Teamtech Solutions",
-      period: "Jun 2020 – Aug 2021",
-      location: "Hyderabad, India",
-      description: ["Built startup's first analytics infrastructure from zero using Python/SQL, unifying 7+ data sources (Salesforce, Stripe, Mixpanel) into a central Redshift warehouse, enabling data-driven decisions across product/sales teams", "Created 10+ executive dashboards in Power BI tracking MRR, CAC, and feature adoption, directly influencing a pivot that reduced churn by 15% and retained $120K in annual revenue", "Automated manual revenue reporting with Python scripts, reducing CFO's financial close time from 3 days → 4 hours and freeing capacity for Series A fundraising", "Identified upsell opportunities through cohort analysis of 2,500+ free-tier users, driving targeted campaigns that converted 18% to paid plans ($45K ARR increase)", "Trained non-technical teams on self-service analytics (Power BI/Excel), increasing data adoption by 50% and reducing ad-hoc requests by 30%"]
-    }
-  ];
-  const education = [
-    {
-      degree: "Master's in Computer/Information Technology Administration and Management",
-      institution: "Lindsey Wilson College",
-      period: "Aug 2023 – May 2025",
-      location: "Columbia, Kentucky"
-    }
-  ];
+      name: "Lambda",
+      icon: Code,
+      color: "text-yellow-600"
+    }]
+  }, {
+    title: "E-commerce Data Pipeline on Azure",
+    description: "Designed and implemented an end-to-end data pipeline to ingest approximately 100 GB of daily e-commerce sales data, perform critical data transformations and enrichments, and load the processed data into a data lake for efficient analytical consumption. Enabled efficient processing resulting in a 30% improvement in data processing time and providing timely insights for business intelligence reporting and analysis.",
+    tech: ["Azure Data Factory", "Azure Databricks", "Apache Spark", "Delta Lake", "Azure Data Lake Gen2"],
+    date: "February 2025",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=800&h=400",
+    githubUrl: "https://github.com/TirupathiRaoLukalapu/E-commerce-Data-Pipeline-on-Azure/tree/main",
+    techIcons: [{
+      name: "Azure",
+      icon: Network,
+      color: "text-blue-600"
+    }, {
+      name: "Databricks",
+      icon: ChartBar,
+      color: "text-red-600"
+    }, {
+      name: "Apache Spark",
+      icon: Database,
+      color: "text-orange-600"
+    }, {
+      name: "Delta Lake",
+      icon: Server,
+      color: "text-green-600"
+    }]
+  }];
+  const experience = [{
+    role: "Data Engineer",
+    company: "Chicago Education Advocacy Cooperative",
+    period: "July 2025 – Present",
+    location: "Chicago, United States",
+    description: ["Design HIPAA-compliant data pipelines on AWS (S3/Glue) for 50+ schools, ensuring zero PII breaches via encryption, RBAC, and audit trails", "Develop scalable ETL workflows ingesting student records, curriculum data, and policy docs (Python/PySpark), optimizing costs 30% through partitioning/lifecycle policies", "Build predictive model pipelines (Scikit-learn) identifying learning gaps, driving interventions that reduce dropout risk by 18%", "Engineer real-time dashboards (Power BI/Shiny) for educators, slashing report generation from 8hrs to 15mins", "Automate data validation (Great Expectations) ensuring 99.8% accuracy in critical advocacy reports", "Migrate legacy district reports to cloud-based dashboards (Power BI), serving 200+ educators with real-time literacy/math metrics", "Develop data governance frameworks unifying records from 50+ schools into standardized schemas, reducing data reconciliation time by 65%", "Prevent $15K+ potential breach costs through PII safeguards and cybersecurity training for staff"]
+  }, {
+    role: "Data Engineer",
+    company: "Innovaccer",
+    period: "Dec 2023 – Apr 2025",
+    location: "California, United States",
+    description: ["Built HIPAA-compliant data pipelines using AWS Glue, Python, and Spark, processing 10TB+ of EHR data monthly, improving data availability by 35%", "Automated data validation with Python reducing errors by 25% and accelerating data source onboarding by 40%", "Migrated on-premise data to AWS S3/Redshift, cutting storage costs by 25% while boosting query speed by 40%", "Implemented Medallion Architecture in Delta Lake, enabling self-service analytics for 50+ researchers and reducing ad-hoc requests by 20%", "Pioneered FHIR-compliant data integrations for EHR systems (Epic, Cerner), standardizing clinical data from 50+ hospitals into Innovaccer's unified data model, accelerating analytics readiness by 35%", "Optimized cloud infrastructure costs by 20% through auto-scaling AWS Glue jobs and partitioning Delta Lake tables, aligning with Innovaccer's focus on 'scalable, sustainable solutions'", "Co-led agile workshops with clinical stakeholders to define data requirements for population health analytics, directly supporting Innovaccer's mission to 'activate data flow for better health outcomes'"]
+  }, {
+    role: "Data Engineer",
+    company: "Capgemini",
+    period: "Oct 2021 – Jun 2023",
+    location: "Hyderabad, India",
+    description: ["Engineered real-time AML monitoring pipelines using Spark Streaming and Kafka, reducing fraud detection latency to less than 2 seconds and aligning with Capgemini's emphasis on 'risk exposure mitigation'", "Optimized Snowflake data warehouse through partitioning/materialized views, slashing report generation from 2 hours to 12 minutes", "Modernized legacy data warehouses to Snowflake using Azure Data Factory, achieving 99.9% pipeline reliability and supporting Capgemini's 'cloud-first' client transformation initiatives", "Built CI/CD pipelines with Azure DevOps, reducing deployment failures by 35% and accelerating releases to hourly cycles", "Implemented dbt models to standardize transformations, boosting team productivity by 15% while ensuring GDPR compliance", "Reduced Snowflake costs by $18K/year via auto-scaling and query tuning"]
+  }, {
+    role: "Data Analyst",
+    company: "Teamtech Solutions",
+    period: "Jun 2020 – Aug 2021",
+    location: "Hyderabad, India",
+    description: ["Built startup's first analytics infrastructure from zero using Python/SQL, unifying 7+ data sources (Salesforce, Stripe, Mixpanel) into a central Redshift warehouse, enabling data-driven decisions across product/sales teams", "Created 10+ executive dashboards in Power BI tracking MRR, CAC, and feature adoption, directly influencing a pivot that reduced churn by 15% and retained $120K in annual revenue", "Automated manual revenue reporting with Python scripts, reducing CFO's financial close time from 3 days → 4 hours and freeing capacity for Series A fundraising", "Identified upsell opportunities through cohort analysis of 2,500+ free-tier users, driving targeted campaigns that converted 18% to paid plans ($45K ARR increase)", "Trained non-technical teams on self-service analytics (Power BI/Excel), increasing data adoption by 50% and reducing ad-hoc requests by 30%"]
+  }];
+  const education = [{
+    degree: "Master's in Computer/Information Technology Administration and Management",
+    institution: "Lindsey Wilson College",
+    period: "Aug 2023 – May 2025",
+    location: "Columbia, Kentucky"
+  }];
   const skillCategories = [{
     category: "Programming Skills",
     skills: ["Python (NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, TensorFlow)", "SQL", "PySpark", "R", "Bash"],
-    icons: [
-      { name: "Python", icon: Code, color: "text-yellow-600" },
-      { name: "SQL", icon: Database, color: "text-blue-600" },
-      { name: "PySpark", icon: ChartBar, color: "text-orange-600" },
-      { name: "R", icon: ChartBar, color: "text-blue-500" },
-      { name: "Bash", icon: Terminal, color: "text-green-600" }
-    ]
+    icons: [{
+      name: "Python",
+      icon: Code,
+      color: "text-yellow-600"
+    }, {
+      name: "SQL",
+      icon: Database,
+      color: "text-blue-600"
+    }, {
+      name: "PySpark",
+      icon: ChartBar,
+      color: "text-orange-600"
+    }, {
+      name: "R",
+      icon: ChartBar,
+      color: "text-blue-500"
+    }, {
+      name: "Bash",
+      icon: Terminal,
+      color: "text-green-600"
+    }]
   }, {
     category: "Big Data/Frameworks",
     skills: ["Apache Spark", "Kafka", "Hive", "Hadoop", "HDFS"],
-    icons: [
-      { name: "Apache Spark", icon: Database, color: "text-orange-600" },
-      { name: "Kafka", icon: Network, color: "text-purple-600" },
-      { name: "Hive", icon: Database, color: "text-yellow-600" },
-      { name: "Hadoop", icon: Server, color: "text-green-600" }
-    ]
+    icons: [{
+      name: "Apache Spark",
+      icon: Database,
+      color: "text-orange-600"
+    }, {
+      name: "Kafka",
+      icon: Network,
+      color: "text-purple-600"
+    }, {
+      name: "Hive",
+      icon: Database,
+      color: "text-yellow-600"
+    }, {
+      name: "Hadoop",
+      icon: Server,
+      color: "text-green-600"
+    }]
   }, {
     category: "Databases/Storage",
     skills: ["MongoDB", "AWS S3", "PostgreSQL", "Delta Lake", "Elasticsearch", "SQL Server"],
-    icons: [
-      { name: "MongoDB", icon: Database, color: "text-green-600" },
-      { name: "AWS S3", icon: Server, color: "text-orange-600" },
-      { name: "PostgreSQL", icon: Database, color: "text-blue-600" },
-      { name: "Delta Lake", icon: Database, color: "text-cyan-600" },
-      { name: "Elasticsearch", icon: Database, color: "text-yellow-600" }
-    ]
+    icons: [{
+      name: "MongoDB",
+      icon: Database,
+      color: "text-green-600"
+    }, {
+      name: "AWS S3",
+      icon: Server,
+      color: "text-orange-600"
+    }, {
+      name: "PostgreSQL",
+      icon: Database,
+      color: "text-blue-600"
+    }, {
+      name: "Delta Lake",
+      icon: Database,
+      color: "text-cyan-600"
+    }, {
+      name: "Elasticsearch",
+      icon: Database,
+      color: "text-yellow-600"
+    }]
   }, {
     category: "Orchestration Tools",
     skills: ["Apache Airflow", "Azure Data Factory"],
-    icons: [
-      { name: "Apache Airflow", icon: Terminal, color: "text-blue-600" },
-      { name: "Azure Data Factory", icon: Network, color: "text-blue-600" }
-    ]
+    icons: [{
+      name: "Apache Airflow",
+      icon: Terminal,
+      color: "text-blue-600"
+    }, {
+      name: "Azure Data Factory",
+      icon: Network,
+      color: "text-blue-600"
+    }]
   }, {
     category: "Cloud Platforms",
     skills: ["Azure (ADF, Databricks, ADLS Gen 2)", "AWS (S3, EC2, EMR)", "Snowflake", "CloudWatch"],
-    icons: [
-      { name: "Azure", icon: Network, color: "text-blue-600" },
-      { name: "AWS", icon: Server, color: "text-orange-600" },
-      { name: "Snowflake", icon: Database, color: "text-cyan-600" },
-      { name: "CloudWatch", icon: ChartBar, color: "text-orange-600" }
-    ]
+    icons: [{
+      name: "Azure",
+      icon: Network,
+      color: "text-blue-600"
+    }, {
+      name: "AWS",
+      icon: Server,
+      color: "text-orange-600"
+    }, {
+      name: "Snowflake",
+      icon: Database,
+      color: "text-cyan-600"
+    }, {
+      name: "CloudWatch",
+      icon: ChartBar,
+      color: "text-orange-600"
+    }]
   }, {
     category: "Monitoring & Visualization Tools",
     skills: ["Power BI (DAX, Data Modeling, UX Best Practices)", "Tableau", "Grafana", "Kibana"],
-    icons: [
-      { name: "Power BI", icon: ChartBar, color: "text-blue-600" },
-      { name: "Tableau", icon: ChartBar, color: "text-orange-600" },
-      { name: "Grafana", icon: ChartBar, color: "text-green-600" },
-      { name: "Kibana", icon: ChartBar, color: "text-purple-600" }
-    ]
+    icons: [{
+      name: "Power BI",
+      icon: ChartBar,
+      color: "text-blue-600"
+    }, {
+      name: "Tableau",
+      icon: ChartBar,
+      color: "text-orange-600"
+    }, {
+      name: "Grafana",
+      icon: ChartBar,
+      color: "text-green-600"
+    }, {
+      name: "Kibana",
+      icon: ChartBar,
+      color: "text-purple-600"
+    }]
   }, {
     category: "Other",
     skills: ["Data Cleaning", "Data Modeling", "Git", "Jira", "Confluence", "KPI Reporting", "Github", "Excel", "Agile Environment", "CI/CD", "DataOps", "Test-Driven Development", "Unity Catalog", "Terraform"],
-    icons: [
-      { name: "Git", icon: Code, color: "text-orange-600" },
-      { name: "Jira", icon: Terminal, color: "text-blue-600" },
-      { name: "Excel", icon: ChartBar, color: "text-green-600" },
-      { name: "Terraform", icon: Server, color: "text-purple-600" }
-    ]
-  }];
-  const certifications = [
-    {
-      title: "Python Programming Certification",
-      provider: "Udemy",
-      date: "2025",
-      description: "Comprehensive Python programming course covering advanced concepts, data structures, and real-world applications",
-      certificateUrl: "https://www.udemy.com/certificate/UC-ce768d0b-5492-4a11-9c0d-0bc61c572dcf/",
-      skills: ["Python", "Data Structures", "Object-Oriented Programming", "Libraries & Frameworks"],
-      color: "from-blue-500 to-cyan-500"
+    icons: [{
+      name: "Git",
+      icon: Code,
+      color: "text-orange-600"
     }, {
-      title: "SQL Database Management Certification",
-      provider: "Udemy",
-      date: "2025",
-      description: "Advanced SQL certification covering database design, query optimization, and data analysis techniques",
-      certificateUrl: "https://www.udemy.com/certificate/UC-ce768d0b-5492-4a11-9c0d-0bc61c572dcf/",
-      skills: ["SQL Queries", "Database Design", "Data Analysis", "Query Optimization"],
-      color: "from-purple-500 to-pink-500"
-    }
-  ];
+      name: "Jira",
+      icon: Terminal,
+      color: "text-blue-600"
+    }, {
+      name: "Excel",
+      icon: ChartBar,
+      color: "text-green-600"
+    }, {
+      name: "Terraform",
+      icon: Server,
+      color: "text-purple-600"
+    }]
+  }];
+  const certifications = [{
+    title: "Python Programming Certification",
+    provider: "Udemy",
+    date: "2025",
+    description: "Comprehensive Python programming course covering advanced concepts, data structures, and real-world applications",
+    certificateUrl: "https://www.udemy.com/certificate/UC-ce768d0b-5492-4a11-9c0d-0bc61c572dcf/",
+    skills: ["Python", "Data Structures", "Object-Oriented Programming", "Libraries & Frameworks"],
+    color: "from-blue-500 to-cyan-500"
+  }, {
+    title: "SQL Database Management Certification",
+    provider: "Udemy",
+    date: "2025",
+    description: "Advanced SQL certification covering database design, query optimization, and data analysis techniques",
+    certificateUrl: "https://www.udemy.com/certificate/UC-ce768d0b-5492-4a11-9c0d-0bc61c572dcf/",
+    skills: ["SQL Queries", "Database Design", "Data Analysis", "Query Optimization"],
+    color: "from-purple-500 to-pink-500"
+  }];
   return <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 text-gray-900 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 dark:text-gray-100">
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 border-b border-gray-200 dark:border-gray-700 transition-all duration-300 ${isNavSticky ? 'bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm shadow-lg' : 'bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm shadow-sm'}`}>
@@ -402,12 +469,7 @@ const Index = () => {
       </section>
 
       {/* Tech Stack Grid */}
-      <section className="py-8 px-6 bg-slate-50 dark:bg-slate-800">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-6 text-slate-800 dark:text-slate-200">Technology Stack</h2>
-          <TechStackGrid />
-        </div>
-      </section>
+      
 
       {/* Skills Section */}
       <section id="skills" className="py-8 px-6 bg-white dark:bg-slate-900">
@@ -425,27 +487,21 @@ const Index = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  {category.icons ? (
-                    <div className="grid grid-cols-3 gap-4">
+                  {category.icons ? <div className="grid grid-cols-3 gap-4">
                       {category.icons.map((tech, techIndex) => {
-                        const IconComponent = tech.icon;
-                        return (
-                          <div key={techIndex} className="flex flex-col items-center p-3 rounded-lg bg-white dark:bg-slate-600 hover:shadow-md transition-all duration-200 hover:scale-105">
+                  const IconComponent = tech.icon;
+                  return <div key={techIndex} className="flex flex-col items-center p-3 rounded-lg bg-white dark:bg-slate-600 hover:shadow-md transition-all duration-200 hover:scale-105">
                             <div className={`p-2 rounded-lg ${tech.color} bg-opacity-10 mb-2`}>
                               <IconComponent className={`h-8 w-8 ${tech.color}`} />
                             </div>
                             <span className="text-sm font-medium text-center text-slate-700 dark:text-slate-300">{tech.name}</span>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  ) : (
-                    <div className="space-y-2">
+                          </div>;
+                })}
+                    </div> : <div className="space-y-2">
                       {category.skills.map((skill, skillIndex) => <Badge key={skillIndex} variant="secondary" className="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 mr-2 mb-2 hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors">
                           {skill}
                         </Badge>)}
-                    </div>
-                  )}
+                    </div>}
                 </CardContent>
               </Card>)}
           </div>
@@ -801,5 +857,4 @@ const Index = () => {
       <BackToTop />
     </div>;
 };
-
 export default Index;
