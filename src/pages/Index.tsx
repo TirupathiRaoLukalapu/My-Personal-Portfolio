@@ -163,54 +163,68 @@ const Index = () => {
     }
   ];
   const skillCategories = [{
-    category: "Code & Core Languages",
-    skills: ["Python (NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, TensorFlow)", "SQL", "PySpark", "Java", "R", "Bash"],
+    category: "Programming Skills",
+    skills: ["Python (NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, TensorFlow)", "SQL", "PySpark", "R", "Bash"],
     icons: [
       { name: "Python", icon: Code, color: "text-yellow-600" },
       { name: "SQL", icon: Database, color: "text-blue-600" },
-      { name: "Java", icon: Code, color: "text-red-600" },
-      { name: "R", icon: ChartBar, color: "text-blue-500" }
+      { name: "PySpark", icon: ChartBar, color: "text-orange-600" },
+      { name: "R", icon: ChartBar, color: "text-blue-500" },
+      { name: "Bash", icon: Terminal, color: "text-green-600" }
     ]
   }, {
-    category: "ChiEAC Tech Stack",
-    skills: ["AWS (S3, Glue)", "Python/PySpark", "Scikit-learn", "Power BI", "Shiny", "Great Expectations"],
-    icons: [
-      { name: "AWS", icon: Server, color: "text-orange-600" },
-      { name: "Python", icon: Code, color: "text-yellow-600" },
-      { name: "Scikit-learn", icon: ChartBar, color: "text-green-600" },
-      { name: "Power BI", icon: Database, color: "text-blue-600" }
-    ]
-  }, {
-    category: "Big Data & Frameworks",
-    skills: ["Apache Spark", "Apache Kafka", "Apache Hive", "Hadoop", "HDFS", "Apache Airflow"],
+    category: "Big Data/Frameworks",
+    skills: ["Apache Spark", "Kafka", "Hive", "Hadoop", "HDFS", "Airflow"],
     icons: [
       { name: "Apache Spark", icon: Database, color: "text-orange-600" },
-      { name: "Apache Kafka", icon: Network, color: "text-purple-600" },
-      { name: "Apache Airflow", icon: Terminal, color: "text-blue-600" }
+      { name: "Kafka", icon: Network, color: "text-purple-600" },
+      { name: "Hive", icon: Database, color: "text-yellow-600" },
+      { name: "Hadoop", icon: Server, color: "text-green-600" },
+      { name: "Airflow", icon: Terminal, color: "text-blue-600" }
     ]
   }, {
-    category: "Databases & Storage",
-    skills: ["MongoDB", "Redis", "ChromaDB", "Snowflake", "Azure Data Lake Storage Gen2", "AWS S3", "PostgreSQL"],
+    category: "Databases/Storage",
+    skills: ["MongoDB", "AWS S3", "PostgreSQL", "Delta Lake", "Elasticsearch", "SQL Server"],
     icons: [
-      { name: "Snowflake", icon: Database, color: "text-cyan-600" },
+      { name: "MongoDB", icon: Database, color: "text-green-600" },
       { name: "AWS S3", icon: Server, color: "text-orange-600" },
-      { name: "MongoDB", icon: Database, color: "text-green-600" }
+      { name: "PostgreSQL", icon: Database, color: "text-blue-600" },
+      { name: "Delta Lake", icon: Database, color: "text-cyan-600" },
+      { name: "Elasticsearch", icon: Database, color: "text-yellow-600" }
+    ]
+  }, {
+    category: "Orchestration Tools",
+    skills: ["Apache Airflow", "Azure Data Factory"],
+    icons: [
+      { name: "Apache Airflow", icon: Terminal, color: "text-blue-600" },
+      { name: "Azure Data Factory", icon: Network, color: "text-blue-600" }
     ]
   }, {
     category: "Cloud Platforms",
-    skills: ["Azure (ADF, Databricks, ADLS Gen2)", "AWS (S3, EC2, EMR, Glue)", "Snowflake"],
+    skills: ["Azure (ADF, Databricks, ADLS Gen 2)", "AWS (S3, EC2, EMR)", "Snowflake", "CloudWatch"],
     icons: [
       { name: "Azure", icon: Network, color: "text-blue-600" },
       { name: "AWS", icon: Server, color: "text-orange-600" },
-      { name: "Snowflake", icon: Database, color: "text-cyan-600" }
+      { name: "Snowflake", icon: Database, color: "text-cyan-600" },
+      { name: "CloudWatch", icon: ChartBar, color: "text-orange-600" }
     ]
   }, {
-    category: "Orchestration & Tools",
-    skills: ["Apache Airflow", "Azure Data Factory", "dbt", "Great Expectations", "Power BI", "Tableau", "GitHub", "Jenkins"],
+    category: "Monitoring & Visualization Tools",
+    skills: ["Power BI (DAX, Data Modeling, UX Best Practices)", "Tableau", "Grafana", "Kibana"],
     icons: [
-      { name: "Apache Airflow", icon: Terminal, color: "text-blue-600" },
-      { name: "dbt", icon: Code, color: "text-purple-600" },
-      { name: "Power BI", icon: ChartBar, color: "text-blue-600" }
+      { name: "Power BI", icon: ChartBar, color: "text-blue-600" },
+      { name: "Tableau", icon: ChartBar, color: "text-orange-600" },
+      { name: "Grafana", icon: ChartBar, color: "text-green-600" },
+      { name: "Kibana", icon: ChartBar, color: "text-purple-600" }
+    ]
+  }, {
+    category: "Other",
+    skills: ["Data Cleaning", "Data Modeling", "Git", "Jira", "Confluence", "KPI Reporting", "Github", "Excel", "Agile Environment", "CI/CD", "DataOps", "Test-Driven Development", "Unity Catalog", "Terraform"],
+    icons: [
+      { name: "Git", icon: Code, color: "text-orange-600" },
+      { name: "Jira", icon: Terminal, color: "text-blue-600" },
+      { name: "Excel", icon: ChartBar, color: "text-green-600" },
+      { name: "Terraform", icon: Server, color: "text-purple-600" }
     ]
   }];
   const certifications = [
