@@ -174,13 +174,12 @@ const Index = () => {
     ]
   }, {
     category: "Big Data/Frameworks",
-    skills: ["Apache Spark", "Kafka", "Hive", "Hadoop", "HDFS", "Airflow"],
+    skills: ["Apache Spark", "Kafka", "Hive", "Hadoop", "HDFS"],
     icons: [
       { name: "Apache Spark", icon: Database, color: "text-orange-600" },
       { name: "Kafka", icon: Network, color: "text-purple-600" },
       { name: "Hive", icon: Database, color: "text-yellow-600" },
-      { name: "Hadoop", icon: Server, color: "text-green-600" },
-      { name: "Airflow", icon: Terminal, color: "text-blue-600" }
+      { name: "Hadoop", icon: Server, color: "text-green-600" }
     ]
   }, {
     category: "Databases/Storage",
