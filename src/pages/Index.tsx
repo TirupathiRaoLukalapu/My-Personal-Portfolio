@@ -129,6 +129,13 @@ const Index = () => {
   const experience = [
     {
       role: "Data Engineer",
+      company: "Chicago Education Advocacy Cooperative",
+      period: "July 2025 – Present",
+      location: "Chicago, United States",
+      description: ["Design HIPAA-compliant data pipelines on AWS (S3/Glue) for 50+ schools, ensuring zero PII breaches via encryption, RBAC, and audit trails", "Develop scalable ETL workflows ingesting student records, curriculum data, and policy docs (Python/PySpark), optimizing costs 30% through partitioning/lifecycle policies", "Build predictive model pipelines (Scikit-learn) identifying learning gaps, driving interventions that reduce dropout risk by 18%", "Engineer real-time dashboards (Power BI/Shiny) for educators, slashing report generation from 8hrs to 15mins", "Automate data validation (Great Expectations) ensuring 99.8% accuracy in critical advocacy reports", "Migrate legacy district reports to cloud-based dashboards (Power BI), serving 200+ educators with real-time literacy/math metrics", "Develop data governance frameworks unifying records from 50+ schools into standardized schemas, reducing data reconciliation time by 65%", "Prevent $15K+ potential breach costs through PII safeguards and cybersecurity training for staff"]
+    },
+    {
+      role: "Data Engineer",
       company: "Innovaccer",
       period: "Dec 2023 – Apr 2025",
       location: "California, United States",
@@ -156,26 +163,55 @@ const Index = () => {
     }
   ];
   const skillCategories = [{
-    category: "Programming Languages",
-    skills: ["Python (NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, TensorFlow)", "SQL", "PySpark", "Java", "R", "Bash"]
+    category: "Code & Core Languages",
+    skills: ["Python (NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, TensorFlow)", "SQL", "PySpark", "Java", "R", "Bash"],
+    icons: [
+      { name: "Python", icon: Code, color: "text-yellow-600" },
+      { name: "SQL", icon: Database, color: "text-blue-600" },
+      { name: "Java", icon: Code, color: "text-red-600" },
+      { name: "R", icon: ChartBar, color: "text-blue-500" }
+    ]
   }, {
-    category: "Frontend Technologies",
-    skills: ["HTML", "CSS"]
+    category: "ChiEAC Tech Stack",
+    skills: ["AWS (S3, Glue)", "Python/PySpark", "Scikit-learn", "Power BI", "Shiny", "Great Expectations"],
+    icons: [
+      { name: "AWS", icon: Server, color: "text-orange-600" },
+      { name: "Python", icon: Code, color: "text-yellow-600" },
+      { name: "Scikit-learn", icon: ChartBar, color: "text-green-600" },
+      { name: "Power BI", icon: Database, color: "text-blue-600" }
+    ]
   }, {
     category: "Big Data & Frameworks",
-    skills: ["Apache Spark", "Apache Kafka", "Apache Hive", "Hadoop", "HDFS", "Apache Airflow"]
+    skills: ["Apache Spark", "Apache Kafka", "Apache Hive", "Hadoop", "HDFS", "Apache Airflow"],
+    icons: [
+      { name: "Apache Spark", icon: Database, color: "text-orange-600" },
+      { name: "Apache Kafka", icon: Network, color: "text-purple-600" },
+      { name: "Apache Airflow", icon: Terminal, color: "text-blue-600" }
+    ]
   }, {
     category: "Databases & Storage",
-    skills: ["MongoDB", "Redis", "ChromaDB", "Snowflake", "Azure Data Lake Storage Gen2", "AWS S3", "PostgreSQL"]
+    skills: ["MongoDB", "Redis", "ChromaDB", "Snowflake", "Azure Data Lake Storage Gen2", "AWS S3", "PostgreSQL"],
+    icons: [
+      { name: "Snowflake", icon: Database, color: "text-cyan-600" },
+      { name: "AWS S3", icon: Server, color: "text-orange-600" },
+      { name: "MongoDB", icon: Database, color: "text-green-600" }
+    ]
   }, {
     category: "Cloud Platforms",
-    skills: ["Azure (ADF, Databricks, ADLS Gen2)", "AWS (S3, EC2, EMR, Glue)", "Snowflake"]
+    skills: ["Azure (ADF, Databricks, ADLS Gen2)", "AWS (S3, EC2, EMR, Glue)", "Snowflake"],
+    icons: [
+      { name: "Azure", icon: Network, color: "text-blue-600" },
+      { name: "AWS", icon: Server, color: "text-orange-600" },
+      { name: "Snowflake", icon: Database, color: "text-cyan-600" }
+    ]
   }, {
     category: "Orchestration & Tools",
-    skills: ["Apache Airflow", "Azure Data Factory", "dbt", "Great Expectations", "Power BI", "Tableau", "GitHub", "Jenkins"]
-  }, {
-    category: "Other Skills",
-    skills: ["Data Cleaning", "Data Modeling", "Patient Data Analytics", "KPI Reporting", "Agile Environment", "CI/CD"]
+    skills: ["Apache Airflow", "Azure Data Factory", "dbt", "Great Expectations", "Power BI", "Tableau", "GitHub", "Jenkins"],
+    icons: [
+      { name: "Apache Airflow", icon: Terminal, color: "text-blue-600" },
+      { name: "dbt", icon: Code, color: "text-purple-600" },
+      { name: "Power BI", icon: ChartBar, color: "text-blue-600" }
+    ]
   }];
   const certifications = [
     {
@@ -369,14 +405,34 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {skillCategories.map((category, index) => <Card key={index} className="bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-800 dark:to-slate-700 border-slate-200 dark:border-slate-600 hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-300 hover:shadow-lg">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-slate-800 dark:text-slate-200 text-lg bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">{category.category}</CardTitle>
+                  <CardTitle className="text-slate-800 dark:text-slate-200 text-lg bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent flex items-center gap-2">
+                    {category.category === "Code & Core Languages" && <Code className="h-5 w-5" />}
+                    {category.category === "ChiEAC Tech Stack" && <Database className="h-5 w-5" />}
+                    {category.category}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-2">
-                    {category.skills.map((skill, skillIndex) => <Badge key={skillIndex} variant="secondary" className="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 mr-2 mb-2 hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors">
-                        {skill}
-                      </Badge>)}
-                  </div>
+                  {category.icons ? (
+                    <div className="grid grid-cols-3 gap-4">
+                      {category.icons.map((tech, techIndex) => {
+                        const IconComponent = tech.icon;
+                        return (
+                          <div key={techIndex} className="flex flex-col items-center p-3 rounded-lg bg-white dark:bg-slate-600 hover:shadow-md transition-all duration-200 hover:scale-105">
+                            <div className={`p-2 rounded-lg ${tech.color} bg-opacity-10 mb-2`}>
+                              <IconComponent className={`h-8 w-8 ${tech.color}`} />
+                            </div>
+                            <span className="text-sm font-medium text-center text-slate-700 dark:text-slate-300">{tech.name}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  ) : (
+                    <div className="space-y-2">
+                      {category.skills.map((skill, skillIndex) => <Badge key={skillIndex} variant="secondary" className="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 mr-2 mb-2 hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors">
+                          {skill}
+                        </Badge>)}
+                    </div>
+                  )}
                 </CardContent>
               </Card>)}
           </div>
