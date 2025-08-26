@@ -131,12 +131,6 @@ const Index = () => {
     description: ["Design HIPAA-compliant data pipelines on AWS (S3/Glue) for 50+ schools, ensuring zero PII breaches via encryption, RBAC, and audit trails", "Develop scalable ETL workflows ingesting student records, curriculum data, and policy docs (Python/PySpark), optimizing costs 30% through partitioning/lifecycle policies", "Build predictive model pipelines (Scikit-learn) identifying learning gaps, driving interventions that reduce dropout risk by 18%", "Engineer real-time dashboards (Power BI/Shiny) for educators, slashing report generation from 8hrs to 15mins", "Automate data validation (Great Expectations) ensuring 99.8% accuracy in critical advocacy reports", "Migrate legacy district reports to cloud-based dashboards (Power BI), serving 200+ educators with real-time literacy/math metrics", "Develop data governance frameworks unifying records from 50+ schools into standardized schemas, reducing data reconciliation time by 65%", "Prevent $15K+ potential breach costs through PII safeguards and cybersecurity training for staff"]
   }, {
     role: "Data Engineer",
-    company: "Innovaccer",
-    period: "Dec 2023 – Apr 2025",
-    location: "California, United States",
-    description: ["Built HIPAA-compliant data pipelines using AWS Glue, Python, and Spark, processing 10TB+ of EHR data monthly, improving data availability by 35%", "Automated data validation with Python reducing errors by 25% and accelerating data source onboarding by 40%", "Migrated on-premise data to AWS S3/Redshift, cutting storage costs by 25% while boosting query speed by 40%", "Implemented Medallion Architecture in Delta Lake, enabling self-service analytics for 50+ researchers and reducing ad-hoc requests by 20%", "Pioneered FHIR-compliant data integrations for EHR systems (Epic, Cerner), standardizing clinical data from 50+ hospitals into Innovaccer's unified data model, accelerating analytics readiness by 35%", "Optimized cloud infrastructure costs by 20% through auto-scaling AWS Glue jobs and partitioning Delta Lake tables, aligning with Innovaccer's focus on 'scalable, sustainable solutions'", "Co-led agile workshops with clinical stakeholders to define data requirements for population health analytics, directly supporting Innovaccer's mission to 'activate data flow for better health outcomes'"]
-  }, {
-    role: "Data Engineer",
     company: "Capgemini",
     period: "Oct 2021 – Jun 2023",
     location: "Hyderabad, India",
@@ -431,7 +425,7 @@ const Index = () => {
                       <div className="space-y-1">
                         <h4 className="text-sm font-semibold dark:text-white">Tirupathi Rao Lukalapu</h4>
                         <p className="text-sm text-muted-foreground dark:text-gray-300">
-                          Data Engineer at Innovaccer Inc.
+                          Data Engineer & Analytics Professional
                         </p>
                         <div className="flex items-center pt-2">
                           <Linkedin className="mr-2 h-4 w-4 opacity-70 text-blue-600" />
@@ -809,7 +803,7 @@ const Index = () => {
                   <div className="space-y-1">
                     <h4 className="text-sm font-semibold dark:text-white">Tirupathi Rao Lukalapu</h4>
                     <p className="text-sm text-muted-foreground dark:text-gray-300">
-                      Data Engineer at Innovaccer Inc.
+                      Data Engineer & Analytics Professional
                     </p>
                     <div className="flex items-center pt-2">
                       <Linkedin className="mr-2 h-4 w-4 opacity-70 text-blue-600" />
