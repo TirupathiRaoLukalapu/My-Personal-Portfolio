@@ -382,7 +382,7 @@ const Index = () => {
               </h1>
               <div className="text-lg mb-6 text-slate-700 leading-relaxed space-y-3 max-w-3xl mx-auto">
                 <p>
-                  Results-driven Data Engineer with <span className="text-blue-600 font-semibold">4+ years of experience</span> designing, building, and optimizing scalable data pipelines across <span className="text-purple-600 font-medium">healthcare and fintech domains</span>.
+                  Results-driven Data Engineer with <span className="text-blue-600 font-semibold">3+ years of experience</span> designing, building, and optimizing scalable data pipelines across <span className="text-purple-600 font-medium">healthcare and fintech domains</span>.
                 </p>
                 <p>
                   Proven expertise in <span className="text-green-600 font-medium">ETL/ELT development, data modeling, and orchestration</span> using tools like PySpark, Snowflake, dbt, Apache Airflow, and Azure Data Factory.
