@@ -268,26 +268,6 @@ const Index = () => {
       icon: ChartBar,
       color: "text-purple-600"
     }]
-  }, {
-    category: "Other",
-    skills: ["Data Cleaning", "Data Modeling", "Git", "Jira", "Confluence", "KPI Reporting", "Github", "Excel", "Agile Environment", "CI/CD", "DataOps", "Test-Driven Development", "Unity Catalog", "Terraform"],
-    icons: [{
-      name: "Git",
-      icon: Code,
-      color: "text-orange-600"
-    }, {
-      name: "Jira",
-      icon: Terminal,
-      color: "text-blue-600"
-    }, {
-      name: "Excel",
-      icon: ChartBar,
-      color: "text-green-600"
-    }, {
-      name: "Terraform",
-      icon: Server,
-      color: "text-purple-600"
-    }]
   }];
   const certifications = [{
     title: "Python Programming Certification",
