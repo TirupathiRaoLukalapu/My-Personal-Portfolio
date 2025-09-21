@@ -137,8 +137,8 @@ const Index = () => {
     description: ["Engineered real-time AML monitoring pipelines using Spark Streaming and Kafka, reducing fraud detection latency to less than 2 seconds and aligning with Capgemini's emphasis on 'risk exposure mitigation'", "Optimized Snowflake data warehouse through partitioning/materialized views, slashing report generation from 2 hours to 12 minutes", "Modernized legacy data warehouses to Snowflake using Azure Data Factory, achieving 99.9% pipeline reliability and supporting Capgemini's 'cloud-first' client transformation initiatives", "Built CI/CD pipelines with Azure DevOps, reducing deployment failures by 35% and accelerating releases to hourly cycles", "Implemented dbt models to standardize transformations, boosting team productivity by 15% while ensuring GDPR compliance", "Reduced Snowflake costs by $18K/year via auto-scaling and query tuning"]
   }, {
     role: "Data Analyst",
-    company: "Teamtech Solutions",
-    period: "Jun 2020 – Aug 2021",
+    company: "Capgemini",
+    period: "Jun 2020 – Oct 2021",
     location: "Hyderabad, India",
     description: ["Built startup's first analytics infrastructure from zero using Python/SQL, unifying 7+ data sources (Salesforce, Stripe, Mixpanel) into a central Redshift warehouse, enabling data-driven decisions across product/sales teams", "Created 10+ executive dashboards in Power BI tracking MRR, CAC, and feature adoption, directly influencing a pivot that reduced churn by 15% and retained $120K in annual revenue", "Automated manual revenue reporting with Python scripts, reducing CFO's financial close time from 3 days → 4 hours and freeing capacity for Series A fundraising", "Identified upsell opportunities through cohort analysis of 2,500+ free-tier users, driving targeted campaigns that converted 18% to paid plans ($45K ARR increase)", "Trained non-technical teams on self-service analytics (Power BI/Excel), increasing data adoption by 50% and reducing ad-hoc requests by 30%"]
   }];
