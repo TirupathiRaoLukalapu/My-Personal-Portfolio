@@ -130,16 +130,16 @@ const Index = () => {
     location: "Chicago, United States",
     description: ["Design HIPAA-compliant data pipelines on AWS (S3/Glue) for 50+ schools, ensuring zero PII breaches via encryption, RBAC, and audit trails", "Develop scalable ETL workflows ingesting student records, curriculum data, and policy docs (Python/PySpark), optimizing costs 30% through partitioning/lifecycle policies", "Build predictive model pipelines (Scikit-learn) identifying learning gaps, driving interventions that reduce dropout risk by 18%", "Engineer real-time dashboards (Power BI/Shiny) for educators, slashing report generation from 8hrs to 15mins", "Automate data validation (Great Expectations) ensuring 99.8% accuracy in critical advocacy reports", "Migrate legacy district reports to cloud-based dashboards (Power BI), serving 200+ educators with real-time literacy/math metrics", "Develop data governance frameworks unifying records from 50+ schools into standardized schemas, reducing data reconciliation time by 65%", "Prevent $15K+ potential breach costs through PII safeguards and cybersecurity training for staff"]
   }, {
-    role: "Data Engineer",
+    role: "ETL Developer",
     company: "Capgemini",
-    period: "Oct 2021 – Jun 2023",
-    location: "Hyderabad, India",
+    period: "Oct 2022 – Jun 2023",
+    location: "On-site",
     description: ["Engineered real-time AML monitoring pipelines using Spark Streaming and Kafka, reducing fraud detection latency to less than 2 seconds and aligning with Capgemini's emphasis on 'risk exposure mitigation'", "Optimized Snowflake data warehouse through partitioning/materialized views, slashing report generation from 2 hours to 12 minutes", "Modernized legacy data warehouses to Snowflake using Azure Data Factory, achieving 99.9% pipeline reliability and supporting Capgemini's 'cloud-first' client transformation initiatives", "Built CI/CD pipelines with Azure DevOps, reducing deployment failures by 35% and accelerating releases to hourly cycles", "Implemented dbt models to standardize transformations, boosting team productivity by 15% while ensuring GDPR compliance", "Reduced Snowflake costs by $18K/year via auto-scaling and query tuning"]
   }, {
-    role: "Data Analyst",
+    role: "Junior Data Engineer",
     company: "Capgemini",
-    period: "Jun 2020 – Oct 2021",
-    location: "Hyderabad, India",
+    period: "Jun 2021 – Oct 2022",
+    location: "Remote",
     description: ["Built startup's first analytics infrastructure from zero using Python/SQL, unifying 7+ data sources (Salesforce, Stripe, Mixpanel) into a central Redshift warehouse, enabling data-driven decisions across product/sales teams", "Created 10+ executive dashboards in Power BI tracking MRR, CAC, and feature adoption, directly influencing a pivot that reduced churn by 15% and retained $120K in annual revenue", "Automated manual revenue reporting with Python scripts, reducing CFO's financial close time from 3 days → 4 hours and freeing capacity for Series A fundraising", "Identified upsell opportunities through cohort analysis of 2,500+ free-tier users, driving targeted campaigns that converted 18% to paid plans ($45K ARR increase)", "Trained non-technical teams on self-service analytics (Power BI/Excel), increasing data adoption by 50% and reducing ad-hoc requests by 30%"]
   }];
   const education = [{
