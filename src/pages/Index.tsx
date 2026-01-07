@@ -125,22 +125,37 @@ const Index = () => {
   }];
   const experience = [{
     role: "Data Engineer",
-    company: "AT&T",
-    period: "Jul 2024 – Dec 2025",
-    location: "Chicago, Illinois, United States · Hybrid",
-    description: []
+    company: "Kinaxis",
+    period: "Sep 2024 – Present",
+    location: "Chicago, United States",
+    description: [
+      "Designed and implemented scalable, governed data pipelines on Azure (ADF, Databricks, ADLS Gen2) to ingest and process network telemetry and customer experience data.",
+      "Architected Delta Lake tables within a medallion lakehouse framework to ensure data quality and support ACID transactions.",
+      "Orchestrated complex data workflows using Apache Airflow, improving pipeline reliability to 99.9%.",
+      "Developed PySpark transformation logic and automated data quality checks to maintain high fidelity of critical business data.",
+      "Collaborated with data governance and platform teams to implement access controls and data lineage tracking."
+    ]
   }, {
-    role: "ETL Developer",
-    company: "Comcast",
-    period: "Oct 2021 – Jun 2023",
-    location: "India · On-site",
-    description: []
+    role: "Data Engineer",
+    company: "CitiusTech",
+    period: "Jun 2022 – Jul 2023",
+    location: "Hyderabad, India",
+    description: [
+      "Built and maintained high-volume ETL pipelines using Databricks and Apache Spark, processing 25 million patient records daily.",
+      "Optimized Spark jobs through intelligent partitioning, predicate pushdown, and memory tuning, achieving a 35% reduction in data load time.",
+      "Engineered a reusable data quality framework using Great Expectations and PySpark, reducing time spent on data validation by 15 hours per week.",
+      "Migrated legacy on-premise SQL Server workloads to a cloud-native Databricks and Delta Lake architecture, cutting infrastructure costs by 25%.",
+      "Implemented automated data validation frameworks with PySpark and SQL, ensuring 99.8% data accuracy."
+    ]
   }, {
     role: "Junior Data Engineer",
-    company: "Infinite Solutions",
-    period: "Jun 2020 – Oct 2021",
-    location: "India · Remote",
-    description: []
+    company: "Vision Software Solution",
+    period: "Dec 2020 – May 2022",
+    location: "Hyderabad, India",
+    description: [
+      "Automated the financial data lifecycle by developing Python (Pandas) and SQL scripts to ingest and clean data from 4+ disparate source systems, reducing manual intervention by 80%.",
+      "Engineered standardized data models and KPI definitions, slashing the monthly financial reporting cycle from 3 days to 5 hours."
+    ]
   }];
   const education = [{
     degree: "Master's in Computer/Information Technology Administration and Management",
