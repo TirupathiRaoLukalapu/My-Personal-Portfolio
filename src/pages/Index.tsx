@@ -285,13 +285,13 @@ const Index = () => {
     }]
   }];
   const certifications = [{
-    title: "Python Programming Certification",
-    provider: "Udemy",
-    date: "2025",
-    description: "Comprehensive Python programming course covering advanced concepts, data structures, and real-world applications",
-    certificateUrl: "https://www.udemy.com/certificate/UC-ce768d0b-5492-4a11-9c0d-0bc61c572dcf/",
-    skills: ["Python", "Data Structures", "Object-Oriented Programming", "Libraries & Frameworks"],
-    color: "from-blue-500 to-cyan-500"
+    title: "Databricks Certified Data Engineer Associate",
+    provider: "Databricks",
+    date: "2024",
+    description: "Professional certification validating expertise in building and optimizing data pipelines using Databricks, Delta Lake, and Apache Spark",
+    certificateUrl: "https://credentials.databricks.com/2efd1032-f067-46ff-95dd-cb2439f0981e#acc.wRYSvN2h",
+    skills: ["Databricks", "Delta Lake", "Apache Spark", "Data Pipelines"],
+    color: "from-red-500 to-orange-500"
   }, {
     title: "SQL Database Management Certification",
     provider: "Udemy",
